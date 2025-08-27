@@ -1,9 +1,9 @@
 <script setup>
-
 </script>
 
 <template>
-  <h1></h1>
+  <div class="container">
+  </div>
 </template>
 
 <style scoped>

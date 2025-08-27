@@ -1,11 +1,16 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
-  <h1></h1>
+  <nav class="navbar">
+    <ul class="navbar__list">
+      <li class="navbar__item">
+        <a href="#!">Home</a>
+      </li>
+      <li class="navbar__item">
+        <a href="#!">About</a>
+      </li>
+    </ul>
+  </nav>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
