@@ -6,7 +6,6 @@ import AppFooter from "@/layouts/AppFooter.vue";
 <template>
   <div>
     <AppHeader />
-    <h1>bbbbb</h1>
     <slot></slot>
     <AppFooter />
   </div>
