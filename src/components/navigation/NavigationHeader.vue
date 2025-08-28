@@ -13,4 +13,13 @@
   </nav>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.navbar {
+  &__list {
+    display: flex;
+  }
+  &__item {
+    padding: 12px 24px;
+  }
+}
+</style>

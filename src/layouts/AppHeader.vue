@@ -1,17 +1,41 @@
 <script setup>
-import NavigationHeader from '@/components/navigation/NavigationHeader.vue';
-
+import NavigationHeader from '@/components/navigation/NavigationHeader.vue'
 </script>
 
 <template>
-  <div class="container">
-    <div class="app-header">
-      <a href="./" class="logo">
-        <img src="../assets/images/Logo.svg" alt="Foot" class="logo-main" />
-      </a>
-      <NavigationHeader />
+  <div class="app-header">
+    <div class="container">
+      <div class="app-header__inner">
+        <a href="./" class="logo">
+          <img src="../assets/images/Logo.svg" alt="Foot" class="logo-main" />
+        </a>
+
+        <NavigationHeader />
+
+        <div class="header-cta">
+          <button class="btn btn--text btn--sm">Login</button>
+          <button class="btn btn--sm">Sign Up</button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.app-header {
+  background: #fffae3;
+  height: 108px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.header-cta {
+  display: flex;
+}
+</style>
