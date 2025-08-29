@@ -55,6 +55,15 @@
     column-gap: 100px;
     row-gap: 50px;
 
+    @include abstracts.screen(xl) {
+      column-gap: 70px;
+    }
+
+    @include abstracts.screen(lg) {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 140px;
+    }
+
     @include abstracts.screen(md) {
       grid-template-columns: 1fr;
       row-gap: 20px;
@@ -89,7 +98,7 @@
     right: 0;
     transform: translateY(-50%);
 
-    @include abstracts.screen(md) {
+    @include abstracts.screen(lg) {
       top: initial;
       bottom: 0;
     }
