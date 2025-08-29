@@ -63,6 +63,7 @@
 
   @include abstracts.screen(md) {
     padding-top: 70px;
+    padding-bottom: 70px;
   }
 
   &__heading {
