@@ -61,6 +61,10 @@
   padding-top: 160px;
   padding-bottom: 260px;
 
+  @include abstracts.screen(md) {
+    padding-top: 70px;
+  }
+
   &__heading {
     color: #191720;
     text-align: center;
@@ -68,17 +72,27 @@
     font-size: 4.4rem;
     font-weight: 600;
     line-height: 1;
+
+    @include abstracts.screen(md) {
+      font-size: 3.4rem;
+    }
   }
 
   &__desc {
     display: block;
-    max-width: 470px;
     margin: 0 auto;
     margin-top: 18px;
     text-align: center;
     color: #575363;
     font-size: 1.8rem;
     line-height: 166.667%;
+
+    @include abstracts.screen(md) {
+      font-size: 1.6rem;
+      margin-top: 12px;
+      max-width: initial;
+      width: 100%;
+    }
   }
 
   &__list {
@@ -103,7 +117,6 @@
     border-radius: 12px;
     background: #fff;
     transition: box-shadow 0.3s ease;
-    
 
     &:hover {
       box-shadow: 0 20px 70px 0 rgba(27, 12, 84, 0.07);
@@ -142,6 +155,13 @@
     line-height: 166.667%;
     max-width: 330px;
     text-align: center;
+
+    @include abstracts.screen(md) {
+      font-size: 1.6rem;
+      margin-top: 12px;
+      max-width: initial;
+      width: 100%;
+    }
   }
 
   &__item-link {
