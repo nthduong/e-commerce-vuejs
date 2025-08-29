@@ -10,9 +10,9 @@ import NavigationHeader from '@/components/navigation/NavigationHeader.vue'
           <img src="../assets/images/Logo.svg" alt="Foot" class="logo-main" />
         </a>
 
-        <NavigationHeader />
+        <NavigationHeader class="d-md-none"/>
 
-        <div class="header-cta">
+        <div class="header-cta d-md-none">
           <button class="btn btn--text btn--sm">Login</button>
           <button class="btn btn--sm">Sign Up</button>
         </div>

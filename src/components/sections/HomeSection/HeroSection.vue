@@ -1,33 +1,44 @@
-<script setup></script>
+<script setup>
+import FormInput from '@/components/form/FormInput.vue'
+</script>
 
 <template>
   <header>
     <section class="hero">
       <div class="container">
         <div class="hero__inner">
-          <div class="hero__content">
-            <p class="hero__label">#The Best in Town</p>
-            <h1 class="hero__heading">Get food delivery and more</h1>
-            <p class="hero__desc">
-              You want it. We get it. Food, drinks, groceries, and more available for delivery and
-              pickup.
-            </p>
-            <div class="get-app">
-              <span class="get-app__text">Get the app:</span>
-              <div class="get-app__list">
-                <a href="#!" class="get-app__item">
-                  <img src="@/assets/icons/apple.svg" alt="" />
-                </a>
-                <a href="#!" class="get-app__item">
-                  <img src="@/assets/icons/android.svg" alt="" />
-                </a>
+          <div class="row">
+            <div class="col-5 col-md-12">
+              <section class="hero__content">
+                <p class="hero__label">#The Best in Town</p>
+                <h1 class="hero__heading">Get food delivery and more</h1>
+                <p class="hero__desc">
+                  You want it. We get it. Food, drinks, groceries, and more available for delivery
+                  and pickup.
+                </p>
+                <div class="hero__form">
+                  <form-input />
+                </div>
+                <div class="get-app">
+                  <span class="get-app__text">Get the app:</span>
+                  <div class="get-app__list">
+                    <a href="#!">
+                      <img class="get-app__item" src="@/assets/icons/apple.svg" alt="" />
+                    </a>
+                    <a href="#!">
+                      <img class="get-app__item" src="@/assets/icons/android.svg" alt="" />
+                    </a>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="col-7 col-md-12">
+              <div class="hero__media">
+                <figure class="hero__media-wrap">
+                  <img class="hero__img" src="@/assets/images/hero.png" alt="" />
+                </figure>
               </div>
             </div>
-          </div>
-          <div class="hero__media">
-            <figure class="hero__media-wrap">
-              <img class="hero__img" src="@/assets/images/hero.png" alt="" />
-            </figure>
           </div>
         </div>
       </div>
@@ -36,17 +47,24 @@
 </template>
 
 <style lang="scss" scoped>
+@use '@/styles/abstracts';
 .hero {
   background: #fffae3;
   padding-top: 52px;
   padding-bottom: 100px;
+  @include abstracts.screen(md) {
+    padding-top: 30px;
+  }
   &__inner {
     display: flex;
     align-items: center;
   }
 
   &__content {
-    width: 44%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   &__label {
@@ -55,6 +73,9 @@
     font-weight: 500;
     line-height: 166.667%;
     letter-spacing: 3.6px;
+    @include abstracts.screen(xl) {
+      font-size: 1.6rem;
+    }
   }
 
   &__heading {
@@ -62,17 +83,44 @@
     font-size: 7.4rem;
     font-weight: 600;
     line-height: 1; /* 100% */
+    @include abstracts.screen(xl) {
+      font-size: 6.4rem;
+    }
+    @include abstracts.screen(lg) {
+      font-size: 4.6rem;
+    }
+    @include abstracts.screen(md) {
+      font-size: 4.6rem;
+    }
   }
 
   &__desc {
     margin-top: 18px;
     font-size: 1.8rem;
     line-height: 166.667%; /* 166.667% */
+    @include abstracts.screen(xl) {
+      font-size: 1.6rem;
+    }
+    @include abstracts.screen(lg) {
+      margin-top: 12px;
+    }
+  }
+
+  &__form {
+    margin-top: 38px;
+    @include abstracts.screen(md) {
+      margin-top: 30px;
+    }
   }
 
   &__media {
-    width: 56%;
-
+    margin-left: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    @include abstracts.screen(md) {
+      margin-top: 50px;
+    }
     &-wrap {
       width: 100%;
       object-fit: cover;
@@ -81,6 +129,10 @@
   &__img {
     width: 100%;
     height: auto;
+    margin-left: 28px;
+    @include abstracts.screen(md) {
+      margin-left: initial;
+    }
   }
 }
 
@@ -89,10 +141,19 @@
   gap: 16px;
   display: flex;
   align-items: center;
+  @include abstracts.screen(md) {
+    margin-top: 18px;
+  }
   &__text {
     font-size: 2rem;
     font-weight: 700;
     line-height: 150%; /* 150% */
+    @include abstracts.screen(xl) {
+      font-size: 1.8rem;
+    }
+    @include abstracts.screen(lg) {
+      font-size: 1.6rem;
+    }
   }
 
   &__list {
@@ -105,6 +166,11 @@
     width: 48px;
     height: 48px;
     flex-shrink: 0;
+
+    @include abstracts.screen(xl) {
+      width: 40px;
+      height: 40px;
+    }
   }
 }
 </style>
