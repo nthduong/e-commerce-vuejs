@@ -1,13 +1,12 @@
-<script setup></script>
+<script setup>
+import { NAV_ITEMS } from '@/constants/navbar'
+</script>
 
 <template>
   <nav class="navbar">
     <ul class="navbar__list">
-      <li class="navbar__item">
-        <a href="#!">Home</a>
-      </li>
-      <li class="navbar__item">
-        <a href="#!">About</a>
+      <li v-for="navItem in NAV_ITEMS" :key="navItem.id">
+        <router-link :to="{name: navItem.name}" class="navbar__link">{{ navItem.label }}</router-link>
       </li>
     </ul>
   </nav>
@@ -18,7 +17,7 @@
   &__list {
     display: flex;
   }
-  &__item {
+  &__link {
     padding: 12px 24px;
   }
 }
