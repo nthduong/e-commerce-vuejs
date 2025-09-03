@@ -1,5 +1,5 @@
 <script setup>
-import FormInput from '@/components/form/FormInput.vue'
+import TextInput from '@/components/form/TextInput.vue'
 </script>
 
 <template>
@@ -17,7 +17,12 @@ import FormInput from '@/components/form/FormInput.vue'
                   and pickup.
                 </p>
                 <div class="hero__form">
-                  <form-input />
+                  <text-input placeholder="Location or zip code">
+                    <template #icon>
+                      <img src="@/assets/icons/location.svg" alt="location icon" />
+                    </template>
+                  </text-input>
+                  <button class="btn">Explore</button>
                 </div>
                 <div class="get-app">
                   <span class="get-app__text">Get the app:</span>
@@ -108,8 +113,12 @@ import FormInput from '@/components/form/FormInput.vue'
 
   &__form {
     margin-top: 38px;
+    display: flex;
+    gap: 16px;
     @include abstracts.screen(md) {
       margin-top: 30px;
+      flex-direction: column;
+      gap: 12px;
     }
   }
 

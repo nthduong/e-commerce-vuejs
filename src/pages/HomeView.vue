@@ -4,6 +4,7 @@ import CategoriesSection from '@/components/sections/HomeSection/CategoriesSecti
 import StatsSection from '@/components/sections/HomeSection/StatsSection.vue'
 import AboutSection from '@/components/sections/HomeSection/AboutSection.vue'
 import FeaturesSection from '@/components/sections/HomeSection/FeaturesSection.vue'
+import SubscribeSection from '@/components/sections/HomeSection/SubscribeSection.vue'
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import FeaturesSection from '@/components/sections/HomeSection/FeaturesSection.v
   <StatsSection class="stats-section" />
   <AboutSection />
   <FeaturesSection />
+  <SubscribeSection />
 </template>
 
 <style lang="scss" scoped>

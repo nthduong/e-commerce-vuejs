@@ -4,11 +4,20 @@ defineProps({
     type: String,
     default: 'Type here...',
   },
+  border: {
+    type: Boolean,
+    default: true,
+  },
 })
 </script>
 
 <template>
-  <div class="form">
+  <div
+    class="form"
+    :style="{
+      border: border ? '1px solid #191720' : 'none',
+    }"
+  >
     <label for="form-input">
       <div class="form__icon">
         <slot name="icon"></slot>
@@ -28,8 +37,8 @@ defineProps({
   line-height: 60px;
   min-height: 60px;
   border-radius: 6px;
-  border: 1px solid #191720;
   background: #fff;
+  width: 100%;
 
   &::placeholder {
     line-height: 175%; /* 175% */
@@ -43,6 +52,7 @@ defineProps({
   &__input {
     margin-left: 11.5px;
     width: 100%;
+    font-size: 1.8rem;
   }
 }
 </style>

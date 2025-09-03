@@ -1,0 +1,85 @@
+<script setup>
+import TextInput from '@/components/form/TextInput.vue'
+</script>
+
+<template>
+  <div class="subscribe">
+    <div class="container">
+      <div class="subscribe__content">
+        <h2 class="subscribe__title">Subscribe newsletter to get updates</h2>
+        <p class="subscribe__desc">
+          Download the Just Eat app for faster ordering and more personalised recommendations.
+        </p>
+        <form @submit.prevent="submitForm" class="subscribe__form">
+          <text-input :border="false" placeholder="Location or zip code"> </text-input>
+          <button class="btn">Explore</button>
+        </form>
+      </div>
+    </div>
+    <img src="@/assets/images/decor-sub.svg" alt="" class="subscribe__decor" />
+  </div>
+</template>
+
+<style lang="scss" scoped>
+@use '@/styles/abstracts';
+.subscribe {
+  background: #29b067;
+  padding: 100px 0;
+  position: relative;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    max-width: 470px;
+    color: #fff;
+    text-align: center;
+    font-family: 'Roboto';
+    font-size: 4.4rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  &__desc {
+    max-width: 470px;
+    margin-top: 18px;
+    color: #fff;
+    text-align: center;
+    font-size: 1.8rem;
+    line-height: 166.667%;
+  }
+  &__form {
+    width: 570px;
+    margin-top: 38px;
+    display: flex;
+    gap: 20px;
+
+    @include abstracts.screen(md) {
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+.btn {
+  background: #ffcf54;
+  color: #191720;
+
+  &:hover {
+    background-color: #ffdc83;
+  }
+}
+</style>
