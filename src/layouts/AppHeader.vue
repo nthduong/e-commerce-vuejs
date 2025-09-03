@@ -3,11 +3,11 @@ import NavigationHeader from '@/components/navigation/NavigationHeader.vue'
 </script>
 
 <template>
-  <div class="app-header">
+  <div class="header">
     <div class="container">
-      <div class="app-header__inner">
+      <div class="header__inner">
         <a href="./" class="logo">
-          <img src="../assets/images/Logo.svg" alt="Foot" class="logo-main" />
+          <img src="@/assets/images/Logo.svg" alt="Foot" class="logo-main" />
         </a>
 
         <NavigationHeader class="d-md-none"/>
@@ -22,7 +22,7 @@ import NavigationHeader from '@/components/navigation/NavigationHeader.vue'
 </template>
 
 <style lang="scss" scoped>
-.app-header {
+.header {
   background: #fffae3;
   height: 108px;
   display: flex;

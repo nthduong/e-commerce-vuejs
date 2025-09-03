@@ -18,7 +18,7 @@
               </figure>
               <h3 class="categories__item-heading">Restaurants</h3>
               <p class="categories__item-desc">
-                Discover the best food & drinks in your area and get them delivered to your door.
+                Discover top food & drinks near you, delivered to your door.
               </p>
               <span class="categories__item-link">Explore</span>
             </a>
