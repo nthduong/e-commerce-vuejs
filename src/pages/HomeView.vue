@@ -3,6 +3,7 @@ import HeroSection from '@/components/sections/HomeSection/HeroSection.vue'
 import CategoriesSection from '@/components/sections/HomeSection/CategoriesSection.vue'
 import StatsSection from '@/components/sections/HomeSection/StatsSection.vue'
 import AboutSection from '@/components/sections/HomeSection/AboutSection.vue'
+import FeaturesSection from '@/components/sections/HomeSection/FeaturesSection.vue'
 </script>
 
 <template>
@@ -10,6 +11,7 @@ import AboutSection from '@/components/sections/HomeSection/AboutSection.vue'
   <CategoriesSection />
   <StatsSection class="stats-section" />
   <AboutSection />
+  <FeaturesSection />
 </template>
 
 <style lang="scss" scoped>
