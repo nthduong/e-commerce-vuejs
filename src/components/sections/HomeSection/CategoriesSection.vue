@@ -12,7 +12,7 @@
         </section>
         <div class="row row-cols-3 row-cols-lg-1 categories__list">
           <div class="col">
-            <a href="#!" class="categories__item">
+            <div class="categories__item">
               <figure class="categories__img-wrap">
                 <img class="categories__img" src="@/assets/images/categories-1.png" alt="" />
               </figure>
@@ -20,11 +20,13 @@
               <p class="categories__item-desc">
                 Discover top food & drinks near you, delivered to your door.
               </p>
-              <span class="categories__item-link">Explore</span>
-            </a>
+              <router-link :to="{ name: 'home' }" class="categories__item-link"
+                >Explore</router-link
+              >
+            </div>
           </div>
           <div class="col">
-            <a href="#!" class="categories__item">
+            <div class="categories__item">
               <figure class="categories__img-wrap">
                 <img class="categories__img" src="@/assets/images/categories-2.png" alt="" />
               </figure>
@@ -32,11 +34,13 @@
               <p class="categories__item-desc">
                 Find deals, free delivery, and more from our restaurant partners.
               </p>
-              <span class="categories__item-link">Explore</span>
-            </a>
+              <router-link :to="{ name: 'home' }" class="categories__item-link"
+                >Explore</router-link
+              >
+            </div>
           </div>
           <div class="col">
-            <a href="#!" class="categories__item">
+            <div class="categories__item">
               <figure class="categories__img-wrap">
                 <img class="categories__img" src="@/assets/images/categories-3.png" alt="" />
               </figure>
@@ -44,8 +48,10 @@
               <p class="categories__item-desc">
                 Find deals, free delivery, and more from our restaurant partners.
               </p>
-              <span class="categories__item-link">Explore</span>
-            </a>
+              <router-link :to="{ name: 'home' }" class="categories__item-link"
+                >Explore</router-link
+              >
+            </div>
           </div>
         </div>
       </div>
@@ -122,10 +128,6 @@
     &:hover {
       box-shadow: 0 20px 70px 0 rgba(27, 12, 84, 0.07);
     }
-
-    &:hover .categories__item-link {
-      color: #572af8;
-    }
   }
 
   &__img-wrap {
@@ -171,6 +173,10 @@
     font-weight: 600;
     line-height: 166.667%;
     transition: color 0.3s ease;
+
+    &:hover {
+      color: #572af8;
+    }
   }
 }
 </style>

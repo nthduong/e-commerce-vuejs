@@ -18,7 +18,7 @@
               BSign up today, start earning tomorrow. Build a new career in delivery service with
               us.
             </p>
-            <button class="features__item-cta btn btn--secondary">Learn More</button>
+            <router-link :to="{ name: 'home' }" class="features__item-cta btn btn--secondary">Learn More</router-link>
           </div>
         </div>
         <div class="col">
@@ -28,7 +28,7 @@
             <p class="features__item-desc">
               Sign up today, start earning tomorrow. Build a new career in delivery service with us.
             </p>
-            <button class="features__item-cta btn btn--secondary">Learn More</button>
+            <router-link :to="{ name: 'home' }" class="features__item-cta btn btn--secondary">Learn More</router-link>
           </div>
         </div>
       </div>

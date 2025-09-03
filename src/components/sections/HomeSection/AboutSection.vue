@@ -18,7 +18,7 @@
             Want to be more specific? Search by cuisine, restaurant name or menu item. We'll filter
             your results accordingly.
           </p>
-          <a href="#!" class="about__button btn">Learn More</a>
+          <router-link :to="{name: 'about'}" class="about__button btn">Learn More</router-link>
         </div>
       </div>
     </div>
