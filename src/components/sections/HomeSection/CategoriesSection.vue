@@ -63,7 +63,7 @@
 @use '@/styles/abstracts';
 
 .categories {
-  background: #fff;
+  background: var(--color-bg-secondary);
   padding-top: 160px;
   padding-bottom: 260px;
 
@@ -73,7 +73,7 @@
   }
 
   &__heading {
-    color: #191720;
+    color: var(--color-text-heading);
     text-align: center;
     font-family: 'Roboto';
     font-size: 4.4rem;
@@ -90,7 +90,7 @@
     margin: 0 auto;
     margin-top: 18px;
     text-align: center;
-    color: #575363;
+    color: var(--color-text-desc);
     font-size: 1.8rem;
     line-height: 166.667%;
 
@@ -122,7 +122,7 @@
     align-items: center;
     padding: 30px 20px;
     border-radius: 12px;
-    background: #fff;
+    background: var(--color-bg-secondary);
     transition: box-shadow 0.3s ease;
 
     &:hover {
@@ -145,7 +145,7 @@
 
   &__item-heading {
     margin-top: 20px;
-    color: #191720;
+    color: var(--color-text-heading);
     font-size: 2.6rem;
     font-weight: 600;
     line-height: 138.462%;
@@ -153,7 +153,7 @@
 
   &__item-desc {
     margin-top: 12px;
-    color: #575363;
+    color: var(--color-text-desc);
     font-size: 1.8rem;
     line-height: 166.667%;
     max-width: 330px;

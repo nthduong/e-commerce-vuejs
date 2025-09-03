@@ -18,7 +18,7 @@
             Want to be more specific? Search by cuisine, restaurant name or menu item. We'll filter
             your results accordingly.
           </p>
-          <router-link :to="{name: 'about'}" class="about__button btn">Learn More</router-link>
+          <router-link :to="{ name: 'about' }" class="about__button btn">Learn More</router-link>
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@
 .about {
   padding-top: 200px;
   padding-bottom: 100px;
-  background: #fffae3;
+  background: var(--color-bg-primary);
 
   @include abstracts.screen(md) {
     padding-top: 50px;
@@ -70,7 +70,7 @@
   }
 
   &__heading {
-    color: #191720;
+    color: var(--color-text-heading);
     font-family: 'Roboto';
     font-size: 4.4rem;
     font-weight: 600;
@@ -83,7 +83,7 @@
 
   &__text {
     margin-top: 18px;
-    color: #575363;
+    color: var(--color-text-desc);
     font-size: 1.8rem;
     line-height: 166.667%;
 

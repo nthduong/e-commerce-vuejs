@@ -76,7 +76,7 @@ import TextInput from '@/components/form/TextInput.vue'
 
 .btn {
   background: #ffcf54;
-  color: #191720;
+  color: var(--color-text-heading);
 
   &:hover {
     background-color: #ffdc83;

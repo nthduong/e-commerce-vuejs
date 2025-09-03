@@ -76,7 +76,7 @@
 @use '@/styles/abstracts';
 
 .footer {
-  background: #fffae3;
+  background: var(--color-bg-primary);
   padding: 100px 0;
 
   @include abstracts.screen(md) {
@@ -107,7 +107,7 @@
   &__desc {
     margin-top: 12px;
     width: 270px;
-    color: #575363;
+    color: var(--color-text-desc);
     line-height: 175%;
   }
 
@@ -124,7 +124,7 @@
     width: 36px;
     height: 36px;
     border-radius: 4px;
-    background: #191720;
+    background: var(--color-text-heading);
     transition: background 0.3s;
 
     &:hover {
@@ -133,7 +133,7 @@
   }
 
   &__heading {
-    color: #191720;
+    color: var(--color-text-heading);
     font-size: 2rem;
     font-weight: 700;
     line-height: 150%;
@@ -148,7 +148,7 @@
   }
 
   &__link {
-    color: #575363;
+    color: var(--color-text-desc);
     line-height: 175%;
   }
 }

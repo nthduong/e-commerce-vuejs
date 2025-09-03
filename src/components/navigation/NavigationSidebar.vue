@@ -38,7 +38,7 @@ const ToggleSidebar = () => {
   border-radius: 0px 20px 20px 0px;
   inset: 0 40% 0 0;
   padding: 40px 0;
-  background: #fff;
+  background: var(--color-bg-secondary);
   margin-left: 0;
   transition: transform 0.5s;
   transform: translateX(-100%);

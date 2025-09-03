@@ -17,7 +17,7 @@ import NavigationSidebar from '@/components/navigation/NavigationSidebar.vue'
           <button class="btn btn--text btn--sm">Login</button>
           <button class="btn btn--sm">Sign Up</button>
         </div>
-        <NavigationSidebar/>
+        <NavigationSidebar />
       </div>
     </div>
   </div>
@@ -25,7 +25,7 @@ import NavigationSidebar from '@/components/navigation/NavigationSidebar.vue'
 
 <style lang="scss" scoped>
 .header {
-  background: #fffae3;
+  background: var(--color-bg-primary);
   height: 108px;
   display: flex;
   justify-content: center;

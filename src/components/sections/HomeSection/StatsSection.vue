@@ -34,7 +34,7 @@
 
 .stats {
   border-radius: 12px;
-  background: #191720;
+  background: var(--color-text-heading);
   position: relative;
 
   &__inner {

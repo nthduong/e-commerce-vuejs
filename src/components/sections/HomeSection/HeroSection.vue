@@ -54,7 +54,7 @@ import TextInput from '@/components/form/TextInput.vue'
 <style lang="scss" scoped>
 @use '@/styles/abstracts';
 .hero {
-  background: #fffae3;
+  background: var(--color-bg-primary);
   padding-top: 52px;
   padding-bottom: 100px;
   @include abstracts.screen(md) {

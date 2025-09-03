@@ -15,7 +15,7 @@ defineProps({
   <div
     class="form"
     :style="{
-      border: border ? '1px solid #191720' : 'none',
+      border: border ? '1px solid var(--color-text-heading)' : 'none',
     }"
   >
     <label for="form-input">
