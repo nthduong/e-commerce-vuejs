@@ -6,7 +6,7 @@ defineProps({
   },
   border: {
     type: Boolean,
-    default: true,
+    default: false,
   },
 })
 </script>
@@ -15,7 +15,7 @@ defineProps({
   <div
     class="form"
     :style="{
-      border: border ? '1px solid var(--color-text-heading)' : 'none',
+      border: border ? '2px solid var(--color-text-heading)' : 'none',
     }"
   >
     <label for="form-input">
@@ -36,9 +36,10 @@ defineProps({
   flex: 1;
   line-height: 60px;
   min-height: 60px;
-  border-radius: 6px;
+  border-radius: 16px;
   background: #fff;
   width: 100%;
+  box-shadow: 0px 13px 26px -8px rgba(0, 0, 0, 0.06);
 
   &::placeholder {
     line-height: 175%; /* 175% */

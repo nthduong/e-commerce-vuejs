@@ -11,7 +11,7 @@ import TextInput from '@/components/form/TextInput.vue'
           Download the Just Eat app for faster ordering and more personalised recommendations.
         </p>
         <form @submit.prevent="submitForm" class="subscribe__form">
-          <text-input :border="false" placeholder="Location or zip code"> </text-input>
+          <text-input :border="false" placeholder="Enter your email"> </text-input>
           <button class="btn">Explore</button>
         </form>
       </div>
@@ -26,6 +26,7 @@ import TextInput from '@/components/form/TextInput.vue'
   background: #29b067;
   padding: 100px 0;
   position: relative;
+  overflow: hidden;
   &__content {
     display: flex;
     flex-direction: column;
@@ -35,10 +36,9 @@ import TextInput from '@/components/form/TextInput.vue'
   }
 
   &__title {
-    max-width: 470px;
+    max-width: 500px;
     color: #fff;
     text-align: center;
-    font-family: 'Roboto';
     font-size: 4.4rem;
     font-weight: 600;
     line-height: 1;
@@ -74,12 +74,4 @@ import TextInput from '@/components/form/TextInput.vue'
   }
 }
 
-.btn {
-  background: #ffcf54;
-  color: var(--color-text-heading);
-
-  &:hover {
-    background-color: #ffdc83;
-  }
-}
 </style>

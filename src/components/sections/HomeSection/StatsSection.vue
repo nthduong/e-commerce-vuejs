@@ -33,8 +33,8 @@
 @use '@/styles/abstracts';
 
 .stats {
-  border-radius: 12px;
-  background: var(--color-text-heading);
+  border-radius: 20px;
+  background: #29b067;
   position: relative;
 
   &__inner {
@@ -73,7 +73,6 @@
   &__title {
     color: #fff;
     text-align: center;
-    font-family: 'Roboto';
     font-size: 4.4rem;
     font-weight: 600;
     line-height: 1;

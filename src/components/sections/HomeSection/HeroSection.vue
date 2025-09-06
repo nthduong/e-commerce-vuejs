@@ -73,7 +73,7 @@ import TextInput from '@/components/form/TextInput.vue'
   }
 
   &__label {
-    color: #572af8;
+    color: #fcb742;
     font-size: 1.8rem;
     font-weight: 500;
     line-height: 166.667%;

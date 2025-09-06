@@ -128,7 +128,7 @@
     transition: background 0.3s;
 
     &:hover {
-      background: #572af8;
+      background: var(--color-button-bg);
     }
   }
 
@@ -150,6 +150,10 @@
   &__link {
     color: var(--color-text-desc);
     line-height: 175%;
+
+    &:hover {
+      color: var(--color-button-bg);
+    }
   }
 }
 </style>

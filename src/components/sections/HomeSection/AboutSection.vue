@@ -18,7 +18,7 @@
             Want to be more specific? Search by cuisine, restaurant name or menu item. We'll filter
             your results accordingly.
           </p>
-          <router-link :to="{ name: 'about' }" class="about__button btn">Learn More</router-link>
+          <router-link :to="{ name: 'about' }" class="about__button btn btn--outline">Learn More</router-link>
         </div>
       </div>
     </div>
@@ -71,7 +71,6 @@
 
   &__heading {
     color: var(--color-text-heading);
-    font-family: 'Roboto';
     font-size: 4.4rem;
     font-weight: 600;
     line-height: 1;

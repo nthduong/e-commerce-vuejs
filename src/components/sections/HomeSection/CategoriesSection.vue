@@ -18,9 +18,9 @@
               </figure>
               <h3 class="categories__item-heading">Restaurants</h3>
               <p class="categories__item-desc">
-                Discover top food & drinks near you, delivered to your door.
+                Find deals, free delivery, and more from our restaurant partners.
               </p>
-              <router-link :to="{ name: 'home' }" class="categories__item-link"
+              <router-link :to="{ name: 'home' }" class="categories__item-link btn btn--outline"
                 >Explore</router-link
               >
             </div>
@@ -34,7 +34,7 @@
               <p class="categories__item-desc">
                 Find deals, free delivery, and more from our restaurant partners.
               </p>
-              <router-link :to="{ name: 'home' }" class="categories__item-link"
+              <router-link :to="{ name: 'home' }" class="categories__item-link btn btn--outline"
                 >Explore</router-link
               >
             </div>
@@ -48,7 +48,7 @@
               <p class="categories__item-desc">
                 Find deals, free delivery, and more from our restaurant partners.
               </p>
-              <router-link :to="{ name: 'home' }" class="categories__item-link"
+              <router-link :to="{ name: 'home' }" class="categories__item-link btn btn--outline"
                 >Explore</router-link
               >
             </div>
@@ -75,7 +75,6 @@
   &__heading {
     color: var(--color-text-heading);
     text-align: center;
-    font-family: 'Roboto';
     font-size: 4.4rem;
     font-weight: 600;
     line-height: 1;
@@ -121,12 +120,14 @@
     flex-direction: column;
     align-items: center;
     padding: 30px 20px;
-    border-radius: 12px;
+    border-radius: 20px;
     background: var(--color-bg-secondary);
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease, border 0.3s ease, transform 0.3s ease;
+    border: 16px solid #fffae3;
 
     &:hover {
-      box-shadow: 0 20px 70px 0 rgba(27, 12, 84, 0.07);
+      border: 16px solid var(--color-button-bg);
+      transform: scale(1.05);
     }
   }
 
@@ -174,9 +175,6 @@
     line-height: 166.667%;
     transition: color 0.3s ease;
 
-    &:hover {
-      color: #572af8;
-    }
   }
 }
 </style>

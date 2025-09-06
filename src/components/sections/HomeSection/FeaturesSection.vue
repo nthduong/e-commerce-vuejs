@@ -18,7 +18,7 @@
               BSign up today, start earning tomorrow. Build a new career in delivery service with
               us.
             </p>
-            <router-link :to="{ name: 'home' }" class="features__item-cta btn btn--secondary"
+            <router-link :to="{ name: 'home' }" class="features__item-cta btn btn--outline"
               >Learn More</router-link
             >
           </div>
@@ -30,7 +30,7 @@
             <p class="features__item-desc">
               Sign up today, start earning tomorrow. Build a new career in delivery service with us.
             </p>
-            <router-link :to="{ name: 'home' }" class="features__item-cta btn btn--secondary"
+            <router-link :to="{ name: 'home' }" class="features__item-cta btn btn--outline"
               >Learn More</router-link
             >
           </div>
@@ -54,7 +54,6 @@
   &__title {
     color: var(--color-text-heading);
     text-align: center;
-    font-family: 'Roboto';
     font-size: 4.4rem;
     font-weight: 600;
     line-height: 1;
@@ -95,12 +94,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 12px;
+    border-radius: 20px;
     background: var(--color-bg-secondary);
     transition: box-shadow 0.3s ease;
+    border: 16px solid #fffae3;
+    transition: box-shadow 0.3s ease, border 0.3s ease, transform 0.3s ease;
 
     &:hover {
       box-shadow: 0 20px 70px 0 rgba(27, 12, 84, 0.07);
+      border: 16px solid var(--color-button-bg);
+      transform: translateY(-16px);
     }
 
     &-title {
