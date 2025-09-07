@@ -32,8 +32,13 @@
   }
 
   &--secondary {
-    background-color: #191720;
+    background-color:var(--color-button-hover);
     color: #fff;
+  }
+
+  &--secondary:hover {
+    color: var(--color-button-bg);
+    background-color: #fff;
   }
 
   &--outline {

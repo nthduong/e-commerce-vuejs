@@ -1,19 +1,11 @@
 <script setup>
-import HeroSection from '@/components/sections/HomeSection/HeroSection.vue'
-import CategoriesSection from '@/components/sections/HomeSection/CategoriesSection.vue'
-import StatsSection from '@/components/sections/HomeSection/StatsSection.vue'
-import AboutSection from '@/components/sections/HomeSection/AboutSection.vue'
-import FeaturesSection from '@/components/sections/HomeSection/FeaturesSection.vue'
-import SubscribeSection from '@/components/sections/HomeSection/SubscribeSection.vue'
+import HeroSection from '@/components/sections/HomeSections/HeroSection.vue'
+import CategoriesSection from '@/components/sections/HomeSections/CategoriesSection.vue'
 </script>
 
 <template>
   <HeroSection />
   <CategoriesSection />
-  <StatsSection class="stats-section" />
-  <AboutSection />
-  <FeaturesSection />
-  <SubscribeSection />
 </template>
 
 <style lang="scss" scoped>

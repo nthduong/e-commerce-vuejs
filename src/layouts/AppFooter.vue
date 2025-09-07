@@ -1,4 +1,7 @@
-<script setup></script>
+<script setup>
+import LogoMain from '@/components/common/LogoMain.vue'
+
+</script>
 
 <template>
   <div class="footer">
@@ -6,9 +9,8 @@
       <div class="footer__inner">
         <div class="footer__row">
           <div class="footer__col">
-            <a href="./" class="logo">
-              <img src="@/assets/images/Logo.svg" alt="Foot" class="logo-main" />
-            </a>
+            <LogoMain />
+            
             <p class="footer__desc">
               Food, drinks, groceries, and more available for delivery and pickup.
             </p>

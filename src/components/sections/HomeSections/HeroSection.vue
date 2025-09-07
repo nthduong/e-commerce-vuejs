@@ -8,7 +8,7 @@ import TextInput from '@/components/form/TextInput.vue'
       <div class="container">
         <div class="hero__inner">
           <div class="row">
-            <div class="col-6 col-md-12">
+            <div class="col-5 col-md-12">
               <section class="hero__content">
                 <p class="hero__label">#Best Pizza</p>
                 <h1 class="hero__heading">HOT PIZZA DELIVERED TO YOU</h1>
@@ -23,23 +23,20 @@ import TextInput from '@/components/form/TextInput.vue'
                   </text-input>
                   <button class="btn">Order Now</button>
                 </div>
-                <div class="get-app">
+                <!-- <div class="get-app">
                   <span class="get-app__text">Get our pizza app:</span>
                   <div class="get-app__list">
                     <a href="#!">
                       <img class="get-app__item" src="@/assets/icons/apple.svg" alt="" />
                     </a>
-                    <a href="#!">
-                      <img class="get-app__item" src="@/assets/icons/android.svg" alt="" />
-                    </a>
                   </div>
-                </div>
+                </div> -->
               </section>
             </div>
-            <div class="col-6 col-md-12">
+            <div class="col-7 col-md-12">
               <div class="hero__media">
                 <figure class="hero__media-wrap">
-                  <img class="hero__img" src="@/assets/images/hero.png" alt="" />
+                  <img class="hero__img" src="@/assets/images/pizza4.png" alt="" />
                 </figure>
               </div>
             </div>
@@ -72,7 +69,7 @@ import TextInput from '@/components/form/TextInput.vue'
   }
 
   &__label {
-    color: #fcb742;
+    color: var(--color-button-bg);
     font-size: 1.8rem;
     font-weight: 500;
     line-height: 166.667%;

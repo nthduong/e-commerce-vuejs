@@ -14,7 +14,7 @@ import TextInput from '@/components/form/TextInput.vue'
 
         <form @submit.prevent="submitForm" class="subscribe__form">
           <text-input :border="false" placeholder="Enter your email"></text-input>
-          <button class="btn">Subscribe</button>
+          <button class="btn btn--secondary">Subscribe</button>
         </form>
       </div>
     </div>
@@ -27,7 +27,7 @@ import TextInput from '@/components/form/TextInput.vue'
 <style lang="scss" scoped>
 @use '@/styles/abstracts';
 .subscribe {
-  background: #29b067;
+  background: #952323;
   padding: 100px 0;
   position: relative;
   overflow: hidden;
@@ -75,6 +75,7 @@ import TextInput from '@/components/form/TextInput.vue'
     top: 0;
     right: 50%;
     transform: translateX(50%);
+    filter: brightness(0) saturate(100%) invert(17%) sepia(58%) saturate(2446%) hue-rotate(341deg) brightness(100%) contrast(93%);
   }
 }
 

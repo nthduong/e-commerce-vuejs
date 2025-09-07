@@ -58,8 +58,9 @@
 <style lang="scss" scoped>
 @use '@/styles/abstracts';
 .features {
-  padding-top: 160px;
+  padding-top: 260px;
   padding-bottom: 160px;
+  background: var(--color-bg-secondary);
 
   @include abstracts.screen(md) {
     padding-top: 70px;

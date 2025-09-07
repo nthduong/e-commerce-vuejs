@@ -38,7 +38,7 @@
 
 .stats {
   border-radius: 20px;
-  background: #29b067;
+  background: #952323;
   position: relative;
 
   &__inner {

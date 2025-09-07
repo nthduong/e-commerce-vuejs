@@ -1,15 +1,14 @@
 <script setup>
 import NavigationHeader from '@/components/navigation/NavigationHeader.vue'
 import NavigationSidebar from '@/components/navigation/NavigationSidebar.vue'
+import LogoMain from '@/components/common/LogoMain.vue'
 </script>
 
 <template>
   <div class="header">
     <div class="container">
       <div class="header__inner">
-        <a href="./" class="logo">
-          <img src="@/assets/images/Logo.svg" alt="Foot" class="logo-main" />
-        </a>
+        <LogoMain />
 
         <NavigationHeader class="d-md-none" />
 
