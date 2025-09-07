@@ -1,0 +1,87 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Seafood Pizza",
+      "slug": "seafood-pizza",
+      "category": "pizza",
+      "description": "Squid, clams, imitation crab, pineapple, bell peppers, onion, and mozzarella cheese.",
+      "categoryId": 1,
+      "price": 150,
+      "image": "/images/products/pizza/pizza-1.png",
+      "isActive": true,
+      "isFeatured": false,
+      "isNew": false,
+      "viewCount": 0
+    },
+    {
+      "id": "2",
+      "name": "Deluxe Pizza",
+      "slug": "deluxe-pizza",
+      "category": "pizza",
+      "description": "Pepperoni, sausage, green bell peppers, mushrooms, onions, and black olives.",
+      "categoryId": 1,
+      "price": 120,
+      "image": "/images/products/pizza/pizza-2.png",
+      "isActive": true,
+      "isFeatured": true,
+      "isNew": false,
+      "viewCount": 0
+    },
+    {
+      "id": "3",
+      "name": "Hawaiian Pizza",
+      "slug": "hawaiian-pizza",
+      "category": "pizza",
+      "description": "Ham, pineapple, mozzarella cheese, and tomato sauce.",
+      "categoryId": 1,
+      "price": 100,
+      "image": "/images/products/pizza/pizza-3.png",
+      "isActive": true,
+      "isFeatured": false,
+      "isNew": true,
+      "viewCount": 0
+    },
+    {
+      "id": "4",
+      "name": "Veggie Pizza",
+      "slug": "veggie-pizza",
+      "category": "pizza",
+      "description": "Fresh vegetables, mozzarella cheese, and tomato sauce.",
+      "categoryId": 1,
+      "price": 100,
+      "image": "/images/products/pizza/pizza-4.png",
+      "isActive": true,
+      "isFeatured": false,
+      "isNew": true,
+      "viewCount": 0
+    }
+  ],
+
+  "categories": [
+    {
+      "id": "1",
+      "name": "Pizza",
+      "slug": "pizzas",
+      "description": "Explore a variety of pizzas, from classic to premium flavors.",
+      "image": "/images/category-pizza.jpg",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "Drink",
+      "slug": "drinks",
+      "description": "Complete your meal with tasty sides and refreshing drinks.",
+      "image": "/images/category-drinks.jpg",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "Deals & Combos",
+      "slug": "deals-combos",
+      "description": "Get the best offers with combo meals and special discounts.",
+      "image": "/images/category-drinks.jpg",
+      "isActive": true
+    }
+  ]
+}

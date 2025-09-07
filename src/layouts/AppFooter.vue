@@ -10,7 +10,7 @@ import LogoMain from '@/components/common/LogoMain.vue'
         <div class="footer__row">
           <div class="footer__col">
             <LogoMain />
-            
+
             <p class="footer__desc">
               Food, drinks, groceries, and more available for delivery and pickup.
             </p>

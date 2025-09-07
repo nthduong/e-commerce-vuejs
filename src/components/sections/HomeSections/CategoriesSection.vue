@@ -12,35 +12,29 @@
         </section>
         <div class="row row-cols-3 row-cols-lg-1 categories__list">
           <div class="col">
-            <div class="categories__item">
+            <router-link :to="{ name: 'home' }" class="categories__item">
               <figure class="categories__img-wrap">
                 <img class="categories__img" src="@/assets/images/categories-1.png" alt="" />
               </figure>
-              <h3 class="categories__item-heading">Pizza Types</h3>
+              <h3 class="categories__item-heading">Pizzas</h3>
               <p class="categories__item-desc">
                 Explore a variety of pizzas, from classic to premium flavors.
               </p>
-              <router-link :to="{ name: 'home' }" class="categories__item-link btn btn--outline"
-                >Explore</router-link
-              >
-            </div>
+            </router-link>
           </div>
           <div class="col">
-            <div class="categories__item">
+            <router-link :to="{ name: 'home' }" class="categories__item">
               <figure class="categories__img-wrap">
                 <img class="categories__img" src="@/assets/images/categories-2.png" alt="" />
               </figure>
-              <h3 class="categories__item-heading">Sides & Drinks</h3>
+              <h3 class="categories__item-heading">Drinks</h3>
               <p class="categories__item-desc">
                 Complete your meal with tasty sides and refreshing drinks.
               </p>
-              <router-link :to="{ name: 'home' }" class="categories__item-link btn btn--outline"
-                >Explore</router-link
-              >
-            </div>
+            </router-link>
           </div>
           <div class="col">
-            <div class="categories__item">
+            <router-link :to="{ name: 'home' }" class="categories__item">
               <figure class="categories__img-wrap">
                 <img class="categories__img" src="@/assets/images/categories-3.png" alt="" />
               </figure>
@@ -48,10 +42,7 @@
               <p class="categories__item-desc">
                 Get the best offers with combo meals and special discounts.
               </p>
-              <router-link :to="{ name: 'home' }" class="categories__item-link btn btn--outline"
-                >Explore</router-link
-              >
-            </div>
+            </router-link>
           </div>
         </div>
       </div>
@@ -65,7 +56,7 @@
 .categories {
   background: var(--color-bg-secondary);
   padding-top: 160px;
-  padding-bottom: 260px;
+  padding-bottom: 160px;
 
   @include abstracts.screen(md) {
     padding-top: 70px;

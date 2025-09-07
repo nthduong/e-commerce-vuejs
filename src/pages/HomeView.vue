@@ -1,11 +1,14 @@
 <script setup>
 import HeroSection from '@/components/sections/HomeSections/HeroSection.vue'
 import CategoriesSection from '@/components/sections/HomeSections/CategoriesSection.vue'
+import FeaturedProducts from '@/components/sections/HomeSections/FeaturedProducts.vue'
+
 </script>
 
 <template>
   <HeroSection />
   <CategoriesSection />
+  <FeaturedProducts />
 </template>
 
 <style lang="scss" scoped>
