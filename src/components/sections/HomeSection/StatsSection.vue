@@ -7,27 +7,31 @@
         <div class="stats__list">
           <div class="stats__item">
             <h3 class="stats__title">350+</h3>
-            <p class="stats__text">Order per minute</p>
+            <p class="stats__text">Pizzas per minute</p>
           </div>
+
           <div class="stats__item">
             <h3 class="stats__title">10x</h3>
             <p class="stats__text">Faster delivery</p>
           </div>
+
           <div class="stats__item">
             <h3 class="stats__title">10+</h3>
-            <p class="stats__text">In Country</p>
+            <p class="stats__text">Cities served</p>
           </div>
+
           <div class="stats__item">
             <h3 class="stats__title">99.9%</h3>
             <p class="stats__text">Order accuracy</p>
           </div>
         </div>
       </div>
-      <img class="stats__decor-1" src="@/assets/images/stats-1.png" alt="" />
-      <img class="stats__decor-2" src="@/assets/images/stats-2.png" alt="" />
+      <img class="stats__decor-1" src="@/assets/images/stats-1.png" alt="Pizza decoration" />
+      <img class="stats__decor-2" src="@/assets/images/stats-2.png" alt="Pizza decoration" />
     </div>
   </div>
 </template>
+
 
 <style lang="scss" scoped>
 @use '@/styles/abstracts';

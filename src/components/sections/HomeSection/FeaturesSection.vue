@@ -3,42 +3,57 @@
 <template>
   <div class="features">
     <div class="container">
+
       <div class="features__top">
-        <h2 class="features__title">It’s all here. All in one platform.</h2>
+        <h2 class="features__title">ALL YOUR FAVORITE PIZZAS ONE PLACE</h2>
         <p class="features__desc">
-          Order food and grocery delivery online from hundreds of restaurants and shops nearby.
+          Order fresh hot pizzas online from your local pizzerias, fast and easy.
         </p>
       </div>
+
       <div class="row row-cols-2 row-cols-lg-1 features__list">
         <div class="col">
           <div class="features__item">
-            <img src="@/assets/images/features-1.png" alt="Deliver With Us" class="features__img" />
-            <h3 class="features__item-title">Deliver With Us</h3>
+            <img
+              src="@/assets/images/features-1.png"
+              alt="Join as a Delivery Rider"
+              class="features__img"
+            />
+            <h3 class="features__item-title">Deliver Pizzas</h3>
             <p class="features__item-desc">
-              BSign up today, start earning tomorrow. Build a new career in delivery service with
-              us.
+              Join our team and start delivering delicious pizzas to happy customers.
             </p>
-            <router-link :to="{ name: 'home' }" class="features__item-cta btn btn--outline"
-              >Learn More</router-link
-            >
+            <router-link
+              :to="{ name: 'home' }"
+              class="features__item-cta btn btn--outline">
+              Learn More
+            </router-link>
           </div>
         </div>
+
         <div class="col">
           <div class="features__item">
-            <img src="@/assets/images/features-2.png" alt="Partner With Us" class="features__img" />
+            <img
+              src="@/assets/images/features-2.png"
+              alt="Become a Pizza Partner"
+              class="features__img"
+            />
             <h3 class="features__item-title">Partner With Us</h3>
             <p class="features__item-desc">
-              Sign up today, start earning tomorrow. Build a new career in delivery service with us.
+              Grow your pizza business by reaching more customers through our platform.
             </p>
-            <router-link :to="{ name: 'home' }" class="features__item-cta btn btn--outline"
-              >Learn More</router-link
-            >
+            <router-link
+              :to="{ name: 'home' }"
+              class="features__item-cta btn btn--outline">
+              Learn More
+            </router-link>
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
+
 
 <style lang="scss" scoped>
 @use '@/styles/abstracts';
@@ -53,6 +68,8 @@
 
   &__title {
     color: var(--color-text-heading);
+    max-width: 700px;
+    margin: 0 auto;
     text-align: center;
     font-size: 4.4rem;
     font-weight: 600;

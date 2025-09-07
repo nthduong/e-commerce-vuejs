@@ -8,13 +8,12 @@ import TextInput from '@/components/form/TextInput.vue'
       <div class="container">
         <div class="hero__inner">
           <div class="row">
-            <div class="col-5 col-md-12">
+            <div class="col-6 col-md-12">
               <section class="hero__content">
-                <p class="hero__label">#The Best in Town</p>
-                <h1 class="hero__heading">Get food delivery and more</h1>
+                <p class="hero__label">#Best Pizza</p>
+                <h1 class="hero__heading">HOT PIZZA DELIVERED TO YOU</h1>
                 <p class="hero__desc">
-                  You want it. We get it. Food, drinks, groceries, and more available for delivery
-                  and pickup.
+                  Hot, cheesy, and delicious pizza delivered straight to your door. Order now and satisfy your cravings!
                 </p>
                 <div class="hero__form">
                   <text-input placeholder="Location or zip code">
@@ -22,10 +21,10 @@ import TextInput from '@/components/form/TextInput.vue'
                       <img src="@/assets/icons/location.svg" alt="location icon" />
                     </template>
                   </text-input>
-                  <button class="btn">Explore</button>
+                  <button class="btn">Order Now</button>
                 </div>
                 <div class="get-app">
-                  <span class="get-app__text">Get the app:</span>
+                  <span class="get-app__text">Get our pizza app:</span>
                   <div class="get-app__list">
                     <a href="#!">
                       <img class="get-app__item" src="@/assets/icons/apple.svg" alt="" />
@@ -37,7 +36,7 @@ import TextInput from '@/components/form/TextInput.vue'
                 </div>
               </section>
             </div>
-            <div class="col-7 col-md-12">
+            <div class="col-6 col-md-12">
               <div class="hero__media">
                 <figure class="hero__media-wrap">
                   <img class="hero__img" src="@/assets/images/hero.png" alt="" />

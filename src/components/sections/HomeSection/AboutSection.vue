@@ -10,15 +10,16 @@
         <div class="about__content">
           <h2 class="about__heading">About Foodeats</h2>
           <p class="about__text">
-            Foodeats helps you find and order food from wherever you are. How it works: you type in
-            an address, we tell you the restaurants that deliver to that locale as well as showing
-            you droves of pickup restaurants near you.
+            Foodeats brings you the best, freshest pizzas, delivered straight to your door.
+            Just enter your location and browse our wide selection of delicious pizzas and sides.
           </p>
           <p class="about__text">
-            Want to be more specific? Search by cuisine, restaurant name or menu item. We'll filter
-            your results accordingly.
+            Craving something specific? Search by topping, pizza type, or combo deal, and
+            we’ll show you exactly what you need.
           </p>
-          <router-link :to="{ name: 'about' }" class="about__button btn btn--outline">Learn More</router-link>
+          <router-link :to="{ name: 'about' }" class="about__button btn btn--outline">
+            Learn More
+          </router-link>
         </div>
       </div>
     </div>

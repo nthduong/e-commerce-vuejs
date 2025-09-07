@@ -36,7 +36,7 @@ defineProps({
   flex: 1;
   line-height: 60px;
   min-height: 60px;
-  border-radius: 16px;
+  border-radius: 999px;
   background: #fff;
   width: 100%;
   box-shadow: 0px 13px 26px -8px rgba(0, 0, 0, 0.06);

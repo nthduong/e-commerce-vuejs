@@ -5,9 +5,9 @@
     <div class="container">
       <div class="categories__inner">
         <section class="categories__top">
-          <h2 class="categories__heading">Your everyday, right away</h2>
+          <h2 class="categories__heading">PIZZA FOR EVERY CRAVING</h2>
           <p class="categories__desc">
-            Order food and grocery delivery online from hundreds of restaurants and shops nearby.
+            Order hot, fresh pizzas online from your favorite local pizzerias.
           </p>
         </section>
         <div class="row row-cols-3 row-cols-lg-1 categories__list">
@@ -16,9 +16,9 @@
               <figure class="categories__img-wrap">
                 <img class="categories__img" src="@/assets/images/categories-1.png" alt="" />
               </figure>
-              <h3 class="categories__item-heading">Restaurants</h3>
+              <h3 class="categories__item-heading">Pizza Types</h3>
               <p class="categories__item-desc">
-                Find deals, free delivery, and more from our restaurant partners.
+                Explore a variety of pizzas, from classic to premium flavors.
               </p>
               <router-link :to="{ name: 'home' }" class="categories__item-link btn btn--outline"
                 >Explore</router-link
@@ -30,9 +30,9 @@
               <figure class="categories__img-wrap">
                 <img class="categories__img" src="@/assets/images/categories-2.png" alt="" />
               </figure>
-              <h3 class="categories__item-heading">Groceries</h3>
+              <h3 class="categories__item-heading">Sides & Drinks</h3>
               <p class="categories__item-desc">
-                Find deals, free delivery, and more from our restaurant partners.
+                Complete your meal with tasty sides and refreshing drinks.
               </p>
               <router-link :to="{ name: 'home' }" class="categories__item-link btn btn--outline"
                 >Explore</router-link
@@ -44,9 +44,9 @@
               <figure class="categories__img-wrap">
                 <img class="categories__img" src="@/assets/images/categories-3.png" alt="" />
               </figure>
-              <h3 class="categories__item-heading">Flower Items</h3>
+              <h3 class="categories__item-heading">Deals & Combos</h3>
               <p class="categories__item-desc">
-                Find deals, free delivery, and more from our restaurant partners.
+                Get the best offers with combo meals and special discounts.
               </p>
               <router-link :to="{ name: 'home' }" class="categories__item-link btn btn--outline"
                 >Explore</router-link

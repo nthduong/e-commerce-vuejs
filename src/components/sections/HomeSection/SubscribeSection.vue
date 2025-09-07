@@ -6,19 +6,23 @@ import TextInput from '@/components/form/TextInput.vue'
   <div class="subscribe">
     <div class="container">
       <div class="subscribe__content">
-        <h2 class="subscribe__title">Subscribe newsletter to get updates</h2>
+        <h2 class="subscribe__title">Subscribe for hot pizza deals</h2>
+
         <p class="subscribe__desc">
-          Download the Just Eat app for faster ordering and more personalised recommendations.
+          Get exclusive offers and updates on your favorite pizzas, straight to your inbox.
         </p>
+
         <form @submit.prevent="submitForm" class="subscribe__form">
-          <text-input :border="false" placeholder="Enter your email"> </text-input>
-          <button class="btn">Explore</button>
+          <text-input :border="false" placeholder="Enter your email"></text-input>
+          <button class="btn">Subscribe</button>
         </form>
       </div>
     </div>
-    <img src="@/assets/images/decor-sub.svg" alt="" class="subscribe__decor" />
+
+    <img src="@/assets/images/decor-sub.svg" alt="Pizza deals decoration" class="subscribe__decor" />
   </div>
 </template>
+
 
 <style lang="scss" scoped>
 @use '@/styles/abstracts';
