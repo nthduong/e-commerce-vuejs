@@ -58,7 +58,6 @@
 <style lang="scss" scoped>
 @use '@/styles/abstracts';
 .features {
-  padding-top: 260px;
   padding-bottom: 160px;
   background: var(--color-bg-secondary);
 

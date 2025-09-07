@@ -173,8 +173,6 @@
     font-size: 1.8rem;
     font-weight: 600;
     line-height: 166.667%;
-    transition: color 0.3s ease;
-
   }
 }
 </style>

@@ -9,7 +9,7 @@ import SubscribeSection from '@/components/sections/AboutSections/SubscribeSecti
 
 <template>
   <AboutSection />
-  <StatsSection class="stats-section" />
+  <StatsSection />
   <FeaturesSection />
   <SubscribeSection />
 
@@ -18,16 +18,4 @@ import SubscribeSection from '@/components/sections/AboutSections/SubscribeSecti
 <style lang="scss" scoped>
 @use '@/styles/abstracts';
 
-.stats-section {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  @include abstracts.screen(md) {
-    position: initial;
-    transform: initial;
-    left: initial;
-    margin-top: 70px;
-    margin-bottom: 70px;
-  }
-}
 </style>

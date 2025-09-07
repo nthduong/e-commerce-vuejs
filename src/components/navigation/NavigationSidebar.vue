@@ -1,6 +1,8 @@
 <script setup>
 import { NAV_ITEMS } from '@/constants/navbar'
 import { ref } from 'vue'
+import LogoMain from '@/components/common/LogoMain.vue'
+
 
 const isShow = ref(false)
 
@@ -13,9 +15,7 @@ const ToggleSidebar = () => {
   <img src="@/assets/icons/menu.svg" alt="" class="d-none d-md-block" @click="ToggleSidebar" />
 
   <div class="navbar" :class="{ show: isShow }">
-    <a href="./" class="logo">
-      <img src="@/assets/images/Logo.svg" alt="Foot" class="logo-main" />
-    </a>
+    <LogoMain />
     <img src="@/assets/icons/close.svg" alt="" class="icon" @click="ToggleSidebar" />
     <ul class="navbar__list">
       <li v-for="navItem in NAV_ITEMS" :key="navItem.id">

@@ -40,6 +40,15 @@
   border-radius: 20px;
   background: #952323;
   position: relative;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  @include abstracts.screen(md) {
+    position: initial;
+    transform: initial;
+    left: initial;
+    margin-top: 70px;
+    margin-bottom: 70px;
+  }
 
   &__inner {
     display: flex;

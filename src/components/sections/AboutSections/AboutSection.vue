@@ -8,9 +8,9 @@
           <img class="about__image" src="@/assets/images/pizza5.png" alt="About Us" />
         </figure>
         <div class="about__content">
-          <h2 class="about__heading">About Foodeats</h2>
+          <h2 class="about__heading">About PizzaRush</h2>
           <p class="about__text">
-            Foodeats brings you the best, freshest pizzas, delivered straight to your door. Just
+            PizzaRush brings you the best, freshest pizzas, delivered straight to your door. Just
             enter your location and browse our wide selection of delicious pizzas and sides.
           </p>
           <p class="about__text">
