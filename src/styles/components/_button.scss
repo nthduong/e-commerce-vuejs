@@ -12,7 +12,6 @@
   transition:
     background-color 0.25s ease,
     color 0.25s ease;
-  box-shadow: var(--box-shadow-button);
   // + .btn {
   //     &:not(.btn--no-margin) {
   //         margin-left: 20px;
@@ -58,5 +57,9 @@
     padding: 8px 24px;
     font-size: 1.6rem;
     line-height: 175%;
+  }
+
+  &--shadow {
+    box-shadow: var(--box-shadow-button);
   }
 }

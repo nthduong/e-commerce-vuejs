@@ -14,7 +14,7 @@ import LogoMain from '@/components/common/LogoMain.vue'
 
         <div class="header-cta d-md-none">
           <button class="btn btn--text btn--sm">Login</button>
-          <button class="btn btn--sm">Sign Up</button>
+          <button class="btn btn--sm btn--shadow">Sign Up</button>
         </div>
         <NavigationSidebar />
       </div>

@@ -21,7 +21,7 @@ import TextInput from '@/components/form/TextInput.vue'
                       <img src="@/assets/icons/location.svg" alt="location icon" />
                     </template>
                   </text-input>
-                  <button class="btn">Order Now</button>
+                  <button class="btn btn--shadow">Order Now</button>
                 </div>
                 <!-- <div class="get-app">
                   <span class="get-app__text">Get our pizza app:</span>

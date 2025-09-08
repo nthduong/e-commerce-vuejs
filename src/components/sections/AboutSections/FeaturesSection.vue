@@ -3,7 +3,6 @@
 <template>
   <div class="features">
     <div class="container">
-
       <div class="features__top">
         <h2 class="features__title">ALL YOUR FAVORITE PIZZAS ONE PLACE</h2>
         <p class="features__desc">
@@ -13,7 +12,7 @@
 
       <div class="row row-cols-2 row-cols-lg-1 features__list">
         <div class="col">
-          <div class="features__item">
+          <router-link :to="{ name: 'home' }" class="features__item">
             <img
               src="@/assets/images/features-1.png"
               alt="Join as a Delivery Rider"
@@ -23,16 +22,11 @@
             <p class="features__item-desc">
               Join our team and start delivering delicious pizzas to happy customers.
             </p>
-            <router-link
-              :to="{ name: 'home' }"
-              class="features__item-cta btn btn--outline">
-              Learn More
-            </router-link>
-          </div>
+          </router-link>
         </div>
 
         <div class="col">
-          <div class="features__item">
+          <router-link :to="{ name: 'home' }" class="features__item">
             <img
               src="@/assets/images/features-2.png"
               alt="Become a Pizza Partner"
@@ -42,18 +36,12 @@
             <p class="features__item-desc">
               Grow your pizza business by reaching more customers through our platform.
             </p>
-            <router-link
-              :to="{ name: 'home' }"
-              class="features__item-cta btn btn--outline">
-              Learn More
-            </router-link>
-          </div>
+          </router-link>
         </div>
       </div>
     </div>
   </div>
 </template>
-
 
 <style lang="scss" scoped>
 @use '@/styles/abstracts';
@@ -114,8 +102,12 @@
     border-radius: 20px;
     background: var(--color-bg-secondary);
     transition: box-shadow 0.3s ease;
-    border: 16px solid #fffae3;
-    transition: box-shadow 0.3s ease, border 0.3s ease, transform 0.3s ease;
+    border: 16px solid var(--color-border);
+    box-shadow: var(--box-shadow);
+    transition:
+      box-shadow 0.3s ease,
+      border 0.3s ease,
+      transform 0.3s ease;
 
     &:hover {
       box-shadow: 0 20px 70px 0 rgba(27, 12, 84, 0.07);

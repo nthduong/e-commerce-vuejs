@@ -113,8 +113,12 @@
     padding: 30px 20px;
     border-radius: 20px;
     background: var(--color-bg-secondary);
-    transition: box-shadow 0.3s ease, border 0.3s ease, transform 0.3s ease;
-    border: 16px solid #fffae3;
+    transition:
+      box-shadow 0.3s ease,
+      border 0.3s ease,
+      transform 0.3s ease;
+    box-shadow: var(--box-shadow);
+    border: 16px solid var(--color-border);
 
     &:hover {
       border: 16px solid var(--color-button-bg);

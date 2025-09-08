@@ -63,3 +63,16 @@ input:-webkit-autofill {
         padding-right: 20px !important;
     }
 }
+
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: var(--line-clamp, 1);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    //chatgpt bao nen co
+    -webkit-box-orient: vertical
+}
+
+.line-clamp.line-2 {
+    --line-clamp: 2;
+}
