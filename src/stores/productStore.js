@@ -1,48 +1,27 @@
-// src/stores/productStore.js
 import { defineStore } from 'pinia'
-import { ref, computed } from 'vue'
-import { ProductService } from '@/services/productService'
+import * as productService from '@/services/productService'
+import { ref } from 'vue'
 
 export const useProductStore = defineStore('product', () => {
   const products = ref([])
   const loading = ref(false)
   const error = ref(null)
 
-  const fetchProducts = async () => {
+  const fetchProducts = async (params = {}) => {
     loading.value = true
     error.value = null
     try {
-      const data = await ProductService.getAll()
-      products.value = data
-    } catch (err) {
-      error.value = 'Failed to fetch products'
-      console.error(err)
+      products.value = await productService.getAll({ params })
+    } catch (error) {
+      error.value = error
     } finally {
       loading.value = false
     }
   }
-
-  const fetchProductById = async (id) => {
-    loading.value = true
-    error.value = null
-    try {
-      return await ProductService.getById(id)
-    } catch (err) {
-      error.value = 'Failed to fetch product'
-      console.error(err)
-    } finally {
-      loading.value = false
-    }
-  }
-
-  const totalProducts = computed(() => products.value.length)
-
   return {
     products,
     loading,
     error,
     fetchProducts,
-    fetchProductById,
-    totalProducts
   }
 })

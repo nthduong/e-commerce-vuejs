@@ -1,19 +1,16 @@
 <script setup>
-import { onMounted } from 'vue'
 import ProductItem from './ProductItem.vue'
-import { useProductStore } from '@/stores/productStore'
+import { useProduct } from '@/composables/useProduct'
 
-const productStore = useProductStore()
+const { products } = useProduct()
 
-onMounted(() => {
-  productStore.fetchProducts()
-})
+
 </script>
 
 <template>
   <div class="product-list">
-    <div class="row row-cols-4">
-      <div class="col" v-for="pizza in productStore.products" :key="pizza.id">
+    <div class="row row-cols-3 g-3">
+      <div class="col" v-for="pizza in products" :key="pizza.id">
         <ProductItem :product="pizza" />
       </div>
     </div>
