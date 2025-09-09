@@ -33,11 +33,11 @@ const getProductImage = (product) => {
 @use '@/styles/abstracts';
 
 .product {
-  background: #fff;
+  background: var(--color-bg-item);
   height: 100%;
   border-radius: 25px;
   box-shadow: var(--box-shadow);
-  border: 1px solid var(--color-button-bg);
+  // border: 1px solid var(--color-button-bg);
   overflow: hidden;
   display: flex;
   flex-direction: column;

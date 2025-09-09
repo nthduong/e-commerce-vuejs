@@ -1,8 +1,8 @@
 :root {
     /* ===== Color background ===== */
     --color-bg-primary: #F8F2DE;
-    --color-bg-secondary: #fff;
-    --box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.4);
+    --color-bg-secondary: #fcfbf8;
+    --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 
     /* ===== Color text ===== */
     --color-text-heading: #191720;
@@ -14,5 +14,7 @@
     --color-button-hover: #A73121;
     --box-shadow-button: 0px 13px 26px -8px rgba(149, 35, 35, 0.42);
 
+    /* ===== Item ===== */
     --color-border: transparent;
+    --color-bg-item: #fff;
 }

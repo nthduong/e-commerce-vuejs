@@ -100,7 +100,7 @@
     flex-direction: column;
     align-items: center;
     border-radius: 20px;
-    background: var(--color-bg-secondary);
+    background: var(--color-bg-item);
     transition: box-shadow 0.3s ease;
     border: 16px solid var(--color-border);
     box-shadow: var(--box-shadow);

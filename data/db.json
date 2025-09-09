@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Seafood Pizza",
       "slug": "seafood-pizza",
       "category": "pizza",
@@ -15,7 +15,7 @@
       "viewCount": 0
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Deluxe Pizza",
       "slug": "deluxe-pizza",
       "category": "pizza",
@@ -29,7 +29,7 @@
       "viewCount": 0
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Hawaiian Pizza",
       "slug": "hawaiian-pizza",
       "category": "pizza",
@@ -43,7 +43,7 @@
       "viewCount": 0
     },
     {
-      "id": "4",
+      "id": 4,
       "name": "Veggie Pizza",
       "slug": "veggie-pizza",
       "category": "pizza",
@@ -60,7 +60,7 @@
 
   "categories": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Pizza",
       "slug": "pizzas",
       "description": "Explore a variety of pizzas, from classic to premium flavors.",
@@ -68,7 +68,7 @@
       "isActive": true
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Drink",
       "slug": "drinks",
       "description": "Complete your meal with tasty sides and refreshing drinks.",
@@ -76,7 +76,7 @@
       "isActive": true
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Deals & Combos",
       "slug": "deals-combos",
       "description": "Get the best offers with combo meals and special discounts.",

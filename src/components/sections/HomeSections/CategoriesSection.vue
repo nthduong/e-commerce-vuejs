@@ -112,7 +112,7 @@
     align-items: center;
     padding: 30px 20px;
     border-radius: 20px;
-    background: var(--color-bg-secondary);
+    background: var(--color-bg-item);
     transition:
       box-shadow 0.3s ease,
       border 0.3s ease,

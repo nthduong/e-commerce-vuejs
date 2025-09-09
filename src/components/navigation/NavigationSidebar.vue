@@ -1,5 +1,5 @@
 <script setup>
-import { NAV_ITEMS } from '@/constants/navbar'
+import { NAV_ITEMS } from '@/config/navbar.config'
 import { ref } from 'vue'
 import LogoMain from '@/components/common/LogoMain.vue'
 
