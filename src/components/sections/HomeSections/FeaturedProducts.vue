@@ -14,9 +14,9 @@ const { featuredProducts } = useProduct()
 <template>
   <div class="featured-products">
     <div class="container">
-      <product-swiper heading="Featured Products" :products="featuredProducts">
+      <product-swiper heading="Featured Products" :products="featuredProducts" current="featured-products">
         <template #item="{ product }">
-          <product-item :product="product"/>
+          <product-item :product="product" />
         </template>
       </product-swiper>
     </div>

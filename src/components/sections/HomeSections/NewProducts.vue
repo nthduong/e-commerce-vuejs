@@ -14,7 +14,7 @@ const { NewProducts } = useProduct()
 <template>
   <div class="new-products">
     <div class="container">
-      <product-swiper heading="New Products" :products="NewProducts">
+      <product-swiper heading="New Products" :products="NewProducts" current="new-products">
         <template #item="{ product }">
           <product-item :product="product" />
         </template>
