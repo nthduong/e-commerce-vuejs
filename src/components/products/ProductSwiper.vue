@@ -8,8 +8,13 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 
 // Components
-import ProductItem from '@/components/products/ProductItem.vue'
 import NavigationControls from '@/components/common/NavigationControls.vue'
+
+const props = defineProps({
+  products: { type: Array, required: true },
+  heading: { type: String, default: 'Product' },
+  numberView: { type: Number, default: 4 },
+})
 
 // Swiper refs
 const swiperInstance = ref(null)
@@ -30,39 +35,37 @@ const goNext = () => {
   }
 }
 
-defineProps({
-  products: {
-    type: Object,
-    required: true,
-  },
-  heading: {
-    type: String,
-    required: true,
-    default: "Product"
-  }
-})
+const swiperBreakpoints = {
+  320: { slidesPerView: 1, spaceBetween: 10 },
+  640: { slidesPerView: 2, spaceBetween: 20 },
+  1024: { slidesPerView: 3, spaceBetween: 30 },
+  1440: { slidesPerView: props.numberView, spaceBetween: 30 },
+}
 </script>
 
 <template>
   <div class="product-top">
     <h2 class="product-heading">{{ heading }}</h2>
-    <NavigationControls @prev="goPrev" @next="goNext" />
+    <NavigationControls @prev="goPrev" @next="goNext" class="d-md-none" />
   </div>
 
   <Swiper
     :modules="[Navigation, Autoplay]"
-    :slidesPerView="4"
+    :slidesPerView="numberView"
     :spaceBetween="30"
-    :speed="1500"
-    :loop="true"
+    :speed="1200"
+    :breakpoints="swiperBreakpoints"
     @swiper="onSwiper"
   >
     <SwiperSlide v-for="product in products" :key="product.id">
       <div class="swiper-wrap">
-        <ProductItem :product="product" />
+        <slot name="item" :product="product"></slot>
       </div>
     </SwiperSlide>
   </Swiper>
+  <div class="dots">
+    <div class="dot"></div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -83,6 +86,10 @@ defineProps({
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @include abstracts.screen(md) {
+    margin-bottom: 30px;
+  }
 }
 
 .product-heading {
@@ -91,5 +98,21 @@ defineProps({
   font-size: 4.4rem;
   font-weight: 600;
   line-height: 1;
+
+  @include abstracts.screen(md) {
+    font-size: 3.4rem;
+  }
+}
+
+.dots {
+  display: flex;
+  gap: 5px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var();
 }
 </style>

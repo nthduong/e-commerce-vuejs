@@ -3,20 +3,10 @@
 <template>
   <div class="control">
     <button class="prev control__btn">
-      <img
-        @click="$emit('prev')"
-        class="control__img"
-        src="@/assets/icons/prev.svg "
-        alt=""
-      />
+      <img @click="$emit('prev')" class="control__img" src="@/assets/icons/prev.svg " alt="" />
     </button>
     <button class="next control__btn">
-      <img
-        @click="$emit('next')"
-        class="control__img"
-        src="@/assets/icons/next.svg"
-        alt=""
-      />
+      <img @click="$emit('next')" class="control__img" src="@/assets/icons/next.svg" alt="" />
     </button>
   </div>
 </template>
@@ -37,6 +27,10 @@
     justify-content: center;
     border: 1px solid var(--color-button-bg);
     transition: background 0.25s ease;
+    @include abstracts.screen(md) {
+      width: 36px;
+      height: 36px;
+    }
 
     &:hover {
       background: var(--color-button-bg);

@@ -39,7 +39,7 @@
       "image": "/images/products/pizza/pizza-9.png",
       "isActive": true,
       "isFeatured": true,
-      "isNew": false,
+      "isNew": true,
       "viewCount": 0
     },
     {
@@ -53,7 +53,7 @@
       "image": "/images/products/pizza/pizza-10.png",
       "isActive": true,
       "isFeatured": false,
-      "isNew": true,
+      "isNew": false,
       "viewCount": 0
     },
     {
