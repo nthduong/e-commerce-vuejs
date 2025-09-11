@@ -33,6 +33,10 @@ import LogoMain from '@/components/common/LogoMain.vue'
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: #fff;
+    border-radius: 999px ;
+    padding: 10px 14px;
+    box-shadow: var(--box-shadow);
   }
 }
 

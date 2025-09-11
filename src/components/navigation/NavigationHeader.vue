@@ -18,7 +18,8 @@ import { NAV_ITEMS } from '@/config/navbar.config'
     display: flex;
   }
   &__link {
-    padding: 12px 24px;
+    padding: 12px 12px;
+    font-weight: 500;
   }
 }
 </style>

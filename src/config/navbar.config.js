@@ -11,4 +11,34 @@ export const NAV_ITEMS = [
     label: 'About',
     path: '/about',
   },
+  {
+    id: 3,
+    name: 'about',
+    label: 'Pizza',
+    path: '/about',
+  },
+  {
+    id: 4,
+    name: 'about',
+    label: 'Humberge',
+    path: '/about',
+  },
+  {
+    id: 5,
+    name: 'about',
+    label: 'Drink',
+    path: '/about',
+  },
+  {
+    id: 5,
+    name: 'about',
+    label: 'Blog',
+    path: '/about',
+  },
+  {
+    id: 7,
+    name: 'about',
+    label: 'Contact',
+    path: '/about',
+  },
 ]
