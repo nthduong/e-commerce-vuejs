@@ -11,9 +11,11 @@ import TextInput from '@/components/form/TextInput.vue'
             <div class="col-5 col-md-12">
               <section class="hero__content">
                 <p class="hero__label">#Best Pizza</p>
-                <h1 class="hero__heading">HOT PIZZA DELIVERED TO YOU</h1>
+
+                <h1 class="hero__heading">HOT <span>PIZZA</span> DELIVERED TO YOU</h1>
                 <p class="hero__desc">
-                  Hot, cheesy, and delicious pizza delivered straight to your door. Order now and satisfy your cravings!
+                  Hot, cheesy, and delicious pizza delivered straight to your door. Order now and
+                  satisfy your cravings!
                 </p>
                 <div class="hero__form">
                   <text-input placeholder="Location or zip code">
@@ -92,6 +94,10 @@ import TextInput from '@/components/form/TextInput.vue'
     }
     @include abstracts.screen(md) {
       font-size: 4.6rem;
+    }
+
+    & span {
+      color: var(--color-button-bg);
     }
   }
 
