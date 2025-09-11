@@ -1,10 +1,11 @@
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Navigation, Autoplay } from 'swiper/modules'
+import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import { ref } from 'vue'
 
 // Swiper CSS
 import 'swiper/css'
+import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
 // Components
@@ -24,15 +25,11 @@ const onSwiper = (swiper) => {
 }
 
 const goPrev = () => {
-  if (swiperInstance.value) {
     swiperInstance.value.slidePrev()
-  }
 }
 
 const goNext = () => {
-  if (swiperInstance.value) {
     swiperInstance.value.slideNext()
-  }
 }
 
 const swiperBreakpoints = {
@@ -50,11 +47,12 @@ const swiperBreakpoints = {
   </div>
 
   <Swiper
-    :modules="[Navigation, Autoplay]"
+    :modules="[Navigation, Pagination, Autoplay]"
     :slidesPerView="numberView"
     :spaceBetween="30"
     :speed="1200"
     :breakpoints="swiperBreakpoints"
+    :pagination="{ clickable: true }"
     @swiper="onSwiper"
   >
     <SwiperSlide v-for="product in products" :key="product.id">
@@ -63,13 +61,15 @@ const swiperBreakpoints = {
       </div>
     </SwiperSlide>
   </Swiper>
-  <div class="dots">
-    <div class="dot"></div>
-  </div>
 </template>
 
 <style lang="scss" scoped>
 @use '@/styles/abstracts';
+
+.swiper {
+  position: relative;
+  padding-bottom: 30px;
+}
 
 .swiper-slide {
   height: 100%;
@@ -102,17 +102,5 @@ const swiperBreakpoints = {
   @include abstracts.screen(md) {
     font-size: 3.4rem;
   }
-}
-
-.dots {
-  display: flex;
-  gap: 5px;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var();
 }
 </style>

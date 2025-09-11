@@ -1,0 +1,16 @@
+.swiper-pagination {
+    position: absolute !important;
+    bottom: 0px !important;
+}
+
+.swiper-pagination-bullet {
+  width: 15px !important;
+  height: 15px !important;
+  background: var(--color-button-bg) !important;
+  transition: width 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+    width: 40px !important;
+    border-radius: 999px !important;
+}
