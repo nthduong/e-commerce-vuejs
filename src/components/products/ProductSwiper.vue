@@ -1,7 +1,6 @@
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
-import { ref } from 'vue'
 
 // Swiper CSS
 import 'swiper/css'
@@ -12,15 +11,8 @@ const props = defineProps({
   products: { type: Array, required: true },
   heading: { type: String, default: 'Product' },
   numberView: { type: Number, default: 4 },
-  current: { type: String, default: '' },
+  current: { type: String, default: 'default' },
 })
-
-// Swiper refs
-const swiperInstance = ref(null)
-
-const onSwiper = (swiper) => {
-  swiperInstance.value = swiper
-}
 
 const swiperBreakpoints = {
   320: { slidesPerView: 1, spaceBetween: 10 },
@@ -34,8 +26,33 @@ const navigationOptions = {
   prevEl: `.${props.current} .prev`, // selector nút prev
 }
 
+const onSwiper = (swiper) => {
+  const prevBtn = document.querySelector(`.${props.current} .prev`)
+
+  if (prevBtn) {
+    prevBtn.style.opacity = swiper.isBeginning ? 0.5 : 1
+    prevBtn.style.pointerEvents = swiper.isBeginning ? 'none' : 'auto'
+  }
+
+}
+
+const onSlideChange = (swiper) => {
+  const prevBtn = document.querySelector(`.${props.current} .prev`)
+  const nextBtn = document.querySelector(`.${props.current} .next`)
+
+  if (prevBtn) {
+    prevBtn.style.opacity = swiper.isBeginning ? 0.5 : 1
+    prevBtn.style.pointerEvents = swiper.isBeginning ? 'none' : 'auto'
+  }
+
+  if (nextBtn) {
+    nextBtn.style.opacity = swiper.isEnd ? 0.5 : 1
+    nextBtn.style.pointerEvents = swiper.isEnd ? 'none' : 'auto'
+  }
+}
+
 const paginationOptions = {
-  clickable: true, // cho phép click vào pagination
+  clickable: true,
 }
 </script>
 
@@ -60,6 +77,7 @@ const paginationOptions = {
     :breakpoints="swiperBreakpoints"
     :navigation="navigationOptions"
     :pagination="paginationOptions"
+    @slideChange="onSlideChange"
     @swiper="onSwiper"
   >
     <SwiperSlide v-for="product in products" :key="product.id">
@@ -90,6 +108,7 @@ const paginationOptions = {
 .control {
   display: flex;
   gap: 14px;
+  user-select: none;
   &__btn {
     width: 50px;
     height: 50px;
