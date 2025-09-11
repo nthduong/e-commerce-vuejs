@@ -9,8 +9,8 @@ export function useProduct(autoLoad = true) {
   const loading = computed(() => productStore.loading)
   const error = computed(() => productStore.error)
 
-  const fetchProducts = async () => {
-    await productStore.fetchProducts()
+  const fetchProducts = async (params = {}) => {
+    await productStore.fetchProducts(params)
   }
   if (autoLoad) {
     onMounted(() => {

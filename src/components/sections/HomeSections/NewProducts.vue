@@ -1,7 +1,7 @@
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Navigation, Autoplay } from 'swiper/modules'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
 // Swiper CSS
 import 'swiper/css'
@@ -13,7 +13,11 @@ import NavigationControls from '@/components/common/NavigationControls.vue'
 
 // Composable
 import { useProduct } from '@/composables/useProduct'
-const { products } = useProduct()
+const { products,fetchProducts } = useProduct()
+
+onMounted(()=> {
+  fetchProducts({"isFeatured": true})
+})
 
 // Swiper refs
 const swiperInstance = ref(null)
@@ -21,7 +25,6 @@ const swiperInstance = ref(null)
 const onSwiper = (swiper) => {
   swiperInstance.value = swiper
 }
-
 
 const goPrev = () => {
   if (swiperInstance.value) {

@@ -2,6 +2,7 @@
 import HeroSection from '@/components/sections/HomeSections/HeroSection.vue'
 import CategoriesSection from '@/components/sections/HomeSections/CategoriesSection.vue'
 import FeaturedProducts from '@/components/sections/HomeSections/FeaturedProducts.vue'
+import NewProducts from '@/components/sections/HomeSections/NewProducts.vue'
 
 </script>
 
@@ -9,6 +10,7 @@ import FeaturedProducts from '@/components/sections/HomeSections/FeaturedProduct
   <HeroSection />
   <CategoriesSection />
   <FeaturedProducts />
+  <NewProducts/>
 </template>
 
 <style lang="scss" scoped>

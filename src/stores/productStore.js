@@ -11,7 +11,7 @@ export const useProductStore = defineStore('product', () => {
     loading.value = true
     error.value = null
     try {
-      products.value = await productService.getAll({ params })
+      products.value = await productService.getAll(params)
     } catch (error) {
       error.value = error
     } finally {
