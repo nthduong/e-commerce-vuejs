@@ -59,7 +59,7 @@ const paginationOptions = {
 <template>
   <div class="product-top">
     <h2 class="product-heading">{{ heading }}</h2>
-    <div class="control">
+    <div class="control d-md-none">
       <button class="prev control__btn">
         <img class="control__img" src="@/assets/icons/prev.svg " alt="" />
       </button>
