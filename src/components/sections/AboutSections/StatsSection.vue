@@ -43,7 +43,6 @@
   transform: translate(-50%, -50%);
   left: 50%;
   @include abstracts.screen(md) {
-    position: initial;
     transform: initial;
     left: initial;
     margin-top: 70px;

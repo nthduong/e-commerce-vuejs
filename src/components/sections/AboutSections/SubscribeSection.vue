@@ -46,6 +46,9 @@ import TextInput from '@/components/form/TextInput.vue'
     font-size: 4.4rem;
     font-weight: 600;
     line-height: 1;
+    @include abstracts.screen(md) {
+      font-size: 3.4rem;
+    }
   }
 
   &__desc {
@@ -55,6 +58,9 @@ import TextInput from '@/components/form/TextInput.vue'
     text-align: center;
     font-size: 1.8rem;
     line-height: 166.667%;
+    @include abstracts.screen(md) {
+      font-size: 1.6rem;
+    }
   }
   &__form {
     width: 570px;

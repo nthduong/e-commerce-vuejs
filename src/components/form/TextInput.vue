@@ -53,7 +53,7 @@ defineProps({
   &__input {
     margin-left: 11.5px;
     width: 100%;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 }
 </style>
