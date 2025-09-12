@@ -2,6 +2,7 @@
 import NavigationHeader from '@/components/navigation/NavigationHeader.vue'
 import NavigationSidebar from '@/components/navigation/NavigationSidebar.vue'
 import LogoMain from '@/components/common/LogoMain.vue'
+import AuthButton from '@/components/auth/AuthButton.vue'
 </script>
 
 <template>
@@ -9,13 +10,8 @@ import LogoMain from '@/components/common/LogoMain.vue'
     <div class="container">
       <div class="header__inner">
         <LogoMain />
-
-        <NavigationHeader class="d-md-none" />
-
-        <div class="header-cta d-md-none">
-          <button class="btn btn--text btn--sm">Login</button>
-          <button class="btn btn--sm btn--shadow">Sign Up</button>
-        </div>
+        <NavigationHeader class="d-lg-none" />
+        <AuthButton class="d-lg-none" />
         <NavigationSidebar />
       </div>
     </div>
@@ -23,6 +19,7 @@ import LogoMain from '@/components/common/LogoMain.vue'
 </template>
 
 <style lang="scss" scoped>
+@use '@/styles/abstracts';
 .header {
   background: var(--color-bg-primary);
   height: 108px;
@@ -33,14 +30,17 @@ import LogoMain from '@/components/common/LogoMain.vue'
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include abstracts.screen(lg) {
+      background: initial;
+      border-radius: initial;
+      padding: initial;
+      box-shadow: initial;
+    }
     background: #fff;
-    border-radius: 999px ;
+    border-radius: 999px;
     padding: 10px 14px;
     box-shadow: var(--box-shadow);
   }
-}
-
-.header-cta {
-  display: flex;
 }
 </style>

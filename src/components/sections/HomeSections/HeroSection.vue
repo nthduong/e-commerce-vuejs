@@ -55,6 +55,11 @@ import TextInput from '@/components/form/TextInput.vue'
   background: var(--color-bg-primary);
   padding-top: 70px;
   padding-bottom: 100px;
+
+  @include abstracts.screen(lg) {
+    padding-top: 50px;
+  }
+
   @include abstracts.screen(md) {
     padding-top: 30px;
   }
@@ -117,7 +122,7 @@ import TextInput from '@/components/form/TextInput.vue'
     margin-top: 38px;
     display: flex;
     gap: 16px;
-    @include abstracts.screen(md) {
+    @include abstracts.screen(lg) {
       margin-top: 30px;
       flex-direction: column;
       gap: 12px;

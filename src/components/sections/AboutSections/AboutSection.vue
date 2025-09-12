@@ -4,11 +4,8 @@
   <div class="about">
     <div class="container">
       <div class="about__inner">
-        <figure class="about__image-wrap">
-          <img class="about__image" src="@/assets/images/pizza5.png" alt="About Us" />
-        </figure>
         <div class="about__content">
-          <h2 class="about__heading">About PizzaRush</h2>
+          <h1 class="about__heading">About <span>PizzaRush</span></h1>
           <p class="about__text">
             PizzaRush brings you the best, freshest pizzas, delivered straight to your door. Just
             enter your location and browse our wide selection of delicious pizzas and sides.
@@ -21,6 +18,9 @@
             Learn More
           </router-link> -->
         </div>
+        <figure class="about__image-wrap">
+          <img class="about__image" src="@/assets/images/pizza5.png" alt="About Us" />
+        </figure>
       </div>
     </div>
   </div>
@@ -51,7 +51,7 @@
     align-items: center;
 
     @include abstracts.screen(lg) {
-      flex-direction: column-reverse;
+      flex-direction: column;
     }
   }
 
@@ -81,12 +81,23 @@
 
   &__heading {
     color: var(--color-text-heading);
-    font-size: 4.4rem;
+    font-size: 7.4rem;
     font-weight: 600;
     line-height: 1;
 
+
+     @include abstracts.screen(xl) {
+      font-size: 6.4rem;
+    }
+    @include abstracts.screen(lg) {
+      font-size: 4.6rem;
+    }
     @include abstracts.screen(md) {
-      font-size: 3.4rem;
+      font-size: 4.6rem;
+    }
+
+    & span {
+      color: var(--color-button-bg);
     }
   }
 
@@ -96,8 +107,11 @@
     font-size: 1.8rem;
     line-height: 166.667%;
 
-    @include abstracts.screen(md) {
+     @include abstracts.screen(xl) {
       font-size: 1.6rem;
+    }
+    @include abstracts.screen(lg) {
+      margin-top: 12px;
     }
   }
 

@@ -35,10 +35,4 @@ export const NAV_ITEMS = [
     label: 'Blog',
     path: '/about',
   },
-  {
-    id: 7,
-    name: 'about',
-    label: 'Contact',
-    path: '/about',
-  },
 ]

@@ -6,7 +6,9 @@ import { NAV_ITEMS } from '@/config/navbar.config'
   <nav class="navbar">
     <ul class="navbar__list">
       <li v-for="navItem in NAV_ITEMS" :key="navItem.id">
-        <router-link :to="{name: navItem.name}" class="navbar__link">{{ navItem.label }}</router-link>
+        <router-link :to="{ name: navItem.name }" class="navbar__link">{{
+          navItem.label
+        }}</router-link>
       </li>
     </ul>
   </nav>
@@ -19,7 +21,7 @@ import { NAV_ITEMS } from '@/config/navbar.config'
   }
   &__link {
     padding: 12px 12px;
-    font-weight: 500;
+    font-weight: 600;
   }
 }
 </style>

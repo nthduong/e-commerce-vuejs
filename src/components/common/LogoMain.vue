@@ -1,13 +1,15 @@
 <script setup></script>
 
 <template>
-  <router-link :to="{name: 'home'}" class="logo">
+  <router-link :to="{ name: 'home' }" class="logo">
     <img src="@/assets/images/Logo-icon.svg" alt="PizzaRush" class="logo__main" />
     <span class="logo__text">PizzaRush</span>
   </router-link>
 </template>
 
 <style lang="scss" scoped>
+@use '@/styles/abstracts';
+
 .logo {
   display: flex;
   align-items: center;
@@ -17,9 +19,15 @@
     font-size: 24px;
     line-height: 30px;
     color: var(--color-button-bg);
+    @include abstracts.screen(md) {
+      font-size: 2rem;
+    }
   }
   &__main {
     width: 50px;
+    @include abstracts.screen(md) {
+      width: 45px;
+    }
   }
 }
 </style>

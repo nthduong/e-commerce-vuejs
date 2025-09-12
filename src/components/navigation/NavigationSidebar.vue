@@ -12,7 +12,9 @@ const ToggleSidebar = () => {
 </script>
 
 <template>
-  <img src="@/assets/icons/menu.svg" alt="" class="d-none d-md-block" @click="ToggleSidebar" />
+  <button class="sidebarToggle d-none d-lg-block">
+    <img src="@/assets/icons/menu.svg" alt="" class="sidebarToggle__img" @click="ToggleSidebar" />
+  </button>
 
   <div class="navbar" :class="{ show: isShow }">
     <LogoMain />
@@ -87,5 +89,18 @@ const ToggleSidebar = () => {
   top: 20px;
   right: 20px;
   cursor: pointer;
+}
+
+.sidebarToggle {
+  width: 25px;
+
+  @include abstracts.screen(md) {
+    width: 20px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>
