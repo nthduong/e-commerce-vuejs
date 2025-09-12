@@ -18,7 +18,7 @@ const ToggleSidebar = () => {
 
   <div class="navbar" :class="{ show: isShow }">
     <LogoMain />
-    <img src="@/assets/icons/close.svg" alt="" class="icon" @click="ToggleSidebar" />
+    <img src="@/assets/icons/close.svg" alt="" class="navbar-icon" @click="ToggleSidebar" />
     <ul class="navbar__list">
       <li v-for="navItem in NAV_ITEMS" :key="navItem.id">
         <router-link :to="{ name: navItem.name }" class="navbar__link">{{
@@ -83,7 +83,7 @@ const ToggleSidebar = () => {
   visibility: visible;
 }
 
-.icon {
+.navbar-icon {
   width: 24px;
   position: absolute;
   top: 20px;

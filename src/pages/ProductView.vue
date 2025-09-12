@@ -3,7 +3,7 @@ import ProductSideBar from '@/components/sections/Product/ProductSideBar.vue'
 </script>
 
 <template>
-  <div class="Product">
+  <div class="product">
     <div class="container">
       <div class="row">
         <div class="col-4">
@@ -17,4 +17,8 @@ import ProductSideBar from '@/components/sections/Product/ProductSideBar.vue'
 
 <style lang="scss" scoped>
 @use '@/styles/abstracts';
+
+.product {
+  padding: 80px 0;
+}
 </style>

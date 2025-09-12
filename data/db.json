@@ -134,7 +134,7 @@
       "name": "Pizza",
       "slug": "pizzas",
       "description": "Explore a variety of pizzas, from classic to premium flavors.",
-      "image": "/images/category-pizza.jpg",
+      "image": "/icons/pizza.svg",
       "isActive": true
     },
     {
@@ -142,7 +142,7 @@
       "name": "Drink",
       "slug": "drinks",
       "description": "Complete your meal with tasty sides and refreshing drinks.",
-      "image": "/images/category-drinks.jpg",
+      "image": "/icons/drink.svg",
       "isActive": true
     },
     {
@@ -150,7 +150,7 @@
       "name": "Deals & Combos",
       "slug": "deals-combos",
       "description": "Get the best offers with combo meals and special discounts.",
-      "image": "/images/category-drinks.jpg",
+      "image": "/icons/combo-food.svg",
       "isActive": true
     }
   ]
