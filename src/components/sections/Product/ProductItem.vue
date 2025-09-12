@@ -14,16 +14,16 @@ const getProductImage = (product) => {
 </script>
 
 <template>
-  <article class="product">
-    <figure class="product__img-wrap">
-      <img class="product__img" :src="getProductImage(product)" alt="pizza Image" />
+  <article class="product-item">
+    <figure class="product-item__img-wrap">
+      <img class="product-item__img" :src="getProductImage(product)" alt="pizza Image" />
     </figure>
-    <div class="product__content">
-      <h3 class="product__title line-clamp line-2">{{ product.name }}</h3>
-      <p class="product__desc line-clamp line-2">{{ product.description }}</p>
-      <div class="product__bottom">
-        <div class="product__price">${{ product.price }}</div>
-        <button class="product__button btn btn--primary btn--sm">Add</button>
+    <div class="product-item__content">
+      <h3 class="product-item__title line-clamp line-2">{{ product.name }}</h3>
+      <p class="product-item__desc line-clamp line-2">{{ product.description }}</p>
+      <div class="product-item__bottom">
+        <div class="product-item__price">${{ product.price }}</div>
+        <button class="product-item__button btn btn--primary btn--sm">Add</button>
       </div>
     </div>
   </article>
@@ -32,7 +32,7 @@ const getProductImage = (product) => {
 <style lang="scss" scoped>
 @use '@/styles/abstracts';
 
-.product {
+.product-item {
   background: var(--color-bg-item);
   height: 100%;
   border-radius: 25px;

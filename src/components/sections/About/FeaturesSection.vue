@@ -102,7 +102,7 @@
     border-radius: 20px;
     background: var(--color-bg-item);
     transition: box-shadow 0.3s ease;
-    border: 16px solid var(--color-border);
+    border: 16px solid transparent;
     box-shadow: var(--box-shadow);
     transition:
       box-shadow 0.3s ease,

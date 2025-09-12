@@ -118,7 +118,7 @@
       border 0.3s ease,
       transform 0.3s ease;
     box-shadow: var(--box-shadow);
-    border: 16px solid var(--color-border);
+    border: 16px solid transparent;
 
     &:hover {
       border: 16px solid var(--color-button-bg);

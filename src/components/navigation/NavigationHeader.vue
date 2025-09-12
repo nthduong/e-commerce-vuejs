@@ -1,6 +1,6 @@
 <script setup>
 import NavigationHeader from '@/components/navigation/NavbarMenu.vue'
-import NavigationSidebar from '@/components/navigation/NavigationSidebar.vue'
+import NavigationSidebar from '@/components/navigation/NavigationDrawer.vue'
 import LogoMain from '@/components/common/LogoMain.vue'
 import AuthButton from '@/components/auth/AuthButton.vue'
 </script>
