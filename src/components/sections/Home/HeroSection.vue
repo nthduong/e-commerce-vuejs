@@ -1,5 +1,5 @@
 <script setup>
-import TextInput from '@/components/form/TextInput.vue'
+import TextInput from '@/components/common/TextInput.vue'
 </script>
 
 <template>

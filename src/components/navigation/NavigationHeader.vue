@@ -1,27 +1,46 @@
 <script setup>
-import { NAV_ITEMS } from '@/config/navbar.config'
+import NavigationHeader from '@/components/navigation/NavbarMenu.vue'
+import NavigationSidebar from '@/components/navigation/NavigationSidebar.vue'
+import LogoMain from '@/components/common/LogoMain.vue'
+import AuthButton from '@/components/auth/AuthButton.vue'
 </script>
 
 <template>
-  <nav class="navbar">
-    <ul class="navbar__list">
-      <li v-for="navItem in NAV_ITEMS" :key="navItem.id">
-        <router-link :to="{ name: navItem.name }" class="navbar__link">{{
-          navItem.label
-        }}</router-link>
-      </li>
-    </ul>
-  </nav>
+  <div class="header">
+    <div class="container">
+      <div class="header__inner">
+        <LogoMain />
+        <NavigationHeader class="d-lg-none" />
+        <AuthButton class="d-lg-none" />
+        <NavigationSidebar />
+      </div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
-.navbar {
-  &__list {
+@use '@/styles/abstracts';
+.header {
+  background: var(--color-bg-primary);
+  height: 108px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__inner {
     display: flex;
-  }
-  &__link {
-    padding: 12px 12px;
-    font-weight: 600;
+    align-items: center;
+    justify-content: space-between;
+
+    @include abstracts.screen(lg) {
+      background: initial;
+      border-radius: initial;
+      padding: initial;
+      box-shadow: initial;
+    }
+    background: #fff;
+    border-radius: 999px;
+    padding: 10px 14px;
+    box-shadow: var(--box-shadow);
   }
 }
 </style>

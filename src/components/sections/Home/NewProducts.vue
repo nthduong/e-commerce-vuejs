@@ -1,20 +1,20 @@
 <script setup>
-import ProductSwiper from '@/components/products/ProductSwiper.vue'
-import ProductItem from '@/components/products/ProductItem.vue'
+import ProductSwiper from '@/components/sections/Product/ProductSwiper.vue'
+import ProductItem from '@/components/sections/Product/ProductItem.vue'
 
 // Components
 
 // Composable
 import { useProduct } from '@/composables/useProduct'
-const { featuredProducts } = useProduct()
+const { NewProducts } = useProduct()
 
 // Swiper refs
 </script>
 
 <template>
-  <div class="featured-products">
+  <div class="new-products">
     <div class="container">
-      <product-swiper heading="Featured Products" :products="featuredProducts" current="featured-products">
+      <product-swiper heading="New Products" :products="NewProducts" current="new-products">
         <template #item="{ product }">
           <product-item :product="product" />
         </template>
@@ -25,7 +25,8 @@ const { featuredProducts } = useProduct()
 
 <style lang="scss" scoped>
 @use '@/styles/abstracts';
-.featured-products {
+
+.new-products {
   padding-bottom: 80px;
 }
 </style>

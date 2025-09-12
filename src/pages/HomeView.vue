@@ -1,8 +1,8 @@
 <script setup>
-import HeroSection from '@/components/sections/HomeSections/HeroSection.vue'
-import CategoriesSection from '@/components/sections/HomeSections/CategoriesSection.vue'
-import FeaturedProducts from '@/components/sections/HomeSections/FeaturedProducts.vue'
-import NewProducts from '@/components/sections/HomeSections/NewProducts.vue'
+import HeroSection from '@/components/sections/Home/HeroSection.vue'
+import CategoriesSection from '@/components/sections/Home/CategoriesSection.vue'
+import FeaturedProducts from '@/components/sections/Home/FeaturedProducts.vue'
+import NewProducts from '@/components/sections/Home/NewProducts.vue'
 
 </script>
 

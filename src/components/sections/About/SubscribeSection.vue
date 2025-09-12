@@ -1,5 +1,5 @@
 <script setup>
-import TextInput from '@/components/form/TextInput.vue'
+import TextInput from '@/components/common/TextInput.vue'
 </script>
 
 <template>
@@ -19,10 +19,13 @@ import TextInput from '@/components/form/TextInput.vue'
       </div>
     </div>
 
-    <img src="@/assets/images/decor-sub.svg" alt="Pizza deals decoration" class="subscribe__decor" />
+    <img
+      src="@/assets/images/decor-sub.svg"
+      alt="Pizza deals decoration"
+      class="subscribe__decor"
+    />
   </div>
 </template>
-
 
 <style lang="scss" scoped>
 @use '@/styles/abstracts';
@@ -81,8 +84,8 @@ import TextInput from '@/components/form/TextInput.vue'
     top: 0;
     right: 50%;
     transform: translateX(50%);
-    filter: brightness(0) saturate(100%) invert(17%) sepia(58%) saturate(2446%) hue-rotate(341deg) brightness(100%) contrast(93%);
+    filter: brightness(0) saturate(100%) invert(17%) sepia(58%) saturate(2446%) hue-rotate(341deg)
+      brightness(100%) contrast(93%);
   }
 }
-
 </style>
