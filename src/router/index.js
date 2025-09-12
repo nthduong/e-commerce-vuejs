@@ -18,6 +18,22 @@ const router = createRouter({
       },
       component: () => import('../pages/AboutView.vue'),
     },
+    {
+      path: '/product',
+      name: 'product',
+      meta: {
+        layout: DEFAULT_LAYOUT,
+      },
+      component: () => import('../pages/ProductView.vue'),
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      meta: {
+        layout: DEFAULT_LAYOUT,
+      },
+      component: () => import('../pages/ContactView.vue'),
+    },
   ],
 })
 
