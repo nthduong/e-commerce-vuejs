@@ -1,6 +1,6 @@
 import api from './api'
 
-export const getAll = async (params = {}) => {
+export const getAllCategories = async (params = {}) => {
   try {
     const response = await api.get('/categories', { params })
     return response.data

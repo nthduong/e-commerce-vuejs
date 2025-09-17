@@ -7,16 +7,14 @@ export function useProduct(autoLoad = true) {
   const products = computed(() => productStore.products)
   const loading = computed(() => productStore.loading)
   const error = computed(() => productStore.error)
-  const featuredProducts = computed(() => {
-    return products.value.filter((product) => product.isFeatured)
-  })
-  const NewProducts = computed(() => {
-    return products.value.filter((product) => product.isNew)
-  })
+  const countProductByCategory = computed(() => productStore.countProductByCategory)
+  const featuredProducts = computed(() => productStore.featuredProducts)
+  const NewProducts = computed(() => productStore.NewProducts)
 
   const fetchProducts = async (params = {}) => {
     await productStore.fetchProducts(params)
   }
+  
   if (autoLoad) {
     onMounted(() => {
       fetchProducts()
@@ -28,6 +26,7 @@ export function useProduct(autoLoad = true) {
     loading,
     error,
     fetchProducts,
+    countProductByCategory,
     featuredProducts,
     NewProducts,
   }

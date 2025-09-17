@@ -1,11 +1,13 @@
 <script setup>
 import { useCategory } from '@/composables/useCategory'
+import { useProduct } from '@/composables/useProduct';
 
 const { categories } = useCategory()
+const { countProductByCategory } = useProduct()
 
-const getProductImage = (product) => {
-  const imageName = product.image?.replace('/icons', '') || 'placeholder.png';
-  const imagePath = `/src/assets/images/products/pizza/${imageName}`;
+const getImage = (categories) => {
+  const imageName = categories.image?.replace('/images/category/', '') || 'placeholder.png';
+  const imagePath = `/src/assets/images/category/${imageName}`;
   return imagePath;
 };
 </script>
@@ -16,10 +18,10 @@ const getProductImage = (product) => {
     <div class="CategoryFilter__list">
       <button v-for="category in categories" :key="category.id" class="CategoryFilter-item">
         <div class="CategoryFilter-item__content">
-          <img :src="getProductImage(category)" alt="" class="CategoryFilter-item__img" />
+          <img :src="getImage(category)" alt="" class="CategoryFilter-item__img" />
           <h3 class="CategoryFilter-item__title">{{ category.name }}</h3>
         </div>
-        <span class="CategoryFilter-item__number">1</span>
+        <span class="CategoryFilter-item__number">{{ countProductByCategory(category.id) }}</span>
       </button>
     </div>
   </div>
@@ -40,7 +42,7 @@ const getProductImage = (product) => {
   }
 
   &__list {
-    margin-top: 20px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     gap: 14px;
@@ -51,23 +53,37 @@ const getProductImage = (product) => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 16px;
-  border-radius: 20px;
-  border: 1px solid var(--color-border);
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--color-button-bg);
+  gap: 10px;
 
   &__content {
     display: flex;
     align-items: center;
+    gap: 12px;
   }
 
   &__title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 600;
   }
 
+  &__img {
+    width: 25px;
+  }
+
   &__number {
-    font-size: 1.8rem;
+    display: flex;
+    font-size: 1.4rem;
     font-weight: 600;
+    background: var(--color-button-bg);
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
   }
 }
 </style>

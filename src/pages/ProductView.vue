@@ -6,10 +6,10 @@ import ProductSideBar from '@/components/sections/Product/ProductSideBar.vue'
   <div class="product">
     <div class="container">
       <div class="row">
-        <div class="col-4">
+        <div class="col-3">
           <product-side-bar />
         </div>
-        <div class="col-8"></div>
+        <div class="col-9"></div>
       </div>
     </div>
   </div>
