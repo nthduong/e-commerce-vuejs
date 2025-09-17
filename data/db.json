@@ -81,7 +81,7 @@
       "image": "/images/products/pizza/pizza-12.png",
       "isActive": true,
       "isFeatured": true,
-      "isNew": false,
+      "isNew": true,
       "viewCount": 0
     },
     {
@@ -145,13 +145,13 @@
       "image": "/images/category/category-2.png",
       "isActive": true
     },
-    {
-      "id": 3,
-      "name": "Deals & Combos",
-      "slug": "deals-combos",
-      "description": "Get the best offers with combo meals and special discounts.",
-      "image": "/images/category/category-3.png",
-      "isActive": true
-    }
+   {
+    "id": 3,
+    "name": "Salad",
+    "slug": "salad",
+    "description": "Fresh and healthy salads to perfectly complement your pizza.",
+    "image": "/images/category/category-3.png",
+    "isActive": true
+  }
   ]
 }

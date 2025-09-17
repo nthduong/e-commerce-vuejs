@@ -1,5 +1,6 @@
 <script setup>
 import ProductSideBar from '@/components/sections/Product/ProductSideBar.vue'
+import ProductList from '@/components/sections/Product/ProductList.vue';
 </script>
 
 <template>
@@ -9,7 +10,9 @@ import ProductSideBar from '@/components/sections/Product/ProductSideBar.vue'
         <div class="col-3">
           <product-side-bar />
         </div>
-        <div class="col-9"></div>
+        <div class="col-9">
+          <product-list/>
+        </div>
       </div>
     </div>
   </div>

@@ -7,6 +7,7 @@ export function useProduct(autoLoad = true) {
   const products = computed(() => productStore.products)
   const loading = computed(() => productStore.loading)
   const error = computed(() => productStore.error)
+  const countProduct = computed(() => productStore.countProduct)
   const countProductByCategory = computed(() => productStore.countProductByCategory)
   const featuredProducts = computed(() => productStore.featuredProducts)
   const NewProducts = computed(() => productStore.NewProducts)
@@ -14,7 +15,7 @@ export function useProduct(autoLoad = true) {
   const fetchProducts = async (params = {}) => {
     await productStore.fetchProducts(params)
   }
-  
+
   if (autoLoad) {
     onMounted(() => {
       fetchProducts()
@@ -25,9 +26,10 @@ export function useProduct(autoLoad = true) {
     products,
     loading,
     error,
-    fetchProducts,
+    countProduct,
     countProductByCategory,
     featuredProducts,
     NewProducts,
+    fetchProducts,
   }
 }

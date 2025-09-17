@@ -15,11 +15,12 @@ export const useProductStore = defineStore('product', () => {
   const NewProducts = computed(() => {
     return products.value.filter((product) => product.isNew)
   })
+  const countProduct = computed(() => products.value.length)
   const countProductByCategory = computed(
     () => (categoryId) =>
       products.value.filter((product) => product.categoryId === categoryId).length,
   )
-  
+
   // 3. ACTIONS
   const fetchProducts = async (params = {}) => {
     loading.value = true
@@ -37,8 +38,9 @@ export const useProductStore = defineStore('product', () => {
     products,
     loading,
     error,
-    featuredProducts,
+    countProduct,
     countProductByCategory,
+    featuredProducts,
     NewProducts,
     fetchProducts,
   }

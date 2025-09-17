@@ -9,7 +9,7 @@ const { products } = useProduct()
 
 <template>
   <div class="product-list">
-    <div class="row row-cols-3 g-3">
+    <div class="row row-cols-4 g-3">
       <div class="col" v-for="pizza in products" :key="pizza.id">
         <ProductItem :product="pizza" />
       </div>

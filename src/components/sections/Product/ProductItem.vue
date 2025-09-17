@@ -7,10 +7,10 @@ defineProps({
 })
 
 const getProductImage = (product) => {
-  const imageName = product.image?.replace('/images/products/pizza/', '') || 'placeholder.png';
-  const imagePath = `/src/assets/images/products/pizza/${imageName}`;
-  return imagePath;
-};
+  const imageName = product.image?.replace('/images/products/pizza/', '') || 'placeholder.png'
+  const imagePath = `/src/assets/images/products/pizza/${imageName}`
+  return imagePath
+}
 </script>
 
 <template>
@@ -19,11 +19,13 @@ const getProductImage = (product) => {
       <img class="product-item__img" :src="getProductImage(product)" alt="pizza Image" />
     </figure>
     <div class="product-item__content">
-      <h3 class="product-item__title line-clamp line-2">{{ product.name }}</h3>
+      <h3 class="product-item__title line-clamp line-1">{{ product.name }}</h3>
       <p class="product-item__desc line-clamp line-2">{{ product.description }}</p>
       <div class="product-item__bottom">
         <div class="product-item__price">${{ product.price }}</div>
-        <button class="product-item__button btn btn--primary btn--sm">Add</button>
+        <button class="product-item__button">
+          <img class="product-item__icon" src="@/assets/icons/plus.svg" alt="" />
+        </button>
       </div>
     </div>
   </article>
@@ -34,7 +36,6 @@ const getProductImage = (product) => {
 
 .product-item {
   background: var(--color-bg-item);
-  height: 100%;
   border-radius: 25px;
   box-shadow: var(--box-shadow);
   // border: 1px solid var(--color-button-bg);
@@ -67,14 +68,14 @@ const getProductImage = (product) => {
   }
 
   &__title {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 600;
     color: var(--color-text-heading);
   }
 
   &__desc {
     margin-top: 12px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: var(--color-text-desc);
     flex-grow: 1;
   }
@@ -87,9 +88,27 @@ const getProductImage = (product) => {
   }
 
   &__price {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: var(--color-text-heading);
+  }
+
+  &__button {
+    background: var(--color-button-bg);
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__icon {
+    width: 20px;
   }
 }
 </style>
