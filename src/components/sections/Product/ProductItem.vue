@@ -7,8 +7,8 @@ defineProps({
 })
 
 const getProductImage = (product) => {
-  const imageName = product.image?.replace('/images/products/pizza/', '') || 'placeholder.png'
-  const imagePath = `/src/assets/images/products/pizza/${imageName}`
+  const imageName = product.image?.replace('/images/products/', '') || 'placeholder.png'
+  const imagePath = `/src/assets/images/products/${imageName}`
   return imagePath
 }
 </script>

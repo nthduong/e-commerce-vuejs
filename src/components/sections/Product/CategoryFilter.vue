@@ -1,11 +1,16 @@
 <script setup>
-import { useRouter } from 'vue-router'
+import { useRouter,useRoute } from 'vue-router'
 import { useCategory } from '@/composables/useCategory'
 import { useProduct } from '@/composables/useProduct'
 
 const { categories } = useCategory()
 const { countProduct, countProductByCategory } = useProduct()
 const router = useRouter()
+const route = useRoute()
+
+console.log(route.params.categorySlug);
+console.dir(route.query);
+
 
 const getImage = (categories) => {
   const imageName = categories.image?.replace('/images/category/', '') || 'placeholder.png'
