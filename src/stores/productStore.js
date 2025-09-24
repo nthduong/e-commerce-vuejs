@@ -5,6 +5,7 @@ import * as productService from '@/services/productService'
 export const useProductStore = defineStore('product', () => {
   // 1. STATE
   const products = ref([])
+  const productList = ref([])
   const loading = ref(false)
   const error = ref(null)
 
@@ -18,7 +19,7 @@ export const useProductStore = defineStore('product', () => {
   const countProduct = computed(() => products.value.length)
   const countProductByCategory = computed(
     () => (categoryId) =>
-      products.value.filter((product) => product.categoryId === categoryId).length,
+      products.value.filter((product) => product.categoryId == categoryId).length,
   )
 
   // 3. ACTIONS
@@ -27,6 +28,18 @@ export const useProductStore = defineStore('product', () => {
     error.value = null
     try {
       products.value = await productService.getAll(params)
+      
+    } catch (err) {
+      error.value = err
+    } finally {
+      loading.value = false
+    }
+  }
+  const fetchProductList = async (params = {}) => {
+    loading.value = true
+    error.value = null
+    try {
+      productList.value = await productService.getAll(params)
     } catch (err) {
       error.value = err
     } finally {
@@ -36,11 +49,13 @@ export const useProductStore = defineStore('product', () => {
 
   return {
     products,
+    productList,
     loading,
     error,
     countProduct,
     countProductByCategory,
     featuredProducts,
+    fetchProductList,
     NewProducts,
     fetchProducts,
   }

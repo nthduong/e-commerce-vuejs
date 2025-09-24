@@ -4,14 +4,14 @@ import { useRoute } from 'vue-router'
 import { useProduct } from '@/composables/useProduct'
 import { watch } from 'vue';
 
-const { products,fetchProducts } = useProduct()
+const { productList,fetchProductList} = useProduct()
 const route = useRoute()
 
 // Theo dõi cả params + query
 watch(
   () => [route.params.categorySlug, route.query],
   () => {
-    fetchProducts({
+    fetchProductList({
       category: route.params.categorySlug,
     });
   },
@@ -23,8 +23,8 @@ watch(
 <template>
   <div class="product-list">
     <div class="row row-cols-4 g-3">
-      <div class="col" v-for="pizza in products" :key="pizza.id">
-        <ProductItem :product="pizza" />
+      <div class="col" v-for="productItem in productList" :key="productItem.id">
+        <ProductItem :product="productItem" />
       </div>
     </div>
   </div>
