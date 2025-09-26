@@ -11,7 +11,6 @@ const route = useRoute()
 console.log(route.params.categorySlug);
 console.dir(route.query);
 
-
 const getImage = (categories) => {
   const imageName = categories.image?.replace('/images/category/', '') || 'placeholder.png'
   const imagePath = `/src/assets/images/category/${imageName}`
@@ -30,7 +29,7 @@ const selectCategory = (categorySlug) => {
   <div class="CategoryFilter">
     <h2 class="CategoryFilter__heading">Category</h2>
     <div class="CategoryFilter__list">
-      <button class="CategoryFilter-item" @click="selectCategory(null)">
+      <button class="CategoryFilter-item" :class="{active: !route.params.categorySlug }" @click="selectCategory(null)">
         <div class="CategoryFilter-item__content">
           <img
             src="@/assets/images/category/category-all.png"
@@ -42,7 +41,7 @@ const selectCategory = (categorySlug) => {
         <span class="CategoryFilter-item__number">{{ countProduct }}</span>
       </button>
 
-      <button v-for="category in categories" :key="category.id" class="CategoryFilter-item" @click="selectCategory(category.slug)">
+      <button v-for="category in categories" :key="category.id" class="CategoryFilter-item" :class="{active: route.params.categorySlug === category.slug  }" @click="selectCategory(category.slug)">
         <div class="CategoryFilter-item__content">
           <img :src="getImage(category)" alt="" class="CategoryFilter-item__img" />
           <h3 class="CategoryFilter-item__title">{{ category.name }}</h3>
@@ -83,6 +82,15 @@ const selectCategory = (categorySlug) => {
   border-radius: 999px;
   border: 1px solid var(--color-button-bg);
   gap: 10px;
+  transition: background 0.25s ease;
+
+  &:hover {
+    background: var(--color-bg-primary);
+  }
+
+  &.active {
+    background: var(--color-bg-primary) ;
+  }
 
   &__content {
     display: flex;

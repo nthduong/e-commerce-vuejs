@@ -22,7 +22,7 @@ watch(
 
 <template>
   <div class="product-list">
-    <div class="row row-cols-4 g-3">
+    <div class="row row-cols-4 row-cols-lg-2 row-cols-sm-1 g-3">
       <div class="col" v-for="productItem in productList" :key="productItem.id">
         <ProductItem :product="productItem" />
       </div>

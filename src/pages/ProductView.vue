@@ -7,10 +7,10 @@ import ProductList from '@/components/sections/Product/ProductList.vue';
   <div class="product">
     <div class="container">
       <div class="row">
-        <div class="col-3">
+        <div class="col-3 col-lg-4 d-md-none">
           <product-side-bar />
         </div>
-        <div class="col-9">
+        <div class="col-9 col-lg-8 col-md-12">
           <product-list/>
         </div>
       </div>
