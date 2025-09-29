@@ -1,11 +1,10 @@
 <script setup>
-import { useRouter,useRoute } from 'vue-router'
+import {useRoute } from 'vue-router'
 import { useCategory } from '@/composables/useCategory'
 import { useProduct } from '@/composables/useProduct'
 
 const { categories } = useCategory()
 const { countProduct, countProductByCategory } = useProduct()
-const router = useRouter()
 const route = useRoute()
 
 console.log(route.params.categorySlug);
@@ -17,19 +16,13 @@ const getImage = (categories) => {
   return imagePath
 }
 
-const selectCategory = (categorySlug) => {
-  router.push({
-    name: 'product',
-    params: { categorySlug } // cập nhật slug trong URL
-  })
-}
 </script>
 
 <template>
   <div class="CategoryFilter">
     <h2 class="CategoryFilter__heading">Category</h2>
     <div class="CategoryFilter__list">
-      <button class="CategoryFilter-item" :class="{active: !route.params.categorySlug }" @click="selectCategory(null)">
+      <router-link class="CategoryFilter-item" :class="{active: !route.params.categorySlug }" :to="{name: 'product'}">
         <div class="CategoryFilter-item__content">
           <img
             src="@/assets/images/category/category-all.png"
@@ -39,15 +32,15 @@ const selectCategory = (categorySlug) => {
           <h3 class="CategoryFilter-item__title">All</h3>
         </div>
         <span class="CategoryFilter-item__number">{{ countProduct }}</span>
-      </button>
+      </router-link>
 
-      <button v-for="category in categories" :key="category.id" class="CategoryFilter-item" :class="{active: route.params.categorySlug === category.slug  }" @click="selectCategory(category.slug)">
+      <router-link v-for="category in categories" :key="category.id" :to="{ name: 'product', params: { categorySlug: category.slug } }" class="CategoryFilter-item" :class="{active: route.params.categorySlug === category.slug }">
         <div class="CategoryFilter-item__content">
           <img :src="getImage(category)" alt="" class="CategoryFilter-item__img" />
           <h3 class="CategoryFilter-item__title">{{ category.name }}</h3>
         </div>
         <span class="CategoryFilter-item__number">{{ countProductByCategory(category.id) }}</span>
-      </button>
+      </router-link>
     </div>
   </div>
 </template>
