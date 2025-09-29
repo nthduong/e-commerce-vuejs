@@ -55,7 +55,7 @@ const getImage = (categories) => {
   border-radius: 20px;
 
   &__heading {
-    font-size: 2.6rem;
+    font-size: 2.2rem;
     font-weight: 600;
   }
 

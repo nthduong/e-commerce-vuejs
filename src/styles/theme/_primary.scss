@@ -18,4 +18,9 @@
     --color-border: #ccc;
     --color-bg-item: #fff;
     --color-icon: brightness(0) saturate(100%) invert(21%) sepia(22%) saturate(4816%) hue-rotate(337deg) brightness(100%) contrast(96%);
+
+    /* ===== Element Plus  ===== */
+    --el-color-primary: var(--color-button-bg) !important;
+    --el-border-radius-base: 99px !important;
+    --el-popover-border-radius: 14px !important
 }
