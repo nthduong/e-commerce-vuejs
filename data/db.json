@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Seafood Pizza",
       "slug": "seafood-pizza",
       "category": "pizza",
@@ -15,7 +15,7 @@
       "viewCount": 0
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Beef Pizza",
       "slug": "beef-pizza",
       "category": "pizza",
@@ -29,7 +29,7 @@
       "viewCount": 0
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Lemon Cream Pizza",
       "slug": "lemon-cream-pizza",
       "category": "pizza",
@@ -43,7 +43,7 @@
       "viewCount": 0
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Bacon Pizza",
       "slug": "bacon-pizza",
       "category": "pizza",
@@ -57,7 +57,7 @@
       "viewCount": 0
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Cheese Pizza",
       "slug": "cheese-pizza",
       "category": "pizza",
@@ -71,7 +71,7 @@
       "viewCount": 0
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Sausage Pizza",
       "slug": "sausage-pizza",
       "category": "pizza",
@@ -85,7 +85,7 @@
       "viewCount": 0
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Veggie Pizza",
       "slug": "veggie-pizza",
       "category": "pizza",
@@ -99,7 +99,7 @@
       "viewCount": 0
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Mixed Pizza",
       "slug": "mixed-pizza",
       "category": "pizza",
@@ -113,7 +113,7 @@
       "viewCount": 0
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Pineapple Pizza",
       "slug": "pineapple-pizza",
       "category": "pizza",
@@ -127,7 +127,7 @@
       "viewCount": 0
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Pepsi",
       "slug": "pepsi",
       "category": "drink",
@@ -141,7 +141,7 @@
       "viewCount": 0
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Pepsi Raspberry",
       "slug": "pepsi-raspberry",
       "category": "drink",
@@ -155,7 +155,7 @@
       "viewCount": 0
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "7UP",
       "slug": "7up",
       "category": "drink",
@@ -169,7 +169,7 @@
       "viewCount": 0
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Aquafina 500ml",
       "slug": "aquafina-500ml",
       "category": "drink",
@@ -183,7 +183,7 @@
       "viewCount": 0
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Pepsi Zero Calorie",
       "slug": "pepsi-zero-calorie",
       "category": "drink",
@@ -197,7 +197,7 @@
       "viewCount": 0
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Lipton",
       "slug": "lipton",
       "category": "drink",
@@ -211,7 +211,7 @@
       "viewCount": 0
     },
     {
-      "id": 16,
+      "id": "16",
       "name": "Pepsi Zero (Original)",
       "slug": "pepsi-zero-original",
       "category": "drink",
@@ -229,7 +229,7 @@
 
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Pizza",
       "slug": "pizza",
       "description": "Explore a variety of pizzas, from classic to premium flavors.",
@@ -237,7 +237,7 @@
       "isActive": true
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Drink",
       "slug": "drink",
       "description": "Complete your meal with tasty sides and refreshing drinks.",
@@ -245,7 +245,7 @@
       "isActive": true
     },
    {
-    "id": 3,
+    "id": "3",
     "name": "Salad",
     "slug": "salad",
     "description": "Fresh and healthy salads to perfectly complement your pizza.",
