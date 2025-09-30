@@ -11,12 +11,40 @@ const route = useRoute()
 watch(
   () => [route.params.categorySlug, route.query],
   () => {
-    fetchProductList({
-      category: route.params.categorySlug,
-    });
+    const params = {}
+
+    // Category param
+    if (route.params.categorySlug) {
+      params.category = route.params.categorySlug
+    }
+
+    // Sort query
+    if (route.query.sort) {
+      // Map query sort sang _sort + _order cho json-server
+      switch(route.query.sort) {
+        case "featured":
+          params._sort = "isFeatured"
+          params._order = "desc"
+          break
+        case "new":
+          params._sort = "isNew"
+          params._order = "desc"
+          break
+        case "price_asc":
+          params._sort = "price"
+          params._order = "asc"
+          break
+        case "price_desc":
+          params._sort = "price"
+          params._order = "desc"
+          break
+      }
+    }
+
+    fetchProductList(params)
   },
-  { immediate: true }
-);
+  { immediate: true, deep: true }
+)
 
 </script>
 
