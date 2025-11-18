@@ -8,6 +8,7 @@ import { capitalizeFirstLetter } from '@/utils/string'
 const route = useRoute()
 const router = useRouter()
 const category = ref(null)
+const sortBy = ref(route.query.sort || 'featured')
 
 watch(
   () => route.params.categorySlug,
@@ -17,7 +18,14 @@ watch(
   { immediate: true },
 )
 
-const sortBy = ref(route.query.sort || 'featured')
+watch(
+  () => route.query.sort,
+  (newSort) => {
+    sortBy.value = newSort
+  },
+  { immediate: true },
+)
+
 
 watch(sortBy, (newVal) => {
   router.replace({
@@ -42,11 +50,11 @@ watch(sortBy, (newVal) => {
             <div class="product__select">
               <p class="product__text">Sort by:</p>
               <div class="select-wrapper">
-                <el-select v-model="sortBy" placeholder="Sắp xếp sản phẩm" style="width: 180px">
+                <el-select v-model="sortBy" placeholder="Sort products" style="width: 180px">
                   <el-option label="Featured Products" value="featured"></el-option>
                   <el-option label="New Products" value="new"></el-option>
-                  <el-option label="High Price" value="price_asc"></el-option>
-                  <!-- <el-option label="Low Price" value="price_desc"></el-option> -->
+                  <!-- <el-option label="High Price" value="price_asc"></el-option> -->
+                  <el-option label="Low Price" value="price_desc"></el-option>
                 </el-select>
               </div>
             </div>
@@ -63,6 +71,9 @@ watch(sortBy, (newVal) => {
 
 .product {
   padding: 80px 0;
+  @include abstracts.screen(sm) {
+     padding: 50px 0;
+  }
 
   &__top {
     margin-top: 5px;

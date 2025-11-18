@@ -23,7 +23,7 @@ const getImage = (categories) => {
         <div class="row row-cols-3 row-cols-lg-1 categories__list">
           <div class="col" v-for="category in categories" :key="category.id">
             <router-link
-              :to="{ name: 'product', params: { categorySlug: category.slug } }"
+              :to="{ name: 'product-category', params: { categorySlug: category.slug } }"
               class="categories__item"
             >
               <figure class="categories__img-wrap">

@@ -26,6 +26,13 @@ import AuthButton from '@/components/auth/AuthButton.vue'
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include abstracts.screen(lg) {
+      height: 80px;
+  }
+  @include abstracts.screen(sm) {
+      height: 70px;
+  }
   &__inner {
     display: flex;
     align-items: center;
