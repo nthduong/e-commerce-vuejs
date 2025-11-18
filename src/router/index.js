@@ -16,15 +16,31 @@ const router = createRouter({
       meta: {
         layout: DEFAULT_LAYOUT,
       },
-      component: () => import('../pages/AboutView.vue'),
+      component: () => import('@/pages/AboutView.vue'),
     },
     {
-      path: '/product/:categorySlug?',
+      path: '/product',
       name: 'product',
       meta: {
         layout: DEFAULT_LAYOUT,
       },
-      component: () => import('../pages/ProductView.vue'),
+      component: () => import('@/pages/ProductView.vue'),
+    },
+    {
+      path: '/product/:categorySlug',
+      name: 'product-category',
+      meta: {
+        layout: DEFAULT_LAYOUT,
+      },
+      component: () => import('@/pages/ProductView.vue'),
+    },
+    {
+      path: '/product/:categorySlug/:productSlug',
+      name: 'product-detail',
+      meta: {
+        layout: DEFAULT_LAYOUT,
+      },
+      component: () => import('@/pages/ProductDetailView.vue'),
     },
     {
       path: '/contact',
@@ -32,7 +48,7 @@ const router = createRouter({
       meta: {
         layout: DEFAULT_LAYOUT,
       },
-      component: () => import('../pages/ContactView.vue'),
+      component: () => import('@/pages/ContactView.vue'),
     },
   ],
 })

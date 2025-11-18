@@ -7,9 +7,6 @@ const { categories } = useCategory()
 const { countProduct, countProductByCategory } = useProduct()
 const route = useRoute()
 
-console.log(route.params.categorySlug);
-console.dir(route.query);
-
 const getImage = (categories) => {
   const imageName = categories.image?.replace('/images/category/', '') || 'placeholder.png'
   const imagePath = `/src/assets/images/category/${imageName}`
@@ -34,7 +31,7 @@ const getImage = (categories) => {
         <span class="CategoryFilter-item__number">{{ countProduct }}</span>
       </router-link>
 
-      <router-link v-for="category in categories" :key="category.id" :to="{ name: 'product', params: { categorySlug: category.slug } }" class="CategoryFilter-item" :class="{active: route.params.categorySlug === category.slug }">
+      <router-link v-for="category in categories" :key="category.id" :to="{ name: 'product-category', params: { categorySlug: category.slug } }" class="CategoryFilter-item" :class="{active: route.params.categorySlug === category.slug }">
         <div class="CategoryFilter-item__content">
           <img :src="getImage(category)" alt="" class="CategoryFilter-item__img" />
           <h3 class="CategoryFilter-item__title">{{ category.name }}</h3>
