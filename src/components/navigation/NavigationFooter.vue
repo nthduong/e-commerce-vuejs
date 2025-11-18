@@ -1,6 +1,5 @@
 <script setup>
 import LogoMain from '@/components/common/LogoMain.vue'
-
 </script>
 
 <template>

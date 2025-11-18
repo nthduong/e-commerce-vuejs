@@ -7,20 +7,16 @@ import { watch } from 'vue';
 const { productList,fetchProductList} = useProduct()
 const route = useRoute()
 
-// Theo dõi cả params + query
 watch(
   () => [route.params.categorySlug, route.query],
   () => {
     const params = {}
 
-    // Category param
     if (route.params.categorySlug) {
       params.category = route.params.categorySlug
     }
 
-    // Sort query
     if (route.query.sort) {
-      // Map query sort sang _sort + _order cho json-server
       switch(route.query.sort) {
         case "featured":
           params._sort = "isFeatured"

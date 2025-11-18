@@ -46,7 +46,7 @@ watch(sortBy, (newVal) => {
                   <el-option label="Featured Products" value="featured"></el-option>
                   <el-option label="New Products" value="new"></el-option>
                   <el-option label="High Price" value="price_asc"></el-option>
-                  <el-option label="Low Price" value="price_desc"></el-option>
+                  <!-- <el-option label="Low Price" value="price_desc"></el-option> -->
                 </el-select>
               </div>
             </div>

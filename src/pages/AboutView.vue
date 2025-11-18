@@ -3,8 +3,6 @@ import AboutSection from '@/components/sections/About/AboutSection.vue'
 import StatsSection from '@/components/sections/About/StatsSection.vue'
 import FeaturesSection from '@/components/sections/About/FeaturesSection.vue'
 import SubscribeSection from '@/components/sections/About/SubscribeSection.vue'
-
-
 </script>
 
 <template>

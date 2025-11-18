@@ -42,7 +42,7 @@ defineProps({
   box-shadow: 0px 13px 26px -8px rgba(0, 0, 0, 0.06);
 
   &::placeholder {
-    line-height: 175%; /* 175% */
+    line-height: 175%;
   }
 
   &__icon {

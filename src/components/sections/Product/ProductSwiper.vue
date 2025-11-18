@@ -2,7 +2,6 @@
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 
-// Swiper CSS
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
@@ -22,8 +21,8 @@ const swiperBreakpoints = {
 }
 
 const navigationOptions = {
-  nextEl: `.${props.current} .next`, // selector nút next
-  prevEl: `.${props.current} .prev`, // selector nút prev
+  nextEl: `.${props.current} .next`,
+  prevEl: `.${props.current} .prev`,
 }
 
 const onSwiper = (swiper) => {

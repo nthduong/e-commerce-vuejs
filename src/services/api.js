@@ -7,14 +7,12 @@ const api = axios.create({
   timeout: 5000,
 })
 
-// Optional: interceptors
 api.interceptors.response.use(
   (response) => response,
   (error) => {
     const status = error.response?.status
     if (status === 401) {
       console.warn('Unauthorized! Redirecting to login...')
-      // redirect logic
     }
     if (status >= 500) {
       console.error('Server error:', error)

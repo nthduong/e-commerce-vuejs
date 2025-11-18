@@ -30,6 +30,10 @@ import AuthButton from '@/components/auth/AuthButton.vue'
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: #fff;
+    border-radius: 999px;
+    padding: 10px 14px;
+    box-shadow: var(--box-shadow);
 
     @include abstracts.screen(lg) {
       background: initial;
@@ -37,10 +41,6 @@ import AuthButton from '@/components/auth/AuthButton.vue'
       padding: initial;
       box-shadow: initial;
     }
-    background: #fff;
-    border-radius: 999px;
-    padding: 10px 14px;
-    box-shadow: var(--box-shadow);
   }
 }
 </style>

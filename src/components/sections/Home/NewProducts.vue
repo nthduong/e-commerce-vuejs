@@ -2,13 +2,9 @@
 import ProductSwiper from '@/components/sections/Product/ProductSwiper.vue'
 import ProductItem from '@/components/sections/Product/ProductItem.vue'
 
-// Components
-
-// Composable
 import { useProduct } from '@/composables/useProduct'
 const { NewProducts } = useProduct()
 
-// Swiper refs
 </script>
 
 <template>

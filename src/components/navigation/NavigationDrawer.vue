@@ -3,7 +3,6 @@ import { NAV_ITEMS } from '@/config/navbar.config'
 import { ref } from 'vue'
 import LogoMain from '@/components/common/LogoMain.vue'
 
-
 const isShow = ref(false)
 
 const ToggleSidebar = () => {
