@@ -1,13 +1,12 @@
 <script setup>
 import { onMounted, computed } from 'vue'
-import { useRoute } from 'vue-router'
 import { useProduct } from '@/composables/useProduct'
 
-const route = useRoute()
+const props = defineProps(['productSlug'])
 const { productDetail, fetchDetail} = useProduct()
 
 onMounted(() => {
-  fetchDetail(route.params.productSlug)
+  fetchDetail(props.productSlug)
 })
 
 const productName = computed(() => productDetail.value?.name || '')

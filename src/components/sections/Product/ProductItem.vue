@@ -23,7 +23,7 @@ const getProductImage = (product) => {
       <p class="product-item__desc line-clamp line-2">{{ product.description }}</p>
       <div class="product-item__bottom">
         <div class="product-item__price">${{ product.price }}</div>
-        <button class="product-item__button">
+        <button class="product-item__button" @click="$emit('view-detail', product.slug)">
           <img class="product-item__icon" src="@/assets/icons/plus.svg" alt="" />
         </button>
       </div>

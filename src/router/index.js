@@ -34,7 +34,6 @@ const router = createRouter({
         layout: DEFAULT_LAYOUT,
       },
       component: () => import('@/pages/ProductView.vue'),
-      props: true,
     },
     {
       path: '/product',
