@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { DEFAULT_LAYOUT } from "@/constants/layouts";
+import { DEFAULT_LAYOUT } from '@/constants/layouts'
 import HomeView from '../pages/HomeView.vue'
 
 const router = createRouter({
@@ -19,12 +19,13 @@ const router = createRouter({
       component: () => import('@/pages/AboutView.vue'),
     },
     {
-      path: '/product',
-      name: 'product',
+      path: '/product/:categorySlug/:productSlug',
+      name: 'product-detail',
       meta: {
         layout: DEFAULT_LAYOUT,
       },
-      component: () => import('@/pages/ProductView.vue'),
+      component: () => import('@/pages/ProductDetailView.vue'),
+      props: true,
     },
     {
       path: '/product/:categorySlug',
@@ -33,14 +34,15 @@ const router = createRouter({
         layout: DEFAULT_LAYOUT,
       },
       component: () => import('@/pages/ProductView.vue'),
+      props: true,
     },
     {
-      path: '/product/:categorySlug/:productSlug',
-      name: 'product-detail',
+      path: '/product',
+      name: 'product',
       meta: {
         layout: DEFAULT_LAYOUT,
       },
-      component: () => import('@/pages/ProductDetailView.vue'),
+      component: () => import('@/pages/ProductView.vue'),
     },
     {
       path: '/contact',

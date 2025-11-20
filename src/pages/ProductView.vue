@@ -1,39 +1,59 @@
 <script setup>
-import { useRoute,useRouter } from 'vue-router'
 import { ref, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import ProductSideBar from '@/components/sections/Product/ProductSideBar.vue'
-import ProductList from '@/components/sections/Product/ProductList.vue'
+import ProductListComponent  from '@/components/sections/Product/ProductList.vue'
+import { useProduct } from '@/composables/useProduct'
 import { capitalizeFirstLetter } from '@/utils/string'
 
 const route = useRoute()
 const router = useRouter()
+const { productList, fetchProductList } = useProduct()
+
 const category = ref(null)
 const sortBy = ref(route.query.sort || 'featured')
 
 watch(
   () => route.params.categorySlug,
-  (newSlug) => {
-    category.value = capitalizeFirstLetter(newSlug)
+  (slug) => {
+    category.value = slug ? capitalizeFirstLetter(slug) : null
   },
   { immediate: true },
 )
+
+const buildParams = () => {
+  const params = {}
+  if (route.params.categorySlug) params.category = route.params.categorySlug
+
+  switch (sortBy.value) {
+    case 'featured':
+      params._sort = 'isFeatured'
+      params._order = 'desc'
+      break
+    case 'new':
+      params._sort = 'isNew'
+      params._order = 'desc'
+      break
+    // case 'price_asc':
+    //   params._sort = 'price'
+    //   params._order = 'asc'
+    //   break
+    case 'price_desc':
+      params._sort = 'price'
+      params._order = 'desc'
+      break
+  }
+  return params
+}
 
 watch(
-  () => route.query.sort,
-  (newSort) => {
-    sortBy.value = newSort
-  },
-  { immediate: true },
+  () => [route.params.categorySlug, sortBy.value],
+  () => fetchProductList(buildParams()),
+  { immediate: true }
 )
 
-
-watch(sortBy, (newVal) => {
-  router.replace({
-    query: {
-      ...route.query,
-      sort: newVal || undefined, 
-    }
-  })
+watch(sortBy, (value) => {
+  router.replace({ query: { ...route.query, sort: value } })
 })
 </script>
 
@@ -59,7 +79,7 @@ watch(sortBy, (newVal) => {
               </div>
             </div>
           </div>
-          <product-list />
+          <product-list-component :products="productList" @view-detail="goToDetail" />
         </div>
       </div>
     </div>
@@ -72,7 +92,7 @@ watch(sortBy, (newVal) => {
 .product {
   padding: 80px 0;
   @include abstracts.screen(sm) {
-     padding: 50px 0;
+    padding: 50px 0;
   }
 
   &__top {

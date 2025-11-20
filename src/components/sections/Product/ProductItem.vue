@@ -15,7 +15,7 @@ const getProductImage = (product) => {
 
 <template>
   <article class="product-item">
-    <figure class="product-item__img-wrap">
+    <figure class="product-item__img-wrap" @click="$emit('view-detail', product.slug)">
       <img class="product-item__img" :src="getProductImage(product)" alt="pizza Image" />
     </figure>
     <div class="product-item__content">
