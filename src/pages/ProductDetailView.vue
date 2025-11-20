@@ -1,4 +1,23 @@
-<script setup></script>
+<script setup>
+import { onMounted, computed } from 'vue'
+import { useRoute } from 'vue-router'
+import { useProduct } from '@/composables/useProduct'
+
+const route = useRoute()
+const { productDetail, fetchDetail} = useProduct()
+
+onMounted(() => {
+  fetchDetail(route.params.productSlug)
+})
+
+const productName = computed(() => productDetail.value?.name || '')
+const productDescription = computed(() => productDetail.value?.description || '')
+const productPrice = computed(() => productDetail.value?.price || '')
+const productImage = computed(() => productDetail.value?.image || '/src/assets/images/products/placeholder.png')
+console.log(productImage.value);
+
+
+</script>
 
 <template>
   <div class="product-detail">
@@ -7,21 +26,17 @@
         <div class="col-5">
           <div class="product-detail_preview">
             <figure class="product-detail__image-wrap">
-              <img
-                class="product-detail__image"
-                src="../assets/images/products/pizza/pizza-15.png"
-                alt=""
-              />
+              <img class="product-detail__image" :src="`/src/assets/${productImage}`" alt="" />
             </figure>
           </div>
         </div>
         <div class="col-7">
           <div class="product-detail__content">
-            <h1 class="product-detail__heading">Seafood Pizza</h1>
+            <h1 class="product-detail__heading">{{ productName }}</h1>
             <p class="product-detail__desc">
-              Explore a variety of pizzas, from classic to premium flavors.
+              {{ productDescription }}
             </p>
-            <span class="product-detail__price">$5000</span>
+            <span class="product-detail__price">${{ productPrice }}</span>
             <div class="product-detail__cta-wrap">
               
               <button class="btn product-detail__cta">Add to card</button>

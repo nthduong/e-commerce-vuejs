@@ -6,6 +6,7 @@ export const useProductStore = defineStore('product', () => {
   // 1. STATE
   const products = ref([])
   const productList = ref([])
+  const productDetail = ref(null)
   const loading = ref(false)
   const error = ref(null)
 
@@ -28,7 +29,6 @@ export const useProductStore = defineStore('product', () => {
     error.value = null
     try {
       products.value = await productService.getAll(params)
-      
     } catch (err) {
       error.value = err
     } finally {
@@ -47,16 +47,31 @@ export const useProductStore = defineStore('product', () => {
     }
   }
 
+  const fetchDetail = async (slug) => {
+    loading.value = true
+    error.value = null
+    try {
+      productDetail.value = await productService.getBySlug(slug)
+    } catch (err) {
+      productDetail.value = null
+      error.value = err
+    } finally {
+      loading.value = false
+    }
+  }
+
   return {
     products,
     productList,
+    productDetail,
     loading,
     error,
     countProduct,
     countProductByCategory,
     featuredProducts,
-    fetchProductList,
     NewProducts,
+    fetchProductList,
+    fetchDetail,
     fetchProducts,
   }
 })

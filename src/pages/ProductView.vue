@@ -2,7 +2,7 @@
 import { ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import ProductSideBar from '@/components/sections/Product/ProductSideBar.vue'
-import ProductListComponent  from '@/components/sections/Product/ProductList.vue'
+import ProductListComponent from '@/components/sections/Product/ProductList.vue'
 import { useProduct } from '@/composables/useProduct'
 import { capitalizeFirstLetter } from '@/utils/string'
 
@@ -49,12 +49,20 @@ const buildParams = () => {
 watch(
   () => [route.params.categorySlug, sortBy.value],
   () => fetchProductList(buildParams()),
-  { immediate: true }
+  { immediate: true },
 )
 
 watch(sortBy, (value) => {
   router.replace({ query: { ...route.query, sort: value } })
 })
+
+const routerPush = useRouter()
+const goToDetail = (slug) => {
+  routerPush.push({
+    name: 'product-detail' ,
+    params: { categorySlug: route.params.categorySlug || 'all', productSlug: slug },
+  })
+}
 </script>
 
 <template>
