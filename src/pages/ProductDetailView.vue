@@ -14,9 +14,6 @@ const productName = computed(() => productDetail.value?.name || '')
 const productDescription = computed(() => productDetail.value?.description || '')
 const productPrice = computed(() => productDetail.value?.price || '')
 const productImage = computed(() => productDetail.value?.image || '/src/assets/images/products/placeholder.png')
-console.log(productImage.value);
-
-
 </script>
 
 <template>

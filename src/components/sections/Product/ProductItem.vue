@@ -48,6 +48,7 @@ const getProductImage = (product) => {
     width: 100%;
     padding-top: 80%;
     flex-shrink: 0;
+    cursor: pointer;
   }
   &__img {
     position: absolute;

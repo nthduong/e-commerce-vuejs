@@ -56,10 +56,9 @@ watch(sortBy, (value) => {
   router.replace({ query: { ...route.query, sort: value } })
 })
 
-const routerPush = useRouter()
 const goToDetail = (slug) => {
-  routerPush.push({
-    name: 'product-detail' ,
+  router.push({
+    name: 'product-detail',
     params: { categorySlug: route.params.categorySlug || 'all', productSlug: slug },
   })
 }
