@@ -8,7 +8,7 @@
 
   &__content {
     display: flex;
-    width: 350px;
+    width: 400px;
     margin: 0 15px;
     flex-direction: column;
     align-items: center;
@@ -37,11 +37,10 @@
     color: var(--color-text-desc);
   }
 
-  
   &__separation-wrap {
     position: relative;
     width: 100%;
-  text-align: center; 
+    text-align: center;
   }
 
   &__separation {
@@ -49,7 +48,7 @@
     margin: 20px 0;
     text-align: center;
     position: relative;
-    background-color: #fff;  
+    background-color: #fff;
     z-index: 2;
     padding: 0 10px;
   }
@@ -81,7 +80,7 @@
     border-radius: 10px;
     border: 1px solid var(--auth-border);
     box-shadow: var(--auth-box-shadow);
-    gap: 10px;
+    gap: 5px;
     font-size: 1.4rem;
     font-weight: 500;
   }
@@ -91,6 +90,10 @@
     display: flex;
     flex-direction: column;
     gap: 14px;
+  }
+
+  &__oauth-img {
+    width: 18px;
   }
 
   &__form-submit {
@@ -105,6 +108,15 @@
 
     &:hover {
       opacity: 0.9;
+    }
+  }
+
+  &__bottom {
+    margin-top: 25px;
+    font-size: 1.4rem;
+
+    & a {
+      text-decoration: underline;
     }
   }
 }

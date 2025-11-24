@@ -14,6 +14,7 @@
   display: flex;
   align-items: center;
   text-decoration: none;
+  padding-right: 12px;
   &__text {
     font-weight: 700;
     font-size: 24px;

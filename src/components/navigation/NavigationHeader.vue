@@ -20,34 +20,4 @@ import AuthButton from '@/components/auth/AuthButton.vue'
 
 <style lang="scss" scoped>
 @use '@/styles/abstracts';
-.header {
-  background: var(--color-bg-primary);
-  height: 108px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  @include abstracts.screen(lg) {
-      height: 80px;
-  }
-  @include abstracts.screen(sm) {
-      height: 70px;
-  }
-  &__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #fff;
-    border-radius: 999px;
-    padding: 10px 14px;
-    box-shadow: var(--box-shadow);
-
-    @include abstracts.screen(lg) {
-      background: initial;
-      border-radius: initial;
-      padding: initial;
-      box-shadow: initial;
-    }
-  }
-}
 </style>
