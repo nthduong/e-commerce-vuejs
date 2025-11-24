@@ -11,21 +11,24 @@
       <form class="auth__form" action="">
         <div class="form__group">
           <label class="form__label" for="login-email">Email</label>
-          <input type="email" id="login-email" class="form__text-input" placeholder="email" />
+          <input type="email" id="login-email" class="form__input" placeholder="email" />
         </div>
         <div class="form__group">
           <label class="form__label" for="login-password">Password</label>
           <input
             type="password"
             id="login-password"
-            class="form__text-input"
+            class="form__input"
             placeholder="password"
           />
         </div>
         <div class="form__group">
           <button class="auth__form-submit">Login</button>
         </div>
-        <span class="auth__separation">Or continue with</span>
+        <div class="auth__separation-wrap">
+          <span class="auth__line"></span>
+          <span class="auth__separation">Or continue with</span>
+        </div>
 
         <div class="auth__oauth">
           <button class="auth__btn-oauth disable">

@@ -8,10 +8,10 @@
     gap: 10px;
   }
 
-  &__text-input {
+  &__input {
     height: 40px;
     border-radius: 10px;
-      width: 100%;
+    width: 100%;
     border: 1px solid var(--auth-border);
     box-shadow: var(--auth-box-shadow);
     display: flex;
@@ -19,13 +19,8 @@
     padding: 0 12px;
   }
 
-  &__input {
-    flex: 1;
-    height: 100%;
-    width: 100%;
-    font-size: 1.6rem;
-    font-weight: 500;
-    line-height: 144.444%;
+  &__input:focus {
+    box-shadow: 0 0 0 3px var(--auth-border);
   }
 
   &__label {
