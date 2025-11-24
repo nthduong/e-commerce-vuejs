@@ -102,7 +102,7 @@ const ToggleCategory = () => {
             :products="productList"
             @view-detail="goToDetail"
           />
-          <div v-else class="empty-message">Không có sản phẩm</div>
+          <div v-else class="empty-message">No products available</div>
         </div>
       </div>
     </div>

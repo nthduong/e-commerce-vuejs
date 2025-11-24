@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { DEFAULT_LAYOUT } from '@/constants/layouts'
+import { DEFAULT_LAYOUT, AUTH_LAYOUT } from '@/constants/layouts'
 import HomeView from '../pages/HomeView.vue'
 
 const router = createRouter({
@@ -50,6 +50,22 @@ const router = createRouter({
         layout: DEFAULT_LAYOUT,
       },
       component: () => import('@/pages/ContactView.vue'),
+    },
+    {
+      path: '/login',
+      name: 'login',
+      meta: {
+        layout: AUTH_LAYOUT,
+      },
+      component: () => import('@/pages/LoginView.vue'),
+    },
+    {
+      path: '/register',
+      name: 'register',
+      meta: {
+        layout: AUTH_LAYOUT,
+      },
+      component: () => import('@/pages/RegisterView.vue'),
     },
   ],
   scrollBehavior(to, from, savedPosition) {

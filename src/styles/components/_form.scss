@@ -1,0 +1,35 @@
+.form {
+  &__group {
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__text-input {
+    height: 40px;
+    border-radius: 10px;
+      width: 100%;
+    border: 1px solid var(--auth-border);
+    box-shadow: var(--auth-box-shadow);
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+  }
+
+  &__input {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 144.444%;
+  }
+
+  &__label {
+    font-size: 14px;
+    font-weight: 500;
+  }
+}

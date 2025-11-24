@@ -1,26 +1,32 @@
 :root {
-    /* ===== Color background ===== */
-    --color-bg-primary: #F8F2DE;
-    --color-bg-secondary: #fcfbf8;
-    --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  /* ===== Color background ===== */
+  --color-bg-primary: #f8f2de;
+  --color-bg-secondary: #fcfbf8;
+  --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 
-    /* ===== Color text ===== */
-    --color-text-heading: #191720;
-    --color-text-desc: #575363;
+  /* ===== Color text ===== */
+  --color-text-heading: #191720;
+  --color-text-desc: #575363;
 
-    /* ===== Button ===== */
-    --color-button-bg: #952323;
-    --color-button-text: #fff;
-    --color-button-hover: #A73121;
-    --box-shadow-button: 0px 13px 26px -8px rgba(149, 35, 35, 0.42);
+  /* ===== Button ===== */
+  --color-button-bg: #952323;
+  --color-button-text: #fff;
+  --color-button-hover: #a73121;
+  --box-shadow-button: 0px 13px 26px -8px rgba(149, 35, 35, 0.42);
 
-    /* ===== Item ===== */
-    --color-border: #ccc;
-    --color-bg-item: #fff;
-    --color-icon: brightness(0) saturate(100%) invert(21%) sepia(22%) saturate(4816%) hue-rotate(337deg) brightness(100%) contrast(96%);
+  /* ===== Item ===== */
+  --color-border: #ccc;
+  --color-bg-item: #fff;
+  --color-icon: brightness(0) saturate(100%) invert(21%) sepia(22%) saturate(4816%)
+    hue-rotate(337deg) brightness(100%) contrast(96%);
 
-    /* ===== Element Plus  ===== */
-    --el-color-primary: var(--color-button-bg) !important;
-    --el-border-radius-base: 99px !important;
-    --el-popover-border-radius: 14px !important
+  /* ===== Auth ===== */
+  --auth-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0px 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --auth-border: rgb(235, 235, 235);
+
+  /* ===== Element Plus  ===== */
+  --el-color-primary: var(--color-button-bg) !important;
+  --el-border-radius-base: 99px !important;
+  --el-popover-border-radius: 14px !important
+;
 }

@@ -82,3 +82,9 @@ input:-webkit-autofill {
     font-weight: 500;
     margin-top: 30px;
 }
+
+.disable {
+    pointer-events: none;
+    opacity: 0.5;
+    user-select: none;
+}
