@@ -29,7 +29,7 @@ const { handleSubmit, submitCount } = useForm({
   validationSchema: schema,
 })
 
-const { value: name, errorMessage: nameError  } = useField('name')
+const { value: userName, errorMessage: nameError  } = useField('name')
 const { value: email, errorMessage: emailError } = useField('email')
 const { value: password, errorMessage: passwordError } = useField('password')
 const { value: confirmPassword, errorMessage: confirmPasswordError} = useField('confirmPassword')
@@ -57,9 +57,9 @@ const onSubmit = handleSubmit(async (values) => {
 
       <form class="auth__form" @submit.prevent="onSubmit">
         <div class="form__group">
-          <label class="form__label" for="register-email">Username</label>
+          <label class="form__label" for="register-name">Username</label>
           <input
-            v-model="name"
+            v-model="userName"
             type="text"
             id="register-name"
             class="form__input"
