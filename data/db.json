@@ -1,4 +1,7 @@
 {
+  "users": [
+  
+  ],
   "products": [
     {
       "id": "1",
@@ -224,9 +227,7 @@
       "isNew": false,
       "viewCount": 0
     }
-
   ],
-
   "categories": [
     {
       "id": "1",
@@ -244,13 +245,13 @@
       "image": "/images/category/category-2.png",
       "isActive": true
     },
-   {
-    "id": "3",
-    "name": "Salad",
-    "slug": "salad",
-    "description": "Fresh and healthy salads to perfectly complement your pizza.",
-    "image": "/images/category/category-3.png",
-    "isActive": true
-  }
+    {
+      "id": "3",
+      "name": "Salad",
+      "slug": "salad",
+      "description": "Fresh and healthy salads to perfectly complement your pizza.",
+      "image": "/images/category/category-3.png",
+      "isActive": true
+    }
   ]
 }
