@@ -3,7 +3,8 @@ import api from './api'
 export const registerUser = async (payload) => {
   try {
     const response = await api.post('/users', payload)
-    return response.data
+    const user = response.data
+    return { success: true, user: user }
   } catch (error) {
     console.error('Failed to register user:', error)
     throw error
@@ -12,9 +13,15 @@ export const registerUser = async (payload) => {
 
 export const loginUser = async ({ email, password }) => {
   try {
-    const response = await api.get(`/users?email=${email}&password=${password}`)
-    if (response.data.length) return response.data[0]
-    throw new Error('Invalid email or password')
+    const response = await api.get('/users')
+    const users = response.data
+    const user = users.find((u) => u.email === email && u.password === password)
+
+    if (!user) {
+      return { success: false, message: 'Incorrect email or password' }
+    }
+
+    return { success: true, user }
   } catch (error) {
     console.error('Failed to login user:', error)
     throw error

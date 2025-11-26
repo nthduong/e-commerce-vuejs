@@ -11,11 +11,17 @@ export const useAuthStore = defineStore('auth', () => {
     loading.value = true
     error.value = null
     try {
-      const data = await registerUser(payload)
-      user.value = data
-      return data
+      const res = await registerUser(payload)
+      if (res.success) {
+        user.value = res.user
+        return { success: true, user: res.user }
+      } else {
+        error.value = res.message
+        return { success: false, message: res.message }
+      }
     } catch (err) {
       error.value = err.message
+      return { success: false, message: err.message }
     } finally {
       loading.value = false
     }
@@ -24,11 +30,16 @@ export const useAuthStore = defineStore('auth', () => {
     loading.value = true
     error.value = null
     try {
-      const data = await loginUser(payload)
-      user.value = data
-      return data
+      const res = await loginUser(payload)
+      if (res.success) {
+        user.value = res.user
+        return { success: true, user: res.user }
+      } else {
+        return { success: false }
+      }
     } catch (err) {
       error.value = err.message
+      return { success: false, message: err.message }
     } finally {
       loading.value = false
     }

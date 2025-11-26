@@ -29,17 +29,20 @@ const { handleSubmit, submitCount } = useForm({
   validationSchema: schema,
 })
 
-const { value: userName, errorMessage: nameError  } = useField('name')
+const { value: userName, errorMessage: nameError } = useField('name')
 const { value: email, errorMessage: emailError } = useField('email')
 const { value: password, errorMessage: passwordError } = useField('password')
-const { value: confirmPassword, errorMessage: confirmPasswordError} = useField('confirmPassword')
-
-
+const { value: confirmPassword, errorMessage: confirmPasswordError } = useField('confirmPassword')
 
 const onSubmit = handleSubmit(async (values) => {
-  const res = await register(values)
-  if (res) {
-    router.push({ name: 'login' })
+  try {
+    const res = await register(values)
+
+    if (res.success) {
+      router.push({ name: 'login' })
+    }
+  } catch (error) {
+    console.log(error)
   }
 })
 </script>
@@ -63,7 +66,7 @@ const onSubmit = handleSubmit(async (values) => {
             type="text"
             id="register-name"
             class="form__input"
-            :class="{ 'input-error': submitCount > 0 && nameError}"
+            :class="{ 'input-error': submitCount > 0 && nameError }"
             placeholder="name"
           />
           <span v-if="submitCount > 0 && nameError" class="error-text">{{ nameError }}</span>
@@ -75,7 +78,7 @@ const onSubmit = handleSubmit(async (values) => {
             type="text"
             id="register-email"
             class="form__input"
-            :class="{ 'input-error': submitCount > 0 && emailError}"
+            :class="{ 'input-error': submitCount > 0 && emailError }"
             placeholder="email"
           />
           <span v-if="submitCount > 0 && emailError" class="error-text">{{ emailError }}</span>
@@ -87,10 +90,12 @@ const onSubmit = handleSubmit(async (values) => {
             type="password"
             id="register-password"
             class="form__input"
-            :class="{ 'input-error': submitCount > 0 && passwordError}"
+            :class="{ 'input-error': submitCount > 0 && passwordError }"
             placeholder="password"
           />
-          <span v-if="submitCount > 0 && passwordError" class="error-text">{{ passwordError }}</span>
+          <span v-if="submitCount > 0 && passwordError" class="error-text">{{
+            passwordError
+          }}</span>
         </div>
         <div class="form__group">
           <label class="form__label" for="register-confirm-password">Confirm Password</label>
@@ -99,10 +104,12 @@ const onSubmit = handleSubmit(async (values) => {
             type="password"
             id="register-confirm-password"
             class="form__input"
-            :class="{ 'input-error': submitCount > 0 && confirmPasswordError}"
+            :class="{ 'input-error': submitCount > 0 && confirmPasswordError }"
             placeholder="Confirm your password"
           />
-          <span v-if="submitCount > 0 && confirmPasswordError" class="error-text">{{ confirmPasswordError }}</span>
+          <span v-if="submitCount > 0 && confirmPasswordError" class="error-text">{{
+            confirmPasswordError
+          }}</span>
         </div>
         <div class="form__group">
           <button class="auth__form-submit">Create Account</button>

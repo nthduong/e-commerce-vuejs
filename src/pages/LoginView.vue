@@ -1,5 +1,39 @@
 <script setup>
 import LogoMain from '@/components/common/LogoMain.vue'
+import { useForm, useField } from 'vee-validate'
+import * as yup from 'yup'
+import { useAuth } from '@/composables/useAuth'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+const { login } = useAuth()
+
+const schema = yup.object({
+  email: yup.string().required('Please enter your email.').email('Invalid email.'),
+  password: yup.string().required('Please enter your password.'),
+})
+
+const { handleSubmit, submitCount, setFieldError } = useForm({
+  validationSchema: schema,
+})
+
+const { value: email, errorMessage: emailError } = useField('email')
+const { value: password, errorMessage: passwordError } = useField('password')
+
+const onSubmit = handleSubmit(async (value) => {
+  try {
+    const res = await login(value)
+
+    if (res.success) {
+      router.push({ name: 'home' })
+    } else {
+      setFieldError('email', 'Tài khoản hoặc mật khẩu không chính xác')
+      setFieldError('password', 'Tài khoản hoặc mật khẩu không chính xác')
+    }
+  } catch (error) {
+    console.log(error)
+  }
+})
 </script>
 
 <template>
@@ -13,14 +47,32 @@ import LogoMain from '@/components/common/LogoMain.vue'
         <div class="auth__desc">Login with your email and password</div>
       </div>
 
-      <form class="auth__form" id="auth-form-login">
+      <form class="auth__form" @submit.prevent="onSubmit">
         <div class="form__group">
           <label class="form__label" for="login-email">Email</label>
-          <input type="email" id="login-email" class="form__input" placeholder="email" />
+          <input
+            v-model="email"
+            type="text"
+            id="login-email"
+            class="form__input"
+            :class="{ 'input-error': submitCount > 0 && emailError }"
+            placeholder="email"
+          />
+          <span class="error-text" v-if="submitCount > 0 && emailError">{{ emailError }}</span>
         </div>
         <div class="form__group">
           <label class="form__label" for="login-password">Password</label>
-          <input type="password" id="login-password" class="form__input" placeholder="password" />
+          <input
+            v-model="password"
+            type="password"
+            id="login-password"
+            class="form__input"
+            :class="{ 'input-error': submitCount > 0 && passwordError }"
+            placeholder="password"
+          />
+          <span class="error-text" v-if="submitCount > 0 && passwordError">
+            {{ passwordError }}
+          </span>
         </div>
         <div class="form__group">
           <button class="auth__form-submit">Login</button>
@@ -48,7 +100,7 @@ import LogoMain from '@/components/common/LogoMain.vue'
 <style lang="scss" scoped>
 @use '@/styles/abstracts';
 .header {
-  position:fixed;
+  position: fixed;
   left: 0;
   right: 0;
   background: transparent;
