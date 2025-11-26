@@ -3,7 +3,7 @@ import { storeToRefs } from 'pinia'
 
 export function useAuth() {
   const authStore = useAuthStore()
-  const { user, loading, error } = storeToRefs(authStore)
+  const { user, loading, error, isAuthenticated, currentUser } = storeToRefs(authStore)
 
   const register = async (values) => {
     return await authStore.register(values)
@@ -19,6 +19,8 @@ export function useAuth() {
     user,
     loading,
     error,
+    isAuthenticated,
+    currentUser,
     register,
     login,
     logout,

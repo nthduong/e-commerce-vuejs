@@ -25,6 +25,15 @@ const ToggleSidebar = () => {
         }}</router-link>
       </li>
     </ul>
+    <span class="separation"></span>
+    <ul>
+      <li class="auth-cta">
+        <router-link :to="{ name: 'login' }">Login</router-link>
+      </li>
+      <li class="auth-cta">
+        <router-link :to="{ name: 'register' }">Sign Up</router-link>
+      </li>
+    </ul>
   </div>
 
   <div class="overlay" :class="{ show: isShow }" @click="ToggleSidebar"></div>
@@ -32,6 +41,21 @@ const ToggleSidebar = () => {
 
 <style lang="scss" scoped>
 @use '@/styles/abstracts';
+
+.separation {
+  display: block;
+  height: 1px;
+  width: 100%;
+  margin: 10px 0;
+  background: var(--color-border);
+}
+
+.auth-cta {
+  display: block;
+  padding: 12px 0;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
 
 .navbar {
   z-index: 9;

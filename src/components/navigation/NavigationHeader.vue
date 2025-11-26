@@ -3,6 +3,9 @@ import NavigationHeader from '@/components/navigation/NavbarMenu.vue'
 import NavigationSidebar from '@/components/navigation/NavigationDrawer.vue'
 import LogoMain from '@/components/common/LogoMain.vue'
 import AuthButton from '@/components/auth/AuthButton.vue'
+import { useAuth } from '@/composables/useAuth'
+
+const { isAuthenticated, currentUser, logout } = useAuth()
 </script>
 
 <template>
@@ -11,7 +14,11 @@ import AuthButton from '@/components/auth/AuthButton.vue'
       <div class="header__inner">
         <LogoMain />
         <NavigationHeader class="d-lg-none" />
-        <AuthButton class="d-lg-none" />
+        <AuthButton
+          :is-authenticated="isAuthenticated"
+          :current-user="currentUser"
+          :logout="logout"
+        />
         <NavigationSidebar />
       </div>
     </div>
