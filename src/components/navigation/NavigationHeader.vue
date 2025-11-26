@@ -9,17 +9,19 @@ const { isAuthenticated, currentUser, logout } = useAuth()
 </script>
 
 <template>
-  <div class="header">
+  <div class="header fixed">
     <div class="container">
       <div class="header__inner">
         <LogoMain />
         <NavigationHeader class="d-lg-none" />
-        <AuthButton
-          :is-authenticated="isAuthenticated"
-          :current-user="currentUser"
-          :logout="logout"
-        />
-        <NavigationSidebar />
+        <div class="header-cart">
+          <AuthButton
+            :is-authenticated="isAuthenticated"
+            :current-user="currentUser"
+            :logout="logout"
+          />
+          <NavigationSidebar />
+        </div>
       </div>
     </div>
   </div>
@@ -27,4 +29,15 @@ const { isAuthenticated, currentUser, logout } = useAuth()
 
 <style lang="scss" scoped>
 @use '@/styles/abstracts';
+
+.fixed {
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+}
+.header-cart {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 </style>

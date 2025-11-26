@@ -20,12 +20,13 @@ console.log(prop.currentUser)
     </div>
   </template>
   <template v-else>
-    <div class="cart">
-      <div class="cart__wrap-icon">
-        <img class="cart__icon" src="@/assets/icons/user.svg" alt="" />
+    <div class="header-actions">
+      <div class="header-actions__wrap-icon">
+        <img class="header-actions__icon" src="@/assets/icons/user.svg" alt="" />
       </div>
-      <div class="cart__wrap-icon">
-        <img class="cart__icon" src="@/assets/icons/cart.svg" alt="" />
+      <div class="header-actions__wrap-icon cart">
+        <img class="header-actions__icon" src="@/assets/icons/cart.svg" alt="" />
+        <span class="cart__count">2</span>
       </div>
     </div>
   </template>
@@ -37,20 +38,39 @@ console.log(prop.currentUser)
   display: flex;
 }
 
-.cart {
+.header-actions {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-right: 10px;
 
   &__wrap-icon {
-    width: 25px;
+    width: 28px;
     cursor: pointer;
   }
 
   &__icon {
     width: 100%;
     height: 100%;
+  }
+}
+
+.cart {
+  position: relative;
+
+  &__count {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 10px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    top: -8px;
+    right: -6px;
+    background: var(--color-button-bg);
   }
 }
 </style>

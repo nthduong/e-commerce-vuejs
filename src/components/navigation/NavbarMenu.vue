@@ -16,6 +16,10 @@ import { NAV_ITEMS } from '@/config/navbar.config'
 
 <style lang="scss" scoped>
 .navbar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   &__list {
     display: flex;
   }

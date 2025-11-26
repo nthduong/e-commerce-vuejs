@@ -1,5 +1,5 @@
 <script setup>
-import TextInput from '@/components/common/TextInput.vue'
+// import TextInput from '@/components/common/TextInput.vue'
 </script>
 
 <template>
@@ -18,12 +18,14 @@ import TextInput from '@/components/common/TextInput.vue'
                   satisfy your cravings!
                 </p>
                 <div class="hero__form">
-                  <text-input placeholder="Location or zip code">
+                  <!-- <text-input placeholder="Location or zip code">
                     <template #icon>
                       <img src="@/assets/icons/location.svg" alt="location icon" />
                     </template>
-                  </text-input>
-                  <button class="btn btn--shadow">Order Now</button>
+                  </text-input> -->
+                  <button class="btn btn--shadow" style="width: 100%;" @click="$router.push({ name: 'product' })">
+                    Order Now
+                  </button>
                 </div>
                 <!-- <div class="get-app">
                   <span class="get-app__text">Get our pizza app:</span>
