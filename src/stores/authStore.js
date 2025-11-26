@@ -35,7 +35,7 @@ export const useAuthStore = defineStore('auth', () => {
         user.value = res.user
         return { success: true, user: res.user }
       } else {
-        return { success: false }
+        return { success: false, message: res.message }
       }
     } catch (err) {
       error.value = err.message

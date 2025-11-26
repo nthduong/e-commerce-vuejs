@@ -27,8 +27,8 @@ const onSubmit = handleSubmit(async (value) => {
     if (res.success) {
       router.push({ name: 'home' })
     } else {
-      setFieldError('email', 'Tài khoản hoặc mật khẩu không chính xác')
-      setFieldError('password', 'Tài khoản hoặc mật khẩu không chính xác')
+      setFieldError('email', res.message)
+      setFieldError('password', res.message)
     }
   } catch (error) {
     console.log(error)

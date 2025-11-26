@@ -25,7 +25,7 @@ const schema = yup.object({
     }),
 })
 
-const { handleSubmit, submitCount } = useForm({
+const { handleSubmit, submitCount, setFieldError } = useForm({
   validationSchema: schema,
 })
 
@@ -40,6 +40,8 @@ const onSubmit = handleSubmit(async (values) => {
 
     if (res.success) {
       router.push({ name: 'login' })
+    } else {
+      setFieldError('email', res.message)
     }
   } catch (error) {
     console.log(error)
