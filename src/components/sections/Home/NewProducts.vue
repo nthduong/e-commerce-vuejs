@@ -17,7 +17,7 @@ const goToDetail = (slug) => {
 </script>
 
 <template>
-  <div class="new-products">
+  <div class="new-products" v-if="NewProducts.length">
     <div class="container">
       <product-swiper heading="New Products" :products="NewProducts" current="new-products">
         <template #item="{ product }">

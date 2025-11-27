@@ -11,7 +11,7 @@ const getImage = (categories) => {
 </script>
 
 <template>
-  <section class="categories">
+  <section class="categories" v-if="categories.length">
     <div class="container">
       <div class="categories__inner">
         <section class="categories__top">

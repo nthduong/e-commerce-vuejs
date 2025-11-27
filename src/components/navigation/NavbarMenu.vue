@@ -19,7 +19,7 @@ import { NAV_ITEMS } from '@/config/navbar.config'
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   &__list {
     display: flex;
   }
@@ -27,5 +27,9 @@ import { NAV_ITEMS } from '@/config/navbar.config'
     padding: 12px 12px;
     font-weight: 600;
   }
+}
+
+.router-link-exact-active {
+  color: var(--color-button-bg);
 }
 </style>
