@@ -28,7 +28,6 @@ console.log(prop.currentUser)
       <div class="header-actions__wrap-icon user">
         <img class="header-actions__icon" src="@/assets/icons/user.svg" alt="" />
         <div class="user__list">
-          <div v-if="currentUser.name" class="user__text">Hello!</div>
           <div class="user__item">
             <img class="user__icon" src="@/assets/icons/profile.svg" alt="icon profile" />
             Profile
@@ -131,13 +130,6 @@ console.log(prop.currentUser)
     &:hover {
       background: #f5f5f5;
     }
-  }
-
-  &__text {
-    padding: 8px 12px;
-    white-space: nowrap;
-    font-weight: 500;
-    user-select: none;
   }
 
   &__icon {

@@ -3,9 +3,10 @@ import LogoMain from '@/components/common/LogoMain.vue'
 import { useForm, useField } from 'vee-validate'
 import * as yup from 'yup'
 import { useAuth } from '@/composables/useAuth'
-import { useRouter } from 'vue-router'
+import { useToast } from 'vue-toastification'
 
-const router = useRouter()
+const toast = useToast()
+
 const { register } = useAuth()
 
 const schema = yup.object({
@@ -39,7 +40,7 @@ const onSubmit = handleSubmit(async (values) => {
     const res = await register(values)
 
     if (res.success) {
-      router.push({ name: 'login' })
+      toast.success('Registration successful! You can now log in.', { timeout: 50000 })
     } else {
       setFieldError('email', res.message)
     }
