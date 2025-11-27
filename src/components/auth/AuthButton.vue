@@ -1,4 +1,7 @@
 <script setup>
+import { useCart } from '@/composables/useCart'
+
+const { getTotalItems } = useCart()
 const prop = defineProps({
   isAuthenticated: Boolean,
   currentUser: Object,
@@ -44,7 +47,7 @@ console.log(prop.currentUser)
       </div>
       <div class="header-actions__wrap-icon cart">
         <img class="header-actions__icon" src="@/assets/icons/cart.svg" alt="" />
-        <span class="cart__count">2</span>
+        <span class="cart__count">{{ getTotalItems <= 99 ? getTotalItems : '99+' }}</span>
       </div>
     </div>
   </template>

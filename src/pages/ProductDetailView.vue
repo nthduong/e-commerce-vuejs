@@ -1,9 +1,11 @@
 <script setup>
 import { onMounted, computed } from 'vue'
 import { useProduct } from '@/composables/useProduct'
+import { useCart } from '@/composables/useCart'
 
 const props = defineProps(['productSlug'])
 const { productDetail, fetchDetail } = useProduct()
+const { addToCart } = useCart()
 
 onMounted(() => {
   fetchDetail(props.productSlug)
@@ -12,9 +14,11 @@ onMounted(() => {
 const productName = computed(() => productDetail.value?.name || '')
 const productDescription = computed(() => productDetail.value?.description || '')
 const productPrice = computed(() => productDetail.value?.price || '')
-const productImage = computed(
-  () => productDetail.value?.image || 'images/products/placeholder.png',
-)
+const productImage = computed(() => productDetail.value?.image || 'images/products/placeholder.png')
+
+const addProduct = () => {
+  addToCart(productDetail.value, 1)
+}
 </script>
 
 <template>
@@ -36,7 +40,7 @@ const productImage = computed(
             </p>
             <span class="product-detail__price">${{ productPrice }}</span>
             <div class="product-detail__cta-wrap">
-              <button class="btn product-detail__cta">Add to card</button>
+              <button class="btn product-detail__cta" @click="addProduct">Add to card</button>
             </div>
           </div>
         </div>
@@ -153,7 +157,6 @@ const productImage = computed(
     @include abstracts.screen(lg) {
       padding: 10px 24px;
     }
-
   }
 }
 </style>
