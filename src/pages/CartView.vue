@@ -1,13 +1,12 @@
 <script setup>
 import { useCartStore } from '@/stores/cartStore'
 import { useRouter } from 'vue-router'
+import QuantityStepper from '@/components/common/QuantityStepper.vue'
 const { cart } = useCartStore()
 
 const router = useRouter()
 
 const goToDetail = (slug) => {
-  console.log(1)
-
   router.push({
     name: 'product-detail',
     params: { categorySlug: 'all', productSlug: slug },
@@ -40,22 +39,7 @@ const goToDetail = (slug) => {
               </div>
             </div>
             <div class="cart-item__quantity flex-center">
-              <div class="quantity-item">
-                <button class="quantity-item__btn">
-                  <img src="@/assets/icons/minus-qty.svg" alt="" />
-                </button>
-                <input
-                  class="quantity-item__input"
-                  type="text"
-                  min="1"
-                  max="99"
-                  maxlength="2"
-                  :value="item.quantity"
-                />
-                <button class="quantity-item__btn">
-                  <img src="@/assets/icons/plus-qty.svg" alt="" />
-                </button>
-              </div>
+              <quantity-stepper :quantity="item.quantity" />
             </div>
             <div class="cart-item__price flex-center">${{ item.price }}</div>
             <div class="cart-item__delete flex-center">
@@ -71,29 +55,6 @@ const goToDetail = (slug) => {
 <style lang="scss" scoped>
 @use '@/styles/abstracts';
 
-.quantity-item {
-  border: 0.1rem solid #e9e8e8;
-  border-radius: 999px;
-  padding: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  &__input {
-    width: 40px;
-    text-align: center;
-  }
-
-  &__btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    padding: 8px;
-    background: #ebebeb;
-    cursor: pointer;
-  }
-}
 
 .flex-center {
   display: flex;
@@ -116,14 +77,14 @@ const goToDetail = (slug) => {
 
 .cart-table {
   margin-top: 40px;
-  width: 70%;
+  width: 100%;
   padding: 20px 20px 0px 20px;
   border: 1px solid var(--color-border);
   border-radius: 20px;
 
   &__top {
     display: grid;
-    grid-template-columns: 4fr 2fr 2fr 0.5fr;
+    grid-template-columns: 3fr 2fr 2fr 0.5fr;
   }
 
   &__title {
@@ -144,7 +105,7 @@ const goToDetail = (slug) => {
   position: relative;
   display: grid;
   padding: 10px 0;
-  grid-template-columns: 4fr 2fr 2fr 0.5fr;
+  grid-template-columns: 3fr 2fr 2fr 0.5fr;
 
   &::before {
     content: '';
@@ -194,7 +155,6 @@ const goToDetail = (slug) => {
     font-size: 1.4rem;
     color: var(--color-text-desc);
   }
-
 
   &__delete {
     cursor: pointer;

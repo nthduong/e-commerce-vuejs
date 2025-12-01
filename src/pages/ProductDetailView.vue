@@ -3,6 +3,7 @@ import { onMounted, computed } from 'vue'
 import { useProduct } from '@/composables/useProduct'
 import { useCart } from '@/composables/useCart'
 import { useToast } from 'vue-toastification'
+import QuantityStepper from '@/components/common/QuantityStepper.vue'
 
 const toast = useToast()
 
@@ -48,7 +49,10 @@ const addProduct = () => {
             </p>
             <span class="product-detail__price">${{ productPrice }}</span>
             <div class="product-detail__cta-wrap">
-              <button class="btn product-detail__cta" @click="addProduct">Add to card</button>
+              <quantity-stepper :quantity="1" />
+              <button class="btn btn--md product-detail__cta" @click="addProduct">
+                Add to card
+              </button>
             </div>
           </div>
         </div>
@@ -59,6 +63,7 @@ const addProduct = () => {
 
 <style lang="scss" scoped>
 @use '@/styles/abstracts';
+
 .product-detail {
   padding: 80px 0;
   @include abstracts.screen(sm) {
@@ -151,14 +156,15 @@ const addProduct = () => {
     height: 100%;
     flex: 1;
     display: flex;
-
+    align-items: center;
+    gap: 20px;
     @include abstracts.screen(lg) {
       margin-top: 12px;
     }
   }
 
   &__cta {
-    margin-top: auto;
+    // margin-top: auto;
     @include abstracts.screen(xl) {
       font-size: 1.4rem;
     }
