@@ -67,6 +67,14 @@ const router = createRouter({
       },
       component: () => import('@/pages/RegisterView.vue'),
     },
+    {
+      path: '/cart',
+      name: 'cart',
+      meta: {
+        layout: DEFAULT_LAYOUT,
+      },
+      component: () => import('@/pages/CartView.vue'),
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {

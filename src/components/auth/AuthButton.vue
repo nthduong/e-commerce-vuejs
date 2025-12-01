@@ -12,7 +12,6 @@ const logOut = () => {
   prop.logout()
 }
 
-console.log(prop.currentUser)
 </script>
 
 <template>
@@ -45,7 +44,7 @@ console.log(prop.currentUser)
           </div>
         </div>
       </div>
-      <div class="header-actions__wrap-icon cart">
+      <div class="header-actions__wrap-icon cart" @click="$router.push({ name: 'cart' })">
         <img class="header-actions__icon" src="@/assets/icons/cart.svg" alt="" />
         <span class="cart__count">{{ getTotalItems <= 99 ? getTotalItems : '99+' }}</span>
       </div>
