@@ -33,7 +33,7 @@ const { isAuthenticated, currentUser, logout } = useAuth()
 .fixed {
   position: sticky;
   top: 0;
-  z-index: 10000;
+  z-index: 999;
 }
 .header-cart {
   display: flex;

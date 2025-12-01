@@ -40,7 +40,7 @@ const onSubmit = handleSubmit(async (values) => {
     const res = await register(values)
 
     if (res.success) {
-      toast.success('Registration successful! You can now log in.', { timeout: 50000 })
+      toast.success('Registration successful! You can now log in.', { timeout: 5000 })
     } else {
       setFieldError('email', res.message)
     }

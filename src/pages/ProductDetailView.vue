@@ -2,6 +2,9 @@
 import { onMounted, computed } from 'vue'
 import { useProduct } from '@/composables/useProduct'
 import { useCart } from '@/composables/useCart'
+import { useToast } from 'vue-toastification'
+
+const toast = useToast()
 
 const props = defineProps(['productSlug'])
 const { productDetail, fetchDetail } = useProduct()
@@ -17,7 +20,12 @@ const productPrice = computed(() => productDetail.value?.price || '')
 const productImage = computed(() => productDetail.value?.image || 'images/products/placeholder.png')
 
 const addProduct = () => {
-  addToCart(productDetail.value, 1)
+  const result = addToCart(productDetail.value, 1)
+  if (result) {
+    toast.success('Product added to your cart.')
+  } else {
+    toast.error('Failed to add product to cart.')
+  }
 }
 </script>
 

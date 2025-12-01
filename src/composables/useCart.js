@@ -6,7 +6,7 @@ export function useCart() {
   const { cart, getTotalItems } = storeToRefs(cartStore)
 
   const addToCart = (product, quantity) => {
-    cartStore.addToCart(product, quantity)
+    return cartStore.addToCart(product, quantity)
   }
 
   return { cart, getTotalItems, addToCart }

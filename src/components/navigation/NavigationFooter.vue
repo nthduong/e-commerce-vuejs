@@ -86,7 +86,7 @@ import LogoMain from '@/components/common/LogoMain.vue'
 
   &__row {
     display: grid;
-    grid-template-columns: 2.5fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2.2fr 1fr 1fr 1fr 1fr;
     gap: 70px;
 
     @include abstracts.screen(xxl) {
