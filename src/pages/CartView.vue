@@ -39,7 +39,7 @@ const goToDetail = (slug) => {
               </div>
             </div>
             <div class="cart-item__quantity flex-center">
-              <quantity-stepper :quantity="item.quantity" />
+              <quantity-stepper :quantity="item.quantity" size="md"/>
             </div>
             <div class="cart-item__price flex-center">${{ item.price }}</div>
             <div class="cart-item__delete flex-center">

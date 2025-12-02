@@ -123,7 +123,7 @@ const addProduct = () => {
 
   &__desc {
     margin-top: 20px;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: var(--color-text-desc);
 
     @include abstracts.screen(xl) {
@@ -137,7 +137,7 @@ const addProduct = () => {
 
   &__price {
     display: block;
-    font-size: 4.2rem;
+    font-size: 3.2rem;
     margin-top: 20px;
     font-weight: 500;
     color: var(--color-button-bg);
@@ -156,8 +156,13 @@ const addProduct = () => {
     height: 100%;
     flex: 1;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     gap: 20px;
+
+    @include abstracts.screen(md) {
+     flex-direction: column;
+     align-items: flex-start;
+    }
     @include abstracts.screen(lg) {
       margin-top: 12px;
     }
@@ -165,6 +170,7 @@ const addProduct = () => {
 
   &__cta {
     // margin-top: auto;
+    width: 100%;
     @include abstracts.screen(xl) {
       font-size: 1.4rem;
     }

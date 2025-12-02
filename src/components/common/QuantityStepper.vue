@@ -1,16 +1,18 @@
 <script setup>
-import { number } from 'yup'
-
 defineProps({
   quantity: {
-    type: number,
+    type: Number,
     default: 1,
+  },
+  size: {
+    type: String,
+    default: 'default',
   },
 })
 </script>
 
 <template>
-  <div class="quantity-item">
+  <div class="quantity-item" :class="`size--${size}`">
     <button class="quantity-item__btn">
       <img src="@/assets/icons/minus-qty.svg" alt="" />
     </button>
@@ -31,13 +33,16 @@ defineProps({
 <style lang="scss" scoped>
 @use '@/styles/abstracts';
 .quantity-item {
-  border: 0.1rem solid #e9e8e8;
+  border: 0.1rem solid var(--color-button-bg);
   border-radius: 999px;
   padding: 7px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: var(--color-bg-secondary);
+  @include abstracts.screen(xl) {
+    padding: 5px;
+  }
 
   &__input {
     width: 40px;
@@ -51,8 +56,33 @@ defineProps({
     justify-content: center;
     border-radius: 50%;
     padding: 14px;
-    background: #ebebeb;
+    background: var(--color-button-bg);
     cursor: pointer;
+    @include abstracts.screen(xl) {
+      padding: 12px;
+    }
+    @include abstracts.screen(lg) {
+      padding: 10px;
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &__btn img {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(2%) saturate(7472%) hue-rotate(160deg)
+      brightness(104%) contrast(101%);
+  }
+}
+
+.size--md {
+  padding: 5px;
+  .quantity-item__btn {
+    padding: 10px;
+    @include abstracts.screen(lg) {
+      padding: 8px;
+    }
   }
 }
 </style>
