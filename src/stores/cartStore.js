@@ -14,7 +14,7 @@ export const useCartStore = defineStore(
       return cart.value.reduce((total, item) => total + item.price * item.quantity, 0)
     })
     const getVAT = computed(() => {
-      return getTotalPrice.value * TAX.VAT_RATE
+      return Math.round(getTotalPrice.value * TAX.VAT_RATE * 100) / 100
     })
     const getTotalWithVAT = computed(() => {
       return getTotalPrice.value + getVAT.value

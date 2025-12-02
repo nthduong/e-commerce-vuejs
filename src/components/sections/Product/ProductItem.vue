@@ -24,7 +24,8 @@ const getProductImage = (product) => {
       <div class="product-item__bottom">
         <div class="product-item__price">${{ product.price }}</div>
         <button class="product-item__button" @click="$emit('view-detail', product.slug)">
-          <img class="product-item__icon" src="@/assets/icons/plus.svg" alt="" />
+          <!-- <img class="product-item__icon" src="@/assets/icons/plus.svg" alt="" /> -->
+           Show more
         </button>
       </div>
     </div>
@@ -35,10 +36,11 @@ const getProductImage = (product) => {
 @use '@/styles/abstracts';
 
 .product-item {
+  height: 100%;
   background: var(--color-bg-item);
   border-radius: 25px;
   box-shadow: var(--box-shadow);
-  // border: 1px solid var(--color-button-bg);
+  border: 1px solid var(--color-button-bg);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -96,15 +98,17 @@ const getProductImage = (product) => {
 
   &__button {
     background: var(--color-button-bg);
-    height: 30px;
-    width: 30px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    padding: 8px 12px;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 20px;
 
     &:hover {
-      opacity: 0.8;
+      opacity: 0.9;
     }
   }
 
