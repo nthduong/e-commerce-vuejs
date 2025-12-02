@@ -38,7 +38,7 @@
 
 .stats {
   border-radius: 20px;
-  background: #952323;
+  background: var(--color-button-bg);
   position: relative;
   transform: translate(-50%, -50%);
   left: 50%;

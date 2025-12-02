@@ -30,7 +30,7 @@ import TextInput from '@/components/common/TextInput.vue'
 <style lang="scss" scoped>
 @use '@/styles/abstracts';
 .subscribe {
-  background: #952323;
+  background: var(--color-button-bg);
   padding: 100px 0;
   position: relative;
   overflow: hidden;

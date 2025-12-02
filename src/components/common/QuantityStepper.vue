@@ -74,7 +74,7 @@ const formatValue = () => {
   &__input {
     width: 40px;
     text-align: center;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   &__btn {
@@ -110,6 +110,10 @@ const formatValue = () => {
     @include abstracts.screen(lg) {
       padding: 8px;
     }
+  }
+
+  .quantity-item__input {
+    font-size: 1.6rem;
   }
 }
 </style>

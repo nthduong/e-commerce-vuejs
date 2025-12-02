@@ -31,6 +31,17 @@ export const useCartStore = defineStore(
       }
     }
 
+    const clearItemFromCart = (productId) => {
+      const existingProduct = cart.value.find((item) => item.id === productId)
+      if (existingProduct) {
+        cart.value = cart.value.filter((item) => item.id !== productId)
+      }
+    }
+
+    const clearAllItem = () => {
+      cart.value = []
+    }
+
     return {
       cart,
       getTotalItems,
@@ -38,6 +49,8 @@ export const useCartStore = defineStore(
       getVAT,
       getTotalWithVAT,
       addToCart,
+      clearItemFromCart,
+      clearAllItem,
     }
   },
   {
