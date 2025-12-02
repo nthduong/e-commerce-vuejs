@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, computed } from 'vue'
+import { onMounted, computed, ref } from 'vue'
 import { useProduct } from '@/composables/useProduct'
 import { useCart } from '@/composables/useCart'
 import { useToast } from 'vue-toastification'
@@ -15,13 +15,15 @@ onMounted(() => {
   fetchDetail(props.productSlug)
 })
 
+const quantity = ref(1)
+
 const productName = computed(() => productDetail.value?.name || '')
 const productDescription = computed(() => productDetail.value?.description || '')
 const productPrice = computed(() => productDetail.value?.price || '')
 const productImage = computed(() => productDetail.value?.image || 'images/products/placeholder.png')
 
 const addProduct = () => {
-  const result = addToCart(productDetail.value, 1)
+  const result = addToCart(productDetail.value, quantity.value)
   if (result) {
     toast.success('Product added to your cart.')
   } else {
@@ -49,7 +51,7 @@ const addProduct = () => {
             </p>
             <span class="product-detail__price">${{ productPrice }}</span>
             <div class="product-detail__cta-wrap">
-              <quantity-stepper :quantity="1" />
+              <quantity-stepper v-model="quantity"/>
               <button class="btn btn--md product-detail__cta" @click="addProduct">
                 Add to card
               </button>

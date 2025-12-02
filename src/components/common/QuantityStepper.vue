@@ -1,19 +1,44 @@
 <script setup>
 defineProps({
-  quantity: {
-    type: Number,
-    default: 1,
-  },
   size: {
     type: String,
     default: 'default',
   },
 })
+
+const qty = defineModel()
+
+const increase = () => {
+  if (qty.value < 99) {
+    qty.value++
+  }
+}
+const decrease = () => {
+  if (qty.value > 1) {
+    qty.value--
+  }
+}
+
+const onInput = (e) => {
+  let value = e.target.value.replace(/\D/g, '')
+  if (Number(value) > 99) {
+    value = 99
+  }
+  qty.value = Number(value)
+}
+
+const formatValue = () => {
+  if (qty.value < 1 || isNaN(qty.value)) {
+    qty.value = 1
+  }
+
+  if (qty.value > 99) qty.value = 99
+}
 </script>
 
 <template>
   <div class="quantity-item" :class="`size--${size}`">
-    <button class="quantity-item__btn">
+    <button class="quantity-item__btn" @click="decrease">
       <img src="@/assets/icons/minus-qty.svg" alt="" />
     </button>
     <input
@@ -22,9 +47,11 @@ defineProps({
       min="1"
       max="99"
       maxlength="2"
-      :value="quantity"
+      v-model="qty"
+      @input="onInput"
+      @blur="formatValue"
     />
-    <button class="quantity-item__btn">
+    <button class="quantity-item__btn" @click="increase">
       <img src="@/assets/icons/plus-qty.svg" alt="" />
     </button>
   </div>
