@@ -71,14 +71,14 @@ const getProductImage = (product) => {
   }
 
   &__title {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     font-weight: 600;
     color: var(--color-text-heading);
   }
 
   &__desc {
     margin-top: 12px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: var(--color-text-desc);
     flex-grow: 1;
   }
@@ -91,14 +91,13 @@ const getProductImage = (product) => {
   }
 
   &__price {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     font-weight: 700;
     color: var(--color-text-heading);
   }
 
   &__button {
     background: var(--color-button-bg);
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -106,6 +105,7 @@ const getProductImage = (product) => {
     color: #fff;
     font-weight: 500;
     border-radius: 20px;
+    font-size: 1.4rem;
 
     &:hover {
       opacity: 0.9;
