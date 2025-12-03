@@ -2,7 +2,7 @@
 
 <template>
   <router-link :to="{ name: 'home' }" class="logo">
-    <img src="@/assets/images/Logo-icon.svg" alt="PizzaRush" class="logo__main" />
+    <img src="@/assets/images/logo-icon.svg" alt="PizzaRush" class="logo__main" />
     <span class="logo__text">PizzaRush</span>
   </router-link>
 </template>
