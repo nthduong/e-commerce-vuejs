@@ -54,7 +54,7 @@ const removeAllItem = () => {
                 <div v-for="item in cart" :key="item.id" class="cart-item">
                   <div class="cart-item__info">
                     <div class="cart-item__image-wrap" @click="goToDetail(item.slug)">
-                      <img class="cart-item__image" :src="`/src/assets/${item.image}`" alt="" />
+                      <img class="cart-item__image" :src="item.image" alt="" />
                     </div>
                     <div class="cart-item__info-right">
                       <div class="cart-item__name" @click="goToDetail(item.slug)">

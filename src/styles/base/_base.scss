@@ -1,38 +1,39 @@
-@use "../abstracts";
+@use '../abstracts';
 
 *,
 ::before,
 ::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
+  touch-action: manipulation;
 }
 
 body {
-    font-size: 1.6rem;
-    font-family: "Sora", sans-serif;
-    color: #191720;
-    background: var(--color-bg-secondary);
+  font-size: 1.6rem;
+  font-family: 'Sora', sans-serif;
+  color: #191720;
+  background: var(--color-bg-secondary);
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.25s ease;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.25s ease;
 
-    &:hover {
-      color: var(--color-button-bg);
-    }
+  &:hover {
+    color: var(--color-button-bg);
+  }
 }
 
 button {
-    border: none;
-    outline: none;
-    background: transparent;
-    padding: 0;
-    cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
 }
 
 a,
@@ -42,55 +43,55 @@ input,
 label,
 textarea,
 select {
-    padding: 0;
-    font-family: inherit;
-    color: inherit;
-    outline: none;
-    border: none;
-    -webkit-tap-highlight-color: transparent;
+  padding: 0;
+  font-family: inherit;
+  color: inherit;
+  outline: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 input {
-    background-color: transparent;
+  background-color: transparent;
 }
 input:-webkit-autofill {
-    transition: background-color 9999s ease-in-out 0s;
+  transition: background-color 9999s ease-in-out 0s;
 }
 
 .container {
-    @include abstracts.screen(sm) {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-    }
+  @include abstracts.screen(sm) {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
 }
 
 .line-clamp {
-    display: -webkit-box;
-    -webkit-line-clamp: var(--line-clamp, 1);
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    //chatgpt bao nen co
-    -webkit-box-orient: vertical
+  display: -webkit-box;
+  -webkit-line-clamp: var(--line-clamp, 1);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  //chatgpt bao nen co
+  -webkit-box-orient: vertical;
 }
 
 .line-clamp.line-2 {
-    --line-clamp: 2;
+  --line-clamp: 2;
 }
 
 .empty-message {
-    font-size: 18px;
-    font-weight: 500;
-    margin-top: 30px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 30px;
 }
 
 .disable {
-    pointer-events: none;
-    opacity: 0.5;
-    user-select: none;
+  pointer-events: none;
+  opacity: 0.5;
+  user-select: none;
 }
 
 .error-text {
-  color: #f44336; 
+  color: #f44336;
   font-size: 1.2rem;
   display: block;
 }
