@@ -4,10 +4,9 @@ import { useCategory } from '@/composables/useCategory'
 const { categories } = useCategory()
 
 const getImage = (categories) => {
-  const imageName = categories.image?.replace('/images/category/', '') || 'placeholder.png';
-  const imagePath = `/src/assets/images/category/${imageName}`;
-  return imagePath;
-};
+  const imageName = categories.image || '/images/products/placeholder.png'
+  return imageName
+}
 </script>
 
 <template>
@@ -29,7 +28,7 @@ const getImage = (categories) => {
               <figure class="categories__img-wrap">
                 <img class="categories__img" :src="getImage(category)" alt="" />
               </figure>
-              <h3 class="categories__item-heading">{{ category.name}}</h3>
+              <h3 class="categories__item-heading">{{ category.name }}</h3>
               <p class="categories__item-desc">
                 {{ category.description }}
               </p>
