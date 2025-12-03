@@ -81,7 +81,7 @@ const ToggleCategory = () => {
             <p class="product__category">{{ route.params.categorySlug ? category : 'All' }}</p>
             <div class="product__right">
               <div class="product__select">
-                <p class="product__text">Sort by:</p>
+                <p class="product__text d-md-none">Sort by:</p>
                 <div class="select-wrapper">
                   <el-select v-model="sortBy" placeholder="Sort products" style="width: 180px">
                     <el-option label="Featured Products" value="featured"></el-option>

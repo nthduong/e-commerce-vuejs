@@ -39,7 +39,7 @@ const removeAllItem = () => {
         <div class="row">
           <div class="col-8 col-lg-12">
             <div class="cart-table">
-              <div class="cart-table__top">
+              <div class="cart-table__top d-md-none">
                 <div class="cart-table__title flex-center">Product</div>
                 <div class="cart-table__title flex-center">Quantity</div>
                 <div class="cart-table__title flex-center">Price</div>
@@ -122,39 +122,14 @@ const removeAllItem = () => {
 <style lang="scss" scoped>
 @use '@/styles/abstracts';
 
-.cart-empty {
-  margin: 40px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &__content {
-    text-align: center;
-  }
-
-  &__title {
-    font-size: 3.2rem;
-    font-weight: 500;
-  }
-
-  &__img-wrap {
-    width: 100%;
-  }
-  &__img {
-    width: 80%;
-  }
-
-  &__btn {
-    margin-top: 20px;
-    width: 300px;
-    background: #e1830e;
-  }
-}
-
 .flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include abstracts.screen(md) {
+    justify-content: flex-end;
+  }
 }
 
 .cart {
@@ -220,6 +195,10 @@ const removeAllItem = () => {
   border: 1px solid var(--color-border);
   border-radius: 20px;
 
+  @include abstracts.screen(md) {
+    padding: 5px 15px;
+  }
+
   &__top {
     display: grid;
     grid-template-columns: 3fr 2fr 2fr 0.5fr;
@@ -252,6 +231,13 @@ const removeAllItem = () => {
   padding: 10px 0;
   grid-template-columns: 3fr 2fr 2fr 0.5fr;
 
+  @include abstracts.screen(md) {
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    grid-template-areas:
+      'aa aa cc dd'
+      'aa aa bb bb';
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -272,11 +258,27 @@ const removeAllItem = () => {
     align-items: center;
     gap: 15px;
     padding-right: 10px;
+    @include abstracts.screen(md) {
+      grid-area: aa;
+      width: 100%;
+    }
+  }
+
+  &__quantity {
+    @include abstracts.screen(md) {
+      grid-area: bb;
+    }
+  }
+
+  &__price {
+    @include abstracts.screen(md) {
+      grid-area: cc;
+    }
   }
   &__image-wrap {
     position: relative;
-    width: 25%;
-    padding-top: 20%;
+    width: 40%;
+    padding-top: 30%;
     flex-shrink: 0;
     cursor: pointer;
   }
@@ -287,7 +289,7 @@ const removeAllItem = () => {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 16px;
   }
 
   &__name {
@@ -302,11 +304,43 @@ const removeAllItem = () => {
   }
 
   &__delete {
+    @include abstracts.screen(md) {
+      grid-area: dd;
+    }
     cursor: pointer;
 
     &:hover img {
       filter: var(--color-icon);
     }
+  }
+}
+
+.cart-empty {
+  margin: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__content {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 3.2rem;
+    font-weight: 500;
+  }
+
+  &__img-wrap {
+    width: 100%;
+  }
+  &__img {
+    width: 80%;
+  }
+
+  &__btn {
+    margin-top: 20px;
+    width: 300px;
+    background: #e1830e;
   }
 }
 </style>
