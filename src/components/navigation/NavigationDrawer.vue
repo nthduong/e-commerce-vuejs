@@ -2,11 +2,18 @@
 import { NAV_ITEMS } from '@/config/navbar.config'
 import { ref } from 'vue'
 import LogoMain from '@/components/common/LogoMain.vue'
+import { useAuth } from '@/composables/useAuth'
+
+const { isAuthenticated, logout } = useAuth()
 
 const isShow = ref(false)
 
 const ToggleSidebar = () => {
   isShow.value = !isShow.value
+}
+
+const logOut = () => {
+  logout()
 }
 </script>
 
@@ -26,12 +33,17 @@ const ToggleSidebar = () => {
       </li>
     </ul>
     <span class="separation"></span>
-    <ul>
+    <ul v-if="!isAuthenticated">
       <li class="auth-cta">
         <router-link :to="{ name: 'login' }">Login</router-link>
       </li>
       <li class="auth-cta">
         <router-link :to="{ name: 'register' }">Sign Up</router-link>
+      </li>
+    </ul>
+    <ul v-else>
+      <li class="auth-cta">
+        <a href="#" @click="logOut">Logout</a>
       </li>
     </ul>
   </div>

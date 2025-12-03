@@ -15,8 +15,7 @@ const logOut = () => {
 </script>
 
 <template>
-  <template v-if="!isAuthenticated">
-    <div class="auth-cta d-lg-none" >
+    <div class="auth-cta d-lg-none" v-if="!isAuthenticated">
       <router-link :to="{ name: 'login' }"
         ><button class="btn btn--text btn--sm">Login</button></router-link
       >
@@ -24,10 +23,8 @@ const logOut = () => {
         ><button class="btn btn--sm btn--shadow">Sign Up</button></router-link
       >
     </div>
-  </template>
-  <template v-else>
     <div class="header-actions">
-      <div class="header-actions__wrap-icon user">
+      <div class="header-actions__wrap-icon user" v-if="isAuthenticated">
         <img class="header-actions__icon" src="@/assets/icons/user.svg" alt="" />
         <div class="user__list">
           <div class="user__item">
@@ -49,7 +46,6 @@ const logOut = () => {
         <span class="cart__count">{{ getTotalItems <= 99 ? getTotalItems : '99+' }}</span>
       </div>
     </div>
-  </template>
 </template>
 
 <style lang="scss" scoped>
@@ -63,6 +59,7 @@ const logOut = () => {
   align-items: center;
   gap: 10px;
   margin-right: 10px;
+  margin-left: 10px;
 
   &__wrap-icon {
     width: 28px;
