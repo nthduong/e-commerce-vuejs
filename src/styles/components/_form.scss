@@ -17,6 +17,12 @@
     display: flex;
     align-items: center;
     padding: 0 12px;
+    background-color: #fff;
+  }
+
+  &__area {
+    padding: 12px;
+    height: 80px;
   }
 
   &__input.input-error {
@@ -28,7 +34,7 @@
   }
 
   &__input.input-error:focus {
-    box-shadow: 0 0 0 3px rgba(220,38,38,0.2);
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2);
   }
 
   &__label {

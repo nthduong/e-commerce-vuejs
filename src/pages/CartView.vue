@@ -94,7 +94,9 @@ const removeAllItem = () => {
                   <strong>Estimated Total</strong>
                   <strong class="cart-info__price">${{ getTotalWithVAT }}</strong>
                 </div>
-                <button class="btn cart-info__btn">Continue to checkout</button>
+                <button class="btn cart-info__btn" @click="$router.push({ name: 'check-out' })">
+                  Continue to checkout
+                </button>
               </div>
             </div>
           </div>
@@ -134,7 +136,7 @@ const removeAllItem = () => {
 
 .cart {
   padding: 80px 0;
-  @include abstracts.screen(sm) {
+  @include abstracts.screen(md) {
     padding: 50px 0;
   }
 
@@ -143,57 +145,17 @@ const removeAllItem = () => {
     font-weight: 600;
     line-height: 1;
     margin-bottom: 40px;
-  }
-}
-
-.cart-info {
-  width: 100%;
-  padding: 20px;
-  border: 1px solid var(--color-border);
-  border-radius: 20px;
-
-  @include abstracts.screen(lg) {
-    margin-top: 20px;
-  }
-
-  &__sub-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  &__row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    & strong {
-      font-weight: 500;
-    }
-  }
-
-  &__sparater {
-    height: 1px;
-    width: 100%;
-    background: var(--color-border);
-    margin: 5px 0;
-  }
-
-  &__price {
-    font-size: 2.6rem;
-    color: var(--color-button-bg);
-  }
-
-  &__btn {
-    margin-top: 20px;
+    text-align: center;
   }
 }
 
 .cart-table {
   width: 100%;
-  padding: 20px 20px 0px 20px;
-  border: 1px solid var(--color-border);
+  padding: 20px 20px 10px 20px;
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--color-button-bg);
   border-radius: 20px;
+  background: #fff;
 
   @include abstracts.screen(md) {
     padding: 5px 15px;
@@ -312,6 +274,51 @@ const removeAllItem = () => {
     &:hover img {
       filter: var(--color-icon);
     }
+  }
+}
+
+.cart-info {
+  width: 100%;
+  padding: 20px;
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--color-button-bg);
+  border-radius: 20px;
+  background: #fff;
+
+  @include abstracts.screen(lg) {
+    margin-top: 20px;
+  }
+
+  &__sub-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & strong {
+      font-weight: 500;
+    }
+  }
+
+  &__sparater {
+    height: 1px;
+    width: 100%;
+    background: var(--color-border);
+    margin: 5px 0;
+  }
+
+  &__price {
+    font-size: 2.6rem;
+    color: var(--color-button-bg);
+  }
+
+  &__btn {
+    margin-top: 20px;
   }
 }
 

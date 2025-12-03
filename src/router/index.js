@@ -52,6 +52,22 @@ const router = createRouter({
       component: () => import('@/pages/ContactView.vue'),
     },
     {
+      path: '/cart',
+      name: 'cart',
+      meta: {
+        layout: DEFAULT_LAYOUT,
+      },
+      component: () => import('@/pages/CartView.vue'),
+    },
+    {
+      path: '/check-out',
+      name: 'check-out',
+      meta: {
+        layout: DEFAULT_LAYOUT,
+      },
+      component: () => import('@/pages/CheckOutView.vue'),
+    },
+    {
       path: '/login',
       name: 'login',
       meta: {
@@ -66,14 +82,6 @@ const router = createRouter({
         layout: AUTH_LAYOUT,
       },
       component: () => import('@/pages/RegisterView.vue'),
-    },
-    {
-      path: '/cart',
-      name: 'cart',
-      meta: {
-        layout: DEFAULT_LAYOUT,
-      },
-      component: () => import('@/pages/CartView.vue'),
     },
   ],
   scrollBehavior(to, from, savedPosition) {
