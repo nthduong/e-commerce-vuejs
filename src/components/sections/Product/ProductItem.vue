@@ -7,9 +7,8 @@ defineProps({
 })
 
 const getProductImage = (product) => {
-  const imageName = product.image?.replace('/images/products/', '') || 'placeholder.png'
-  const imagePath = `/src/assets/images/products/${imageName}`
-  return imagePath
+  const imageName = product.image || '/images/products/placeholder.png'
+  return imageName
 }
 </script>
 
@@ -25,7 +24,7 @@ const getProductImage = (product) => {
         <div class="product-item__price">${{ product.price }}</div>
         <button class="product-item__button" @click="$emit('view-detail', product.slug)">
           <!-- <img class="product-item__icon" src="@/assets/icons/plus.svg" alt="" /> -->
-           Show more
+          Show more
         </button>
       </div>
     </div>

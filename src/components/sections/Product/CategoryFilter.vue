@@ -8,9 +8,9 @@ const { countProduct, countProductByCategory } = useProduct()
 const route = useRoute()
 
 const getImage = (categories) => {
-  const imageName = categories.image?.replace('/images/category/', '') || 'placeholder.png'
-  const imagePath = `/src/assets/images/category/${imageName}`
-  return imagePath
+  const imageName = categories.image || '/images/products/placeholder.png'
+
+  return imageName
 }
 
 </script>

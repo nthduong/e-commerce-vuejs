@@ -20,7 +20,7 @@ const quantity = ref(1)
 const productName = computed(() => productDetail.value?.name || '')
 const productDescription = computed(() => productDetail.value?.description || '')
 const productPrice = computed(() => productDetail.value?.price || '')
-const productImage = computed(() => productDetail.value?.image || 'images/products/placeholder.png')
+const productImage = computed(() => productDetail.value?.image || '/images/products/placeholder.png')
 
 const addProduct = () => {
   const result = addToCart(productDetail.value, quantity.value)
@@ -39,7 +39,7 @@ const addProduct = () => {
         <div class="col-5 col-xl-6 col-lg-5 col-md-12">
           <div class="product-detail_preview">
             <figure class="product-detail__image-wrap">
-              <img class="product-detail__image" :src="`/src/assets/${productImage}`" alt="" />
+              <img class="product-detail__image" :src="productImage" alt="" />
             </figure>
           </div>
         </div>

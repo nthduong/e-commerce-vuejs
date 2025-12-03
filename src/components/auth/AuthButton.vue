@@ -16,7 +16,7 @@ const logOut = () => {
 
 <template>
   <template v-if="!isAuthenticated">
-    <div class="auth-cta">
+    <div class="auth-cta d-lg-none" >
       <router-link :to="{ name: 'login' }"
         ><button class="btn btn--text btn--sm">Login</button></router-link
       >
