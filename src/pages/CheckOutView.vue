@@ -43,39 +43,6 @@ const onSubmit = handleSubmit(async () => {
           <div class="col-8 col-lg-12">
             <div class="check-out__table">
               <div class="auth__form">
-                <div class="form__group"><h2 class="form__group-heading">Deliver To</h2></div>
-                <div class="form__group">
-                  <label class="form__label" for="check-out-address">Address</label>
-                  <input
-                    v-model="address"
-                    type="text"
-                    id="check-out-address"
-                    class="form__input"
-                    :class="{ 'input-error': submitCount > 0 && addressError }"
-                    placeholder="address"
-                  />
-                  <span v-if="submitCount > 0 && addressError" class="error-text">{{
-                    addressError
-                  }}</span>
-                </div>
-                <div class="form__group">
-                  <label class="form__label" for="check-out-note">Order Notes</label>
-                  <textarea
-                    v-model="note"
-                    type="text"
-                    id="check-out-note"
-                    class="form__input form__area"
-                    :class="{ 'input-error': submitCount > 0 && noteError }"
-                    placeholder="note"
-                  />
-                  <span v-if="submitCount > 0 && noteError" class="error-text">{{
-                    noteError
-                  }}</span>
-                </div>
-              </div>
-            </div>
-            <div class="check-out__table">
-              <div class="auth__form">
                 <div class="form__group"><h2 class="form__group-heading">Customer</h2></div>
                 <div class="form__group">
                   <label class="form__label" for="check-out-name">Full Name</label>
@@ -119,6 +86,39 @@ const onSubmit = handleSubmit(async () => {
                 <span v-if="submitCount > 0 && emailError" class="error-text">{{
                   emailError
                 }}</span>
+              </div>
+            </div>
+            <div class="check-out__table">
+              <div class="auth__form">
+                <div class="form__group"><h2 class="form__group-heading">Deliver To</h2></div>
+                <div class="form__group">
+                  <label class="form__label" for="check-out-address">Address</label>
+                  <input
+                    v-model="address"
+                    type="text"
+                    id="check-out-address"
+                    class="form__input"
+                    :class="{ 'input-error': submitCount > 0 && addressError }"
+                    placeholder="address"
+                  />
+                  <span v-if="submitCount > 0 && addressError" class="error-text">{{
+                    addressError
+                  }}</span>
+                </div>
+                <div class="form__group">
+                  <label class="form__label" for="check-out-note">Order Notes</label>
+                  <textarea
+                    v-model="note"
+                    type="text"
+                    id="check-out-note"
+                    class="form__input form__area"
+                    :class="{ 'input-error': submitCount > 0 && noteError }"
+                    placeholder="note"
+                  />
+                  <span v-if="submitCount > 0 && noteError" class="error-text">{{
+                    noteError
+                  }}</span>
+                </div>
               </div>
             </div>
           </div>

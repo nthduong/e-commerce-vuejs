@@ -66,7 +66,7 @@ const formatValue = () => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--color-bg-secondary);
+  background: #fff;
   @include abstracts.screen(xl) {
     padding: 5px;
   }
@@ -109,6 +109,9 @@ const formatValue = () => {
     padding: 10px;
     @include abstracts.screen(lg) {
       padding: 8px;
+    }
+    @include abstracts.screen(sm) {
+      padding: 5px;
     }
   }
 

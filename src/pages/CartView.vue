@@ -151,14 +151,14 @@ const removeAllItem = () => {
 
 .cart-table {
   width: 100%;
-  padding: 20px 20px 10px 20px;
+  padding: 20px 20px 0px 20px;
   box-shadow: var(--box-shadow);
   border: 1px solid var(--color-button-bg);
   border-radius: 20px;
   background: #fff;
 
   @include abstracts.screen(md) {
-    padding: 5px 15px;
+    padding: 0px 10px;
   }
 
   &__top {
@@ -190,10 +190,11 @@ const removeAllItem = () => {
 .cart-item {
   position: relative;
   display: grid;
-  padding: 10px 0;
+  padding: 20px 0;
   grid-template-columns: 3fr 2fr 2fr 0.5fr;
 
   @include abstracts.screen(md) {
+    padding: 10px 0;
     grid-template-columns: 2fr 2fr 1fr 1fr;
     grid-template-areas:
       'aa aa cc dd'
@@ -243,6 +244,10 @@ const removeAllItem = () => {
     padding-top: 30%;
     flex-shrink: 0;
     cursor: pointer;
+    @include abstracts.screen(md) {
+      width: 50%;
+      padding-top: 40%;
+    }
   }
   &__image {
     position: absolute;
