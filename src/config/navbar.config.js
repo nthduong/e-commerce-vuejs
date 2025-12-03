@@ -17,10 +17,10 @@ export const NAV_ITEMS = [
     label: 'About',
     path: '/about',
   },
-  {
-    id: 4,
-    name: 'contact',
-    label: 'Contact',
-    path: '/contact',
-  },
+  // {
+  //   id: 4,
+  //   name: 'contact',
+  //   label: 'Contact',
+  //   path: '/contact',
+  // },
 ]

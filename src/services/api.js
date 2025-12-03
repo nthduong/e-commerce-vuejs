@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:3000'
+const API_URL = 'https://json-server-gs7z.onrender.com/'
 
 const api = axios.create({
   baseURL: API_URL, 
