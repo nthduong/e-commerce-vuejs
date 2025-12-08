@@ -1,12 +1,18 @@
 <script setup>
+import { useRouter } from 'vue-router'
 import { useForm, useField } from 'vee-validate'
 import * as yup from 'yup'
 import { useToast } from 'vue-toastification'
 import { useCart } from '@/composables/useCart'
 import { TAX } from '@/config/tax.config'
-const { getTotalItems, getTotalPrice, getVAT, getTotalWithVAT } = useCart()
+import { useOder } from '@/composables/useOrder'
+import { useAuth } from '@/composables/useAuth'
 
+const router = useRouter()
 const toast = useToast()
+const { user } = useAuth()
+const { getTotalItems, getTotalPrice, getVAT, getTotalWithVAT, clearAllItem } = useCart()
+const { submitOrder } = useOder()
 
 const schema = yup.object({
   name: yup.string().required('Please enter your name.'),
@@ -29,8 +35,31 @@ const { value: phone, errorMessage: phoneError } = useField('phone')
 const { value: address, errorMessage: addressError } = useField('address')
 const { value: note, errorMessage: noteError } = useField('note')
 
-const onSubmit = handleSubmit(async () => {
-  toast.success('Order Placed Successfully!', { timeout: 5000 })
+const orderData = {
+  userId: user.value?.id ?? null,
+  status: 'pending',
+  subtotal: getTotalPrice.value,
+  tax: getVAT.value,
+  total: getTotalWithVAT.value,
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+}
+
+const onSubmit = handleSubmit(async (values) => {
+  if (getTotalItems.value < 1) return
+
+  const orderPayload = {
+    order: orderData,
+    shippingAddress: values,
+  }
+
+  const res = submitOrder(orderPayload)
+
+  if (res) {
+    toast.success('Order Placed Successfully!', { timeout: 5000 })
+    clearAllItem()
+    router.push({ name: 'home' })
+  }
 })
 </script>
 
