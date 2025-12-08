@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useProduct } from '@/composables/useProduct'
 import { useCart } from '@/composables/useCart'
 import { useToast } from 'vue-toastification'
@@ -8,19 +8,25 @@ import QuantityStepper from '@/components/common/QuantityStepper.vue'
 const toast = useToast()
 
 const props = defineProps(['productSlug'])
-const { productDetail, fetchDetail } = useProduct()
+const { productDetail, fetchDetail,loading } = useProduct()
 const { addToCart } = useCart()
 
-onMounted(() => {
-  fetchDetail(props.productSlug)
-})
+watch(
+  () => props.productSlug,
+  (newSlug) => {
+    if (newSlug) fetchDetail(newSlug)
+  },
+  { immediate: true, }
+)
 
 const quantity = ref(1)
 
 const productName = computed(() => productDetail.value?.name || '')
 const productDescription = computed(() => productDetail.value?.description || '')
 const productPrice = computed(() => productDetail.value?.price || '')
-const productImage = computed(() => productDetail.value?.image || '/images/products/placeholder.png')
+const productImage = computed(
+  () => productDetail.value?.image || '/images/products/placeholder.png',
+)
 
 const addProduct = () => {
   const result = addToCart(productDetail.value, quantity.value)
@@ -34,12 +40,23 @@ const addProduct = () => {
 
 <template>
   <div class="product-detail">
-    <div class="container">
+    <div v-if="loading" class="container">
+      <div class="row">
+        <div class="col-5 col-xl-6 col-lg-5 col-md-12">
+          <div class="skeleton skeleton--image"></div>
+        </div>
+        <div class="col-7 col-xl-6 col-lg-7 col-md-12">
+          <div class="skeleton skeleton--text"></div>
+        </div>
+      </div>
+    </div>
+
+    <div v-else-if="productDetail" class="container">
       <div class="row">
         <div class="col-5 col-xl-6 col-lg-5 col-md-12">
           <div class="product-detail_preview">
             <figure class="product-detail__image-wrap">
-              <img class="product-detail__image" :src="productImage" alt="" />
+              <img class="product-detail__image" :src="productImage"  alt="" />
             </figure>
           </div>
         </div>
@@ -51,7 +68,7 @@ const addProduct = () => {
             </p>
             <span class="product-detail__price">${{ productPrice }}</span>
             <div class="product-detail__cta-wrap">
-              <quantity-stepper v-model="quantity"/>
+              <quantity-stepper v-model="quantity" />
               <button class="btn btn--md product-detail__cta" @click="addProduct">
                 Add to card
               </button>
@@ -65,6 +82,27 @@ const addProduct = () => {
 
 <style lang="scss" scoped>
 @use '@/styles/abstracts';
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+
+  &--image {
+    height: 400px;
+    border-radius: 20px;
+  }
+
+  &--text {
+    height: 300px;
+    border-radius: 20px;
+  }
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
 
 .product-detail {
   padding: 80px 0;
@@ -162,8 +200,8 @@ const addProduct = () => {
     gap: 20px;
 
     @include abstracts.screen(md) {
-     flex-direction: column;
-     align-items: flex-start;
+      flex-direction: column;
+      align-items: flex-start;
     }
     @include abstracts.screen(lg) {
       margin-top: 12px;

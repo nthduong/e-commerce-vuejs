@@ -9,6 +9,7 @@ export const useProductStore = defineStore('product', () => {
   const productDetail = ref(null)
   const loading = ref(false)
   const error = ref(null)
+  const detailCache = new Map()
 
   // 2. GETTERS
   const featuredProducts = computed(() => {
@@ -48,10 +49,16 @@ export const useProductStore = defineStore('product', () => {
   }
 
   const fetchDetail = async (slug) => {
+    productDetail.value = null
     loading.value = true
     error.value = null
+    if (detailCache.has(slug)) {
+      productDetail.value = detailCache.get(slug)
+      return
+    }
     try {
       productDetail.value = await productService.getBySlug(slug)
+      detailCache.set(slug, productDetail.value) 
     } catch (err) {
       productDetail.value = null
       error.value = err
