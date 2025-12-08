@@ -131,7 +131,13 @@ const onSubmit = handleSubmit(async (values) => {
       </form>
       <p class="auth__bottom">
         Already have an account?
-        <router-link :to="{ name: 'login' }">Sign in</router-link>
+        <router-link
+          :to="{
+            name: 'login',
+            query: { redirect: $route.query.redirect },
+          }"
+          >Sign in</router-link
+        >
       </p>
     </div>
   </div>

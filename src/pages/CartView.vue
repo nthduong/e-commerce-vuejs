@@ -1,8 +1,15 @@
 <script setup>
 import { useCart } from '@/composables/useCart'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import QuantityStepper from '@/components/common/QuantityStepper.vue'
 import { TAX } from '@/config/tax.config'
+import { useAuth } from '@/composables/useAuth'
+import { useToast } from 'vue-toastification'
+
+const toast = useToast()
+const route = useRoute()
+const router = useRouter()
+const { isAuthenticated } = useAuth()
 const {
   cart,
   getTotalItems,
@@ -12,8 +19,6 @@ const {
   clearItemFromCart,
   clearAllItem,
 } = useCart()
-
-const router = useRouter()
 
 const goToDetail = (slug) => {
   router.push({
@@ -28,6 +33,15 @@ const removeItemCart = (productId) => {
 
 const removeAllItem = () => {
   clearAllItem()
+}
+
+const checkOut = () => {
+  if (isAuthenticated.value) {
+    router.push({ name: 'check-out' })
+  } else {
+    toast.info('Please log in to continue to checkout.')
+    router.push({ name: 'login', query: { redirect: route.fullPath } })
+  }
 }
 </script>
 
@@ -94,9 +108,7 @@ const removeAllItem = () => {
                   <strong>Estimated Total</strong>
                   <strong class="cart-info__price">${{ getTotalWithVAT }}</strong>
                 </div>
-                <button class="btn cart-info__btn" @click="$router.push({ name: 'check-out' })">
-                  Continue to checkout
-                </button>
+                <button class="btn cart-info__btn" @click="checkOut">Continue to checkout</button>
               </div>
             </div>
           </div>

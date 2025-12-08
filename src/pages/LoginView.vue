@@ -3,9 +3,10 @@ import LogoMain from '@/components/common/LogoMain.vue'
 import { useForm, useField } from 'vee-validate'
 import * as yup from 'yup'
 import { useAuth } from '@/composables/useAuth'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 
 const router = useRouter()
+const route = useRoute()
 const { login } = useAuth()
 
 const schema = yup.object({
@@ -25,7 +26,13 @@ const onSubmit = handleSubmit(async (value) => {
     const res = await login(value)
 
     if (res.success) {
-      router.push({ name: 'home' })
+      const redirect = route.query.redirect
+
+      if (redirect) {
+        router.push(redirect)
+      } else {
+        router.push({ name: 'home' })
+      }
     } else {
       setFieldError('email', res.message)
       setFieldError('password', res.message)
@@ -91,7 +98,13 @@ const onSubmit = handleSubmit(async (value) => {
       </form>
       <p class="auth__bottom">
         Don't have an account?
-        <router-link :to="{ name: 'register' }">Sign up</router-link>
+        <router-link
+          :to="{
+            name: 'register',
+            query: { redirect: $route.query.redirect },
+          }"
+          >Sign up</router-link
+        >
       </p>
     </div>
   </div>
