@@ -37,6 +37,7 @@ export const useProductStore = defineStore('product', () => {
     }
   }
   const fetchProductList = async (params = {}) => {
+    productList.value = []
     loading.value = true
     error.value = null
     try {

@@ -8,7 +8,7 @@ import { capitalizeFirstLetter } from '@/utils/string'
 
 const route = useRoute()
 const router = useRouter()
-const { productList, fetchProductList } = useProduct()
+const { productList, loading, fetchProductList } = useProduct()
 
 const category = ref(null)
 const sortBy = ref(route.query.sort || 'featured')
@@ -98,11 +98,10 @@ const ToggleCategory = () => {
             </div>
           </div>
           <product-list-component
-            v-if="productList.length"
             :products="productList"
+            :loading="loading"
             @view-detail="goToDetail"
           />
-          <div v-else class="empty-message">No products available</div>
         </div>
       </div>
     </div>
